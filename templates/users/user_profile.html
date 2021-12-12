@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "../../static/css/user_profile.css">
+</head>
+<body>
+    <div class = blackout-container>
+        <img src="{{ user.profile.avatar.url }}" class="avatar-80" alt="" width="125" height="125">
+        <p class = "white_text">{{ user.first_name }} {{ user.last_name }}</p>
+        <p class = "white_text">{{ user.profile.role}}</p>
+        <p class = "white_text">{{ user.email}}</p>
+        <p class = "white_text">{{ user.profile.about }}</p>
+        <p class = "white_text">Contact: {{ user.email}}</p>
+
+        <p>
+            <a href="https://vk.com/"><img src="../../media/icons/Group%2055.png" alt =""></a>
+            <a href="https://telegram.org/"><img src="../../media/icons/Group%2056.png" alt =""></a>
+            <a href="https://www.whatsapp.com/"><img src="../../media/icons/Group%2057.png" alt =""></a>
+        </p>
+
+        <p class = "white_text">Projects:
+            {% for project in projects %}
+                <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" class="avatar-80" alt="" width="125" height="125"></a>
+            {% endfor %}
+        </p>
+
+        <p class = "white_text">Gallery:
+            {% for pic in pictures %}
+            <img src="{{ pic.image.url}}" class="avatar-80" alt="" width="125" height="125">
+            {% endfor %}
+        </p>
+
+        <p class = "white_text">Skills:
+            {% for skill in skills %}
+            {{ skill.name }}
+            {% endfor %}
+        </p>
+
+        <p class = "white_text">Software:
+            {% for soft in software %}
+                <img src ="{{ soft.icon.url }}" alt ="">{{ soft.name }}
+            {% endfor %}
+        </p>
+
+        <p class = "white_text">
+            Achievements:
+            {% for ach in achievements %}
+                <img src="{{ ach.image.url }}" width="125" height="125" alt ="">
+            {% endfor %}
+        </p>
+    </div>
+</body>
+</html>

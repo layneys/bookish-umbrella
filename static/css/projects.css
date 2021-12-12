@@ -1,0 +1,295 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo {
+  height: 30px;
+}
+
+#headerBar {
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: .6s;
+}
+.mobileImage {
+  display: none;
+}
+._3Lines {
+  display: none;
+}
+.currentPage {
+  border-bottom: 2px solid #FF9736;
+}
+
+
+body {
+  position: relative;
+  top: 0px;
+  background-size: 100%;
+  background: url("../imgs/Background.svg") no-repeat;
+}
+.blackout {
+}
+.blackout:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 900px;
+  background: rgba(47, 47, 47, 0.1);
+  z-index: -4;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: inherit;
+  z-index: 1;
+}
+
+.header:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  opacity: .7;
+  z-index: -1;
+  background: linear-gradient(65deg,#45474D, #36393E);
+}
+.header::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .9;
+  z-index: -2;
+  filter: blur(3px);
+  background: inherit;
+}
+
+.header a {
+  color: #fff;
+}
+.header .left-side img {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.header  .middle ul {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 100px;
+}
+.header .middle ul li {
+  margin-right: 40px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+  padding-bottom: 13px;
+}
+.header .right-side {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.header .right-side a {
+  font-family: 'Exo 2', sans-serif;
+}
+.info-container {
+  width: 100%;
+  height: 750px;
+  position: relative;
+}
+.info-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  height: 630px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background: rgba(47, 47, 47, .15);
+}
+.info {
+  width: 600px;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  right: 200px;
+  top: 240px;
+  z-index: 1;
+}
+.info p {
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+.info a {
+  border: 2px solid #fff;
+  padding: 5px 38px 10px;
+}
+.info a:hover{
+  cursor: pointer;
+}
+
+.container-outside {
+  width: 100%;
+  position: relative;
+  padding-bottom: 50px;
+}
+.container-outside::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  left: 0;
+  top: -130px;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  background:
+  linear-gradient(0deg, #0F182D 20%, transparent),
+  linear-gradient(to top, transparent, rgba(47, 47, 47, 0.15));
+
+  /*background:*/
+  /*        radial-gradient(ellipse 100% 100% at bottom, #0F182D, rgba(47, 47, 47, 0.35)),*/
+  /*        radial-gradient(ellipse 100% 100% at bottom left, #0F182D, transparent),*/
+  /*        radial-gradient(ellipse 100% 100% at bottom right, #0F182D, transparent),*/
+  /*        linear-gradient(to top, transparent, rgba(47, 47, 47, 0.2));*/
+  /*
+    from #0F182D
+    to #2F2F2F
+  */
+}
+.container-outside:after {
+  content: '';
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  padding-bottom: 0;
+  position: absolute;
+  z-index: -1;
+  background: #0F182D;
+}
+
+.container-outside .inside-container {
+  width: 80%;
+  background: transparent;
+  margin: 0 auto;
+}
+.projects-list {
+  text-align: center;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 140px;
+  margin-left: 150px;
+  overflow: hidden;
+  transition: all .6s;
+}
+.list div {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.list div:hover {
+  cursor: pointer;
+}
+.list div a img {
+  width: 240px;
+  height: 120px;
+}
+
+.oc {
+  margin-top: 10px;
+  border-radius: 15px;
+  transition: all .5s;
+}
+.oc:hover {
+  cursor: pointer;
+}
+
+
+.contestWork-list {
+  margin-top: 70px;
+  margin-left: 150px;
+}
+.contestWork-list h2, .inDeveloping h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 29px;
+}
+.contestWork-list .contestList {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contestWork-list .contestList div {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.contestWork-list .contestList div:hover {
+  cursor: pointer;
+}
+.contestWork-list .contestList div a img {
+  width: 240px;
+  height: 120px;
+}
+
+
+
+.inDeveloping {
+  margin-top: 70px;
+  margin-left: 150px;
+}
+.DevelopingList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inDevBar {
+  display: flex;
+  margin-top: 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 240px;
+  height: 280px;
+  box-shadow: 0 5px 10px black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.inDevBar a img {
+  width: 160px;
+  height: 200px;
+}
+.inDevBar:hover {
+  cursor: pointer;
+}

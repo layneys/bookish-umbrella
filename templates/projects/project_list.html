@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=.5">
+    <meta charset="UTF-8">
+    <title>проекты</title>
+    <link href="../../static/css/projects.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="blackout"></div>
+<header class="header">
+    <div class="left-side">
+        <img src="../../media/imgs/logo_citg.png"class="logo" alt="">
+    </div>
+    <div class="middle">
+        <ul class="headerList">
+            <li><a href="http://127.0.0.1:8000/">главная</a></li>
+            <li class="currentPage"><a href="#">проекты</a></li>
+            <li><a href="#">команда</a></li>
+        </ul>
+    </div>
+    <div class="right-side">
+        <span class="DesktopMail"><a href="#">mail@.ru</a></span>
+        <span class="_3Lines" id="dynamicHeaderBar"><img src="imgs/Lines.png" alt=""></span>
+    </div>
+</header>
+<div id="headerBar">
+
+</div>
+<div class="info-container">
+   <div class="info">
+       <img class="mobileImage" src="../../media/imgs/OneMoreBack.png" alt="">
+       <h2>Cosmic Driver</h2>
+       <p>Для университета открытии коворкинга «Центр IT-притяжения РГУПС» - это знаковое событие, которое положит начало новой эпохе дополнительного образования и саморазвития студентов. Центр - площадка, основанная на современных концепциях форматов рабочего пространства.</p>
+      <div class="wrapper"> <a href="#">подробнее</a></div>
+   </div>
+</div>
+<div class="container-outside">
+    <div class="inside-container">
+        <div class="projects-list">
+            <div class="list" id="list">
+                {% for project in completed_projects %}
+                    <div class="bar"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
+                {% endfor %}
+            </div>
+
+            <div><img src="../../media/imgs/openList.svg" alt="" width="80px" class="oc" id="openCloseList"></div>
+        </div>
+        <div class="contestWork-list">
+            <h2>Конкурсные работы</h2>
+            <div class="contestList">
+                {% for project in contest_projects %}
+                <div><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+        <div class="inDeveloping">
+            <h2>Проекты в <br> разработке</h2>
+            <div class="DevelopingList">
+                {% for project in in_development %}
+                    <div class="inDevBar" style="background: #EFF7FE">
+                        <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt=""></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../static/js/projects.js"></script>
+</body>
+</html>

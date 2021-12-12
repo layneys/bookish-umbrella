@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  cursor: url("/img/NO.cur"), auto;
+  position: relative;
+  background: linear-gradient(107.41deg, #18181a 0.58%, #333333 100%);
+  color: #fff;
+  font-family: 'Exo 2', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+button {
+  color: #fff;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  outline: none;
+}
+.hide {
+  display: none;
+}
+.container {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+.btnLeft {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  margin-top: 9%;
+  margin-right: 1%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.btnRight {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  margin-top: 9%;
+  margin-left: 1%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.header {
+  background: linear-gradient(121.4deg, rgba(69, 71, 77, 0.65) 26.47%, rgba(54, 57, 62, 0.65) 68.95%);
+  -webkit-box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
+          box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
+  -webkit-backdrop-filter: blur(39px);
+          backdrop-filter: blur(39px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 68px;
+  letter-spacing: .1em;
+}
+.header .nav a {
+  font-size: 20px;
+  padding-bottom: 21px;
+  margin-left: 20px;
+  -webkit-transition: 1.5s ease all;
+  transition: 1.5s ease all;
+}
+.header .nav a:hover {
+  border-bottom: 2px solid #FF9736;
+}
+.header .header__item .header__item-logo {
+  width: 126px;
+  height: 50px;
+}
+.header .header__item .mail {
+  font-size: 20px;
+}
+.header .header__item:first-child {
+  margin-left: 50px;
+}
+.header .header__item:last-child {
+  margin-right: 50px;
+}
