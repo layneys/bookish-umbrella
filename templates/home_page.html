@@ -154,12 +154,13 @@
 
         <div class="projects__bottom">
             {% for project in projects %}
+                <a href ="http://127.0.0.1:8000/project/{{ project.id }}/" >
             <div class="projects__bottom__item">
                 <img class="projects__bottom__item-img" src="{{project.preview_pic.url}}" alt="проект">
 
                 <div class="projects__bottom__item-text">
                     <p>{{ project.title }}</p>
-                </div>
+                </div></a>
             </div>
             {% endfor %}
         </div>
