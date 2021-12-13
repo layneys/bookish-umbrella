@@ -21,8 +21,8 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li class="hover">Home</li>
-                    <li class="hover">Project</li>
+                    <li class="hover"><a href="http://127.0.0.1:8000/">Home</a></li>
+                    <li class="hover"><a href="http://127.0.0.1:8000/projects/">Projects</a></li>
                     <li class="hover">Portfolio</li>
                     <li class="hover">Team </li>
                 </ul>
@@ -42,59 +42,13 @@
             </div>
         </div>
         <div class="projects-wrapper">
-            <div class="container prj-container">
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/spaceman.png" alt="image of project"></a>
+            {% for project in completed_projects %}
+                <div class="container prj-container">
+                    <div class="project prj-element-of-array">
+                        <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a>
+                    </div>
                 </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/hungryFrog.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/navigation.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/directory.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/database.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-                <div class="project prj-element-of-array">
-                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="after-prjcts">
             <button id="load-more">LOAD MORE</button>
@@ -107,10 +61,11 @@
                 <p>Конкурсные работы</p>
             </div>
         </div>
-        <div class="container prj-container">
-            <div class="project"><a href="#"><img src="../../media/imgs/database.png" alt="image of competition project"></a></div>
-            <div class="project"><a href="#"><img src="../../media/imgs/directory.png" alt="image of competition project"></a></div>
-        </div>
+        {% for project in contest_projects %}
+            <div class="container prj-container">
+                <div class="project"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
+            </div>
+        {% endfor %}
     </div>
     <div class="post-03">
         <div class="container">
@@ -120,42 +75,18 @@
             </div>
         </div>
         <div class="container prj-container">
+            {% for project in in_development %}
             <div class="prj-inDev">
                 <div class="description-inDev-prj" style="margin-left: 50px">
-                    <h3>Проект 1</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
                 </div>
                 <div class="logo-inDev-prj">
-                    <img src="../../media/icons/navigation-icon.png" alt="logo of inDev image">
+                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt=""></a>
                 </div>
             </div>
-            <div class="prj-inDev">
-                <div class="description-inDev-prj">
-                    <h3>Проект 2</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </div>
-                <div class="logo-inDev-prj">
-                    <img src="../../media/icons/database-icon.png" alt="logo of inDev image">
-                </div>
-            </div>
-            <div class="prj-inDev">
-                <div class="description-inDev-prj">
-                    <h3>Проект 3</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </div>
-                <div class="logo-inDev-prj">
-                    <img src="../../media/icons/greenA-icon.png" alt="logo of inDev image">
-                </div>
-            </div>
-            <div class="prj-inDev">
-                <div class="description-inDev-prj">
-                    <h3>Проект 4</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </div>
-                <div class="logo-inDev-prj">
-                    <img src="../../media/icons/arrow-icon.png" alt="logo of inDev image">
-                </div>
-            </div>
+        {% endfor %}
+
         </div>
     </div>
 </main>
