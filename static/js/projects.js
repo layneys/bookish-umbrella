@@ -1,46 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-    let headerBar = document.getElementById('headerBar');
-    let dynamicHeaderBar = document.getElementById('dynamicHeaderBar');
-    dynamicHeaderBar.addEventListener('click', ()=> {
-        if(headerBar.style.height !== '200px') {
-            headerBar.style.height = '200px';
-        } else {
-            headerBar.style.height = '0px';
-        }
-    })
-
-    //<field with Projects>
+document.addEventListener('DOMContentLoaded', ()=> {
     let isOpen = false;
-    let projectsList = document.getElementById('list');
-    let openCloseListButton = document.getElementById('openCloseList');
-    let bars = document.getElementsByClassName('bar');
-    openCloseListButton.addEventListener('click', () => {
+    let project_wrapper = document.querySelector('.projects-wrapper');
+    let realized_projects_array = document.getElementsByClassName('prj-element-of-array');
+    let button = document.getElementById('load-more');
+
+    button.addEventListener('click', ()=> {
+        let height = 0;
+        for(let i = 0; i < realized_projects_array.length; ++i)
+            console.log("offsetTop:" + realized_projects_array[i].offsetTop)
         if(!isOpen) {
-            openCloseListButton.src = "https://madsparrowsk.github.io/TinyProject/projects/imgs/closeList.svg";
-            projectsList.style.height = bars[bars.length - 1].offsetTop + bars[bars.length - 1].clientHeight + 'px';
             isOpen = true;
+            button.innerText = 'HIDE';
+            height = realized_projects_array[realized_projects_array.length - 1].offsetTop + realized_projects_array[realized_projects_array.length - 1].clientHeight + 50;
         } else {
-
-            openCloseListButton.src = "https://madsparrowsk.github.io/TinyProject/projects/imgs/openList.svg";
-            projectsList.style.height = bars[0].offsetTop + bars[0].clientHeight + 'px';
             isOpen = false;
+            button.innerText = 'load more';
+            height = realized_projects_array[0].offsetTop + realized_projects_array[0].clientHeight + 50;
         }
+
+        //console.log("height " + height)
+        project_wrapper.style.height = height + 'px';
     });
-    //</field with Projects>
 
-    //<field with contest>
-    //</field with contest>
 
-    //<field with inDeveloping projects>
-    let inDevsPrjcs = document.getElementsByClassName('inDevBar');
-    for(let i = 0; i < inDevsPrjcs.length; ++i) {
-        inDevsPrjcs[i].addEventListener('click', (e) => {
-            if(e.target === inDevsPrjcs[i]) {
-                /*console.log(inDevsPrjcs[i].childNodes[1].href);
-                window.location.href = inDevsPrjcs[i].childNodes[1].href;*/
-            }
-        });
+    let arrowUp = document.querySelector('.arrow-up');
+    arrowUp.onclick =  () => {
+        window.scrollTo(0,0);
     }
-    //</field with inDeveloping projects>
 })

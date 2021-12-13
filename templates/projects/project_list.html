@@ -1,77 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=.5">
     <meta charset="UTF-8">
-    <title>проекты</title>
-    <link href="../../static/css/projects.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Exo+2:wght@300&family=Inter:wght@200&family=Karla:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link href="../../static/css/projects.css" rel="stylesheet">
 </head>
 <body>
-<div class="blackout"></div>
+
 <header class="header">
-    <div class="left-side">
-        <img src="../../media/imgs/logo_citg.png"class="logo" alt="">
-    </div>
-    <div class="middle">
-        <ul class="headerList">
-            <li><a href="http://127.0.0.1:8000/">главная</a></li>
-            <li class="currentPage"><a href="#">проекты</a></li>
-            <li><a href="#">команда</a></li>
-        </ul>
-    </div>
-    <div class="right-side">
-        <span class="DesktopMail"><a href="#">mail@.ru</a></span>
-        <span class="_3Lines" id="dynamicHeaderBar"><img src="imgs/Lines.png" alt=""></span>
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <img class="hover" src="../../media/icons/logoHeader.png" alt="logo">
+                <h3 class="hover">CITG</h3>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="hover">Home</li>
+                    <li class="hover">Project</li>
+                    <li class="hover">Portfolio</li>
+                    <li class="hover">Team </li>
+                </ul>
+            </div>
+            <div class="mail">
+                <a class="hover" href="mailto:itsomemail@mail.com">itsomemail@mail.com</a>
+            </div>
+        </div>
     </div>
 </header>
-<div id="headerBar">
-
-</div>
-<div class="info-container">
-   <div class="info">
-       <img class="mobileImage" src="../../media/imgs/OneMoreBack.png" alt="">
-       <h2>Cosmic Driver</h2>
-       <p>Для университета открытии коворкинга «Центр IT-притяжения РГУПС» - это знаковое событие, которое положит начало новой эпохе дополнительного образования и саморазвития студентов. Центр - площадка, основанная на современных концепциях форматов рабочего пространства.</p>
-      <div class="wrapper"> <a href="#">подробнее</a></div>
-   </div>
-</div>
-<div class="container-outside">
-    <div class="inside-container">
-        <div class="projects-list">
-            <div class="list" id="list">
-                {% for project in completed_projects %}
-                    <div class="bar"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
-                {% endfor %}
-            </div>
-
-            <div><img src="../../media/imgs/openList.svg" alt="" width="80px" class="oc" id="openCloseList"></div>
-        </div>
-        <div class="contestWork-list">
-            <h2>Конкурсные работы</h2>
-            <div class="contestList">
-                {% for project in contest_projects %}
-                <div><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
-                {% endfor %}
+<main class="main">
+    <div class="post-01">
+        <div class="container">
+            <div class="little-description little-description_decoration-blur">
+                <h2>01</h2>
+                <p>Реализованные проекты</p>
             </div>
         </div>
-        <div>
-        <div class="inDeveloping">
-            <h2>Проекты в <br> разработке</h2>
-            <div class="DevelopingList">
-                {% for project in in_development %}
-                    <div class="inDevBar" style="background: #EFF7FE">
-                        <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt=""></a>
-                    </div>
-                {% endfor %}
+        <div class="projects-wrapper">
+            <div class="container prj-container">
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/spaceman.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/hungryFrog.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/navigation.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/directory.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/database.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img src="../../media/imgs/plug.png" alt="image of project"></a>
+                </div>
             </div>
         </div>
+        <div class="after-prjcts">
+            <button id="load-more">LOAD MORE</button>
         </div>
     </div>
-</div>
+    <div class="post-02">
+        <div class="container">
+            <div class="little-description">
+                <h2>02</h2>
+                <p>Конкурсные работы</p>
+            </div>
+        </div>
+        <div class="container prj-container">
+            <div class="project"><a href="#"><img src="../../media/imgs/database.png" alt="image of competition project"></a></div>
+            <div class="project"><a href="#"><img src="../../media/imgs/directory.png" alt="image of competition project"></a></div>
+        </div>
+    </div>
+    <div class="post-03">
+        <div class="container">
+            <div class="little-description">
+                <h2>03</h2>
+                <p>Проекты в разработке</p>
+            </div>
+        </div>
+        <div class="container prj-container">
+            <div class="prj-inDev">
+                <div class="description-inDev-prj" style="margin-left: 50px">
+                    <h3>Проект 1</h3>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <img src="../../media/icons/navigation-icon.png" alt="logo of inDev image">
+                </div>
+            </div>
+            <div class="prj-inDev">
+                <div class="description-inDev-prj">
+                    <h3>Проект 2</h3>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <img src="../../media/icons/database-icon.png" alt="logo of inDev image">
+                </div>
+            </div>
+            <div class="prj-inDev">
+                <div class="description-inDev-prj">
+                    <h3>Проект 3</h3>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <img src="../../media/icons/greenA-icon.png" alt="logo of inDev image">
+                </div>
+            </div>
+            <div class="prj-inDev">
+                <div class="description-inDev-prj">
+                    <h3>Проект 4</h3>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <img src="../../media/icons/arrow-icon.png" alt="logo of inDev image">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="links-to-social-networks">
+            <div class="soc-nets telegram">
+                <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
+                <p>Telegram</p>
+            </div>
+            <div class="soc-nets VKontakte">
+                <img src="../../media/icons/vk-icon.svg" alt="image of social network">
+                <p>VKontakte</p>
+            </div>
+            <div class="soc-nets WhatsApp">
+                <img src="../../media/icons/whatsapp-icon.svg" alt="image of social network">
+                <p>WhatsApp</p>
+            </div>
+        </div>
+        <div class="contacts">
+            <a href="tel:+123-456-789"><h3>+123.456.789</h3></a>
+            <p>Ростов-на-Дону</p>
+            <p>пл. Ростовского Стрелкового</p>
+            <p>Полка Народного Ополочения пл, 2.</p>
+        </div>
+        <div class="arrow-up">
+            <div class="arrow-up-inside">
+                <img src="../../media/imgs/arrow-up.svg" alt="image of arrow up">
+            </div>
+        </div>
+    </div>
+</footer>
 
-<script src="../../static/js/projects.js"></script>
+    <script src="../../static/js/projects.js"></script>
 </body>
 </html>
+
+<!--     
+    font-family: 'Asap', sans-serif;
+
+    font-family: 'Exo 2', sans-serif;
+
+    font-family: 'Inter', sa ns-serif;
+
+    font-family: 'Karla', sans-serif;
+
+    font-family: 'Roboto', sans-serif;
+ -->
