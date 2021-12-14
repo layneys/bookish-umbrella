@@ -34,11 +34,15 @@ body {
 
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
   background: #181C21;
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid;
-  border-image-source: linear-gradient(90deg, #813024 14%, #FFFFFF, transparent 90%);
+  border-bottom: 2px solid;
+  border-image-source: linear-gradient(90deg, #813024 14%, rgba(176, 155, 151, 0.3), transparent 90%);
   border-image-slice: 1;
 }
 .header-data {
@@ -80,9 +84,8 @@ body {
   color: #fff;
 }
 
-
 .post-01 ,.post-02, .post-03 {
-  margin-top: 70px;
+  margin-top: 120px;
   overflow: hidden;
 }
 
@@ -99,7 +102,9 @@ body {
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
 }
-
+.little-description_decoration-blur {
+  transition: all .3s;
+}
 .little-description_decoration-blur:before {
   content: "";
   width: 100%;
@@ -125,7 +130,6 @@ body {
   background-attachment: fixed;
   background-image: url("../../media/imgs/post-01-background.png");
   transition: all .4s;
-  backdrop-filter: blur(5px);
 }
 .prj-container {
   position: relative;
@@ -146,7 +150,13 @@ body {
   text-align: center;
   position: relative;
 }
-.after-prjcts:before {
+.after-prjcts_decoration-blur-purple {
+  text-align: center;
+  position: relative;
+  transition: all .3s;
+  z-index: -1;
+}
+.after-prjcts_decoration-blur-purple:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -163,7 +173,7 @@ body {
 .after-prjcts button {
   text-transform: uppercase;
   font-family: 'Karla', sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   border-radius: 0;
   border: none;
   width: 150px;
@@ -220,7 +230,7 @@ body {
 }
 .links-to-social-networks {
   position: relative;
-  left: 200px;
+  left: 0;
   display: flex;
   text-align: center;
   align-items: center;
@@ -254,14 +264,20 @@ body {
 }
 
 .arrow-up {
-  position: absolute;
-  right: -100px;
-  top: -45px;
+  display: none;
+  z-index: 5;
+  position: fixed;
+  bottom:50px;
+  right: 23px;
   border-radius: 50%;
 }
 .arrow-up:hover {
   cursor: pointer;
 }
+.arrow-up:hover div img {
+  opacity: 1;
+}
+
 .arrow-up div {
   background: rgba(49, 49, 49, 0.32);
   display: flex;
@@ -270,6 +286,10 @@ body {
   border-radius: 50%;
   width: 90px;
   height: 90px;
+}
+.arrow-up div img {
+  opacity: .2;
+  transition: all .3s;
 }
 
 

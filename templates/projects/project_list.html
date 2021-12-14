@@ -21,10 +21,10 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li class="hover"><a href="http://127.0.0.1:8000/">Home</a></li>
-                    <li class="hover"><a href="http://127.0.0.1:8000/projects/">Projects</a></li>
-                    <li class="hover">Portfolio</li>
-                    <li class="hover">Team </li>
+                    <li><a class="hover" href="http://127.0.0.1:8000/">Домой</a></li>
+                    <li><a class="hover" href="http://127.0.0.1:8000/projects/">Проекты</a></li>
+                    <li><a class="hover" href="#">Портфолио</a></li>
+                    <li><a class="hover" href="#">Команда</a></li>
                 </ul>
             </div>
             <div class="mail">
@@ -36,22 +36,54 @@
 <main class="main">
     <div class="post-01">
         <div class="container">
-            <div class="little-description little-description_decoration-blur">
+            <div class="little-description">
+                <div class="little-description_decoration-blur"></div>
                 <h2>01</h2>
                 <p>Реализованные проекты</p>
             </div>
         </div>
         <div class="projects-wrapper">
-            {% for project in completed_projects %}
-                <div class="container prj-container">
-                    <div class="project prj-element-of-array">
-                        <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a>
-                    </div>
+<!--            {% for project in completed_projects %}-->
+<!--                <div class="container prj-container">-->
+<!--                    <div class="project prj-element-of-array">-->
+<!--                        <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+            <div class="container prj-container">
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
                 </div>
-            {% endfor %}
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+                <div class="project prj-element-of-array">
+                    <a href="#"><img alt="Photo" src="../../media/imgs/spaceman.png"></a>
+                </div>
+            </div>
+
         </div>
         <div class="after-prjcts">
-            <button id="load-more">LOAD MORE</button>
+            <div class="after-prjcts_decoration-blur-purple"></div>
+            <button id="load-more">Развернуть</button>
         </div>
     </div>
     <div class="post-02">
@@ -61,11 +93,15 @@
                 <p>Конкурсные работы</p>
             </div>
         </div>
-        {% for project in contest_projects %}
-            <div class="container prj-container">
-                <div class="project"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
-            </div>
-        {% endfor %}
+<!--        {% for project in contest_projects %}-->
+<!--            <div class="container prj-container">-->
+<!--                <div class="project"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+        <div class="container prj-container">
+            <div class="project"><a href="#"><img alt="Photo" src="../../media/imgs/database.png"></a></div>
+            <div class="project"><a href="#"><img alt="Photo" src="../../media/imgs/database.png"></a></div>
+        </div>
     </div>
     <div class="post-03">
         <div class="container">
@@ -75,18 +111,54 @@
             </div>
         </div>
         <div class="container prj-container">
-            {% for project in in_development %}
+<!--            {% for project in in_development %}-->
+<!--            <div class="prj-inDev">-->
+<!--                <div class="description-inDev-prj" style="margin-left: 50px">-->
+<!--                    <h3>{{ project.title }}</h3>-->
+<!--                    <p>{{ project.description }}</p>-->
+<!--                </div>-->
+<!--                <div class="logo-inDev-prj">-->
+<!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt=""></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+
             <div class="prj-inDev">
                 <div class="description-inDev-prj" style="margin-left: 50px">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
+                    <h3>project.title</h3>
+                    <p>project.description</p>
                 </div>
                 <div class="logo-inDev-prj">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt=""></a>
+                    <a href=""><img src="../../media/icons/navigation-icon-2.png" alt="image"></a>
                 </div>
             </div>
-        {% endfor %}
-
+            <div class="prj-inDev">
+                <div class="description-inDev-prj" style="margin-left: 50px">
+                    <h3>project.title</h3>
+                    <p>project.description</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <a href=""><img src="../../media/icons/navigation-icon-2.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="prj-inDev">
+                <div class="description-inDev-prj" style="margin-left: 50px">
+                    <h3>project.title</h3>
+                    <p>project.description</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <a href=""><img src="../../media/icons/navigation-icon-2.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="prj-inDev">
+                <div class="description-inDev-prj" style="margin-left: 50px">
+                    <h3>project.title</h3>
+                    <p>project.description</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <a href=""><img src="../../media/icons/navigation-icon-2.png" alt="image"></a>
+                </div>
+            </div>
         </div>
     </div>
 </main>
