@@ -44,7 +44,7 @@ body {
   left: 0;
   z-index: 2;
   background: #181C21;
-  height: 70px;
+  height: 77px;
   width: 100%;
   border-bottom: 2px solid;
   border-image-source: linear-gradient(90deg, #813024 14%, rgba(176, 155, 151, 0.3), transparent 90%);
