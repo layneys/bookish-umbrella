@@ -19,9 +19,14 @@ body {
   overflow-x: hidden;
 }
 
+
+.currentPage {
+  color:#FF9736;
+}
+
 .container {
   height: 100%;
-  width: 86%;
+  width: 1645px;
   margin: 0 auto;
 }
 .hover {
@@ -83,6 +88,9 @@ body {
   font-family: 'Inter', sans-serif;
   color: #fff;
 }
+.nav ul li a {
+  font-weight: 300;
+}
 
 .post-01 ,.post-02, .post-03 {
   margin-top: 120px;
@@ -126,8 +134,9 @@ body {
   width: 100%;
   height: 650px;
   overflow: hidden;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100%;
   background-image: url("../../media/imgs/post-01-background.png");
   transition: all .4s;
 }
@@ -264,10 +273,11 @@ body {
 }
 
 .arrow-up {
-  display: none;
+  transition: all .4s;
+  opacity: 0;
   z-index: 5;
   position: fixed;
-  bottom:50px;
+  bottom: 50px;
   right: 23px;
   border-radius: 50%;
 }
@@ -277,7 +287,6 @@ body {
 .arrow-up:hover div img {
   opacity: 1;
 }
-
 .arrow-up div {
   background: rgba(49, 49, 49, 0.32);
   display: flex;
@@ -291,5 +300,3 @@ body {
   opacity: .2;
   transition: all .3s;
 }
-
-
