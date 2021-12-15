@@ -1,55 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel = "stylesheet" href = "../../static/css/user_profile.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fonsts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat&display=swap" rel="stylesheet">
+
+  
+    <link rel="stylesheet" href="../../static/css/common-styles.css">
+    <link rel="stylesheet" href="../../static/css/team/team.css">
+
+
+    <title>Document</title>
 </head>
+
 <body>
-    <div class = blackout-container>
-        <img src="{{ user.profile.avatar.url }}" class="avatar-80" alt="" width="125" height="125">
-        <p class = "white_text">{{ user.first_name }} {{ user.last_name }}</p>
-        <p class = "white_text">{{ user.profile.role}}</p>
-        <p class = "white_text">{{ user.email}}</p>
-        <p class = "white_text">{{ user.profile.about }}</p>
-        <p class = "white_text">Contact: {{ user.email}}</p>
 
-        <p>
-            <a href="https://vk.com/"><img src="../../media/icons/Group%2055.png" alt =""></a>
-            <a href="https://telegram.org/"><img src="../../media/icons/Group%2056.png" alt =""></a>
-            <a href="https://www.whatsapp.com/"><img src="../../media/icons/Group%2057.png" alt =""></a>
-        </p>
+    <!-- main -->
+    <section class="main">
+        <header class="header">
 
-        <p class = "white_text">Projects:
-            {% for project in projects %}
-                <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" class="avatar-80" alt="" width="125" height="125"></a>
-            {% endfor %}
-        </p>
+            <div class="header__item">
+                <div><img class="header__item-logo" src="../../media/imgs/main/header-logo.svg" alt="иконка"></div>
+            </div>
 
-        <p class = "white_text">Gallery:
-            {% for pic in pictures %}
-            <img src="{{ pic.image.url}}" class="avatar-80" alt="" width="125" height="125">
-            {% endfor %}
-        </p>
+            <div class="header__item">
+                <nav class="nav">
+                    <a class="nav__link" href="../../templates/home_page.html">главная</a>
+                    <a class="nav__link" href="#">проекты</a>
+                    <a class="nav__link" href="user_profile.html">команда</a>
+                </nav>
+            </div>
 
-        <p class = "white_text">Skills:
-            {% for skill in skills %}
-            {{ skill.name }}
-            {% endfor %}
-        </p>
+            <div class="header__item">
+                <a class="mail" href="mailto:huy@gmain.com">сontack@gmail.com</a>
+            </div>
 
-        <p class = "white_text">Software:
-            {% for soft in software %}
-                <img src ="{{ soft.icon.url }}" alt ="">{{ soft.name }}
-            {% endfor %}
-        </p>
+        </header>
 
-        <p class = "white_text">
-            Achievements:
-            {% for ach in achievements %}
-                <img src="{{ ach.image.url }}" width="125" height="125" alt ="">
-            {% endfor %}
-        </p>
-    </div>
+        <div class="main__content">
+
+            <div class="main__top">
+                <div>
+                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
+                </div>
+
+                <div class="main__text">
+                    <h3>Андрей Бредихин</h3>
+                    <p>2D-artist</p>
+                    <a href="mailto:huy@gmain.com">сontack@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="main__bottom">
+                <div class="container">
+                    <button class="main__btn bgBtn">портфолио</button>
+
+                    <button class="main__btn">галерея</button>
+
+                    <button class="main__btn">резюме</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="work container">
+
+        <div class="portfolio item-main hide">
+            <div class="work__top">
+
+                <div>
+                    <p class="work__title">
+                        Участие в проектах
+                    </p>
+                </div>
+
+                <div class="work__projects">
+                    <div class="work__top__items">
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+                        <div class="work__top__item">
+                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                        </div>
+
+
+                    </div>
+
+                    <div class="work__projects__btnOpen">
+                        <button id="work__projects-btnOpen" class="work__projects-btnOpen">
+
+                            <img src="../../media/imgs/team-page/work-top/open.svg" alt="картинка">
+
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="work__bottom">
+
+                <div>
+                    <p class="work__title">
+                        Галерея
+                    </p>
+                </div>
+
+                <div class="work__bottom__items">
+
+                    <div class="show__gallery">
+                        <a href="">посмотреть все</a>
+                    </div>
+
+                    <div class="work__bottom__top">
+                        <div class="work__bottom__item">
+                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 258.png" alt="картинка">
+                        </div>
+
+                        <div class="work__bottom__item">
+                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 259.png" alt="картинка">
+                        </div>
+
+                        <div class="work__bottom__item">
+                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 262.png" alt="картинка">
+                        </div>
+                    </div>
+
+                    <div class="work__bottom__bottom">
+                        <div class="work__bottom__item">
+                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 260.png" alt="картинка">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="gallery item-main container hide">
+
+        </div>
+
+        <div class="resume item-main container">
+
+            <div class="resume__contact">
+
+                <div class="resume__contact__top">
+                    <div>
+                        <h4 id="human-position">
+                            Uinity developer
+                        </h4>
+                    </div>
+
+                    <div>
+                        <a  class="resume__resumeAll" href="#">
+                            посмотреть подробное резюме
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resume__contact__emailDiv">
+
+                    <div>
+                        <p>contact:</p>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            contack@gmail.com
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="resume__contact__links">
+
+                    <div>
+                        <a href="#">
+                            <img src="../../media/imgs/footer/vk.svg" alt="иконка">
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <img src="../../media/imgs/footer/telegramm.svg" alt="иконка">
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <img src="../../media/imgs/footer/whatshap.svg" alt="иконка">
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="resume__skils">
+
+                <div>
+                    <p>Skills</p>
+                </div>
+
+                <div class="skils__items">
+                   
+                    <div class="skils__item">
+                        <p class="skils__item-text">illustrator</p>
+                    </div>
+
+                    <div class="skils__item">
+                        <p class="skils__item-text">ui/ux</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="resume__software">
+
+                <div>
+                    <p>Software</p>
+                </div>
+
+                <div class="software__items">
+                   
+                    <div class="software__item">
+                       
+                        <div class="software__item__divImg">
+                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
+                        </div>
+
+                        <div class="software__text">
+                            <p>
+                                Раз
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="software__item">
+                       
+                        <div class="software__item__divImg">
+                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
+                        </div>
+
+                        <div class="software__text">
+                            <p>
+                                Раз
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="software__item">
+                       
+                        <div class="software__item__divImg">
+                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
+                        </div>
+
+                        <div class="software__text">
+                            <p>
+                                Раз
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="resume__achive">
+
+                <div>
+                    <p>
+                        Достижения и награды
+                    </p>
+                </div>
+
+                <div class="achive__items">
+
+                    <div class="achive__item">
+                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
+                    </div>
+
+                    <div class="achive__item">
+                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
+                    </div>
+
+                    <div class="achive__item">
+                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="../../static/js/team/team-page.js"></script>
 </body>
+
 </html>

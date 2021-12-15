@@ -1,12 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  cursor: url("/img/NO.cur"), auto;
   position: relative;
-  background: linear-gradient(107.41deg, #18181a 0.58%, #333333 100%);
+  background-color: #191E24;
   color: #fff;
-  font-family: 'Exo 2', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 *,
 *::after,
@@ -33,11 +31,17 @@ button {
   background: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
   padding: 0;
   margin: 0;
 }
 img {
   outline: none;
+}
+.btn {
+  font-size: 20px;
+  background-color: #F2682E;
+  padding: 23px 36px;
 }
 .hide {
   display: none;
@@ -70,17 +74,14 @@ img {
   border-radius: 10px;
 }
 .header {
-  background: linear-gradient(121.4deg, rgba(69, 71, 77, 0.65) 26.47%, rgba(54, 57, 62, 0.65) 68.95%);
+  background: #181C21;
   -webkit-box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
           box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
-  -webkit-backdrop-filter: blur(39px);
-          backdrop-filter: blur(39px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -97,18 +98,21 @@ img {
   transition: 1.5s ease all;
 }
 .header .nav a:hover {
-  border-bottom: 2px solid #FF9736;
+  color: #FF9736;
 }
-.header .header__item .header__item-logo {
-  width: 126px;
-  height: 50px;
+.header .header__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .header__item .header-title {
+  color: #DD8A4B;
+  font-size: 24px;
+  padding-left: 15px;
 }
 .header .header__item .mail {
   font-size: 20px;
-}
-.header .header__item:first-child {
-  margin-left: 50px;
-}
-.header .header__item:last-child {
-  margin-right: 50px;
 }
