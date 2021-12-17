@@ -120,14 +120,14 @@ function borderCheck() {
     return false;
 }
 
-// (()=> {
-//     setInterval(()=> {
-//         sliderInside.style.left = Number.parseInt(sliderInside.style.left) - childrenOfInsideSlider[0].clientWidth - 20 + 'px';
-//         if(borderCheck()) {
-//             sliderInside.style.left = 0 + 'px';
-//         }
-//     }, 6000);
-// })();
+(()=> {
+    setInterval(()=> {
+        sliderInside.style.left = Number.parseInt(sliderInside.style.left) - childrenOfInsideSlider[0].clientWidth - 20 + 'px';
+        if(borderCheck()) {
+            sliderInside.style.left = 0 + 'px';
+        }
+    }, 6000);
+})();
 
 window.addEventListener('click', (e)=> {
     if(e.target.getAttribute('data-video') || e.target.getAttribute('data-image')) return;
