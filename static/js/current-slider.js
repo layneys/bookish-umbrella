@@ -126,7 +126,7 @@ function borderCheck() {
         if(borderCheck()) {
             sliderInside.style.left = 0 + 'px';
         }
-    }, 6000);
+    }, 3000);
 })();
 
 window.addEventListener('click', (e)=> {
