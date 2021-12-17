@@ -7,16 +7,24 @@
     <title>Проекты</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Exo+2:wght@300&family=Inter:wght@200;300;600&family=Karla:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Exo+2:wght@300;400&family=Inter:wght@200;300;600&family=Karla:wght@300&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link href="../../static/css/current.css" rel="stylesheet">
 </head>
 <body>
+<div class="pop-up-block">
+    <div class="pop-up-block__image" data-dont-touch="true">
+        <img src="" alt="there must be image)" data-dont-touch="true">
+    </div>
+    <div class="pop-up-block__video" data-dont-touch="true">
+        <iframe src="/" frameborder="0" data-dont-touch="true"></iframe>
+    </div>
+</div>
 <header class="header">
     <div class="container">
         <div class="header-data">
             <div class="logo">
-                <img class="hover" src="../../media/icons/logoHeader.png" alt="logo">
-                <h3 class="hover">CITG</h3>
+                <a href="#" ondragstart="return false"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"></a>
+                <a href="#"><h3 class="hover">CITG</h3></a>
             </div>
             <div class="nav">
                 <ul>
@@ -42,43 +50,132 @@
         </div>
     </div>
     <div class="slider container">
-        <div class="slider__left-button"><img src="../../media/icons/leftButton-slider.svg"  alt="left-arrow"></div>
+        <div class="slider__left-button"><img src="../../media/icons/leftButton-slider.svg" alt="left-arrow"></div>
         <div class="slider__outside">
             <div class="slider__inside">
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
+                    <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/plug.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
                 <div class="slider__block">
-                    <img src="../../media/imgs/plug.png" alt="image" ondragstart="return false">
+                    <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
                 </div>
             </div>
         </div>
         <div class="slider__right-button"><img src="../../media/icons/rightButton-slider.svg" alt="right-button"></div>
     </div>
+    <div class="workers container">
+        <h3>Над проектом работали:</h3>
+       <div class="workers__workers-container">
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/designer.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                    <h4>Бредихин Андрей</h4>
+                    <p>illustrator, UI/UX-designer</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/unity-developer.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Федорин Данил</h4>
+                   <p>Unity Developer</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/vfx-unity-developer.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Возьянов Александр</h4>
+                   <p>VFX, Unity Developer</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/project-manager.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Поляниченко Дмитрий</h4>
+                   <p>Project Manager</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/3d-artist.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Рубцова Софья</h4>
+                   <p>3D Artist</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/3d-artist-n.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Жердева Анастасия</h4>
+                   <p>3D Artist</p>
+               </div>
+           </div>
+           <div class="workers__worker-card">
+               <div class="workers__image">
+                   <a href="#" ondragstart="return false"><img src="../../media/imgs/unity-developer-s.jpg" alt="there must be image"></a>
+               </div>
+               <div class="workers__description">
+                   <h4>Настенко Семен</h4>
+                   <p>Unity Developer</p>
+               </div>
+           </div>
+       </div>
+    </div>
 </main>
-<footer>
-
+<footer class="footer">
+    <div class="container">
+        <div class="info-block">
+            <div class="info-block__soc-networks">
+                <div class="info-block__git-hub">
+                    <a href="#" ondragstart="return false"><img src="../../media/icons/GitHub.svg" alt="github image"></a>
+                    <p>GitHub</p>
+                </div>
+                <div class="info-block__app-store">
+                    <a href="#" ondragstart="return false"><img src="../../media/icons/AppStore.svg" alt="github image"></a>
+                    <p>AppStore</p>
+                </div>
+                <div class="info-block__google-play">
+                    <a href="#" ondragstart="return false"><img src="../../media/icons/GooglePlay.svg" alt="github image"></a>
+                    <p>GooglePlay</p>
+                </div>
+            </div>
+            <div class="info-block__link">
+                <a href="#">cosmicdriver.com</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script src="../../static/js/current-slider.js"></script>
