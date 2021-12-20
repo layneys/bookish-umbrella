@@ -56,6 +56,8 @@ sliderInside.addEventListener('touchmove', function touchMove(e) {
     let x = e.changedTouches[e.changedTouches.length - 1].pageX;
     if(x !== startX) isMouseDown = true;
 
+    isMove = true;
+
     if(isMouseDown) {
         sliderInside.style.transition = 'none';
         sliderInside.style.left = x - startX + 'px';
@@ -66,6 +68,8 @@ sliderInside.addEventListener('touchend', function touchEnd() {
     isMouseDown = false;
     sliderInside.style.transition = 'all .6s';
 
+
+    isMove = false;
 });
 
 
