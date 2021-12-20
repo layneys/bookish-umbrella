@@ -19,6 +19,12 @@ body {
   overflow-x: hidden;
 }
 
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  font-weight: 100;
+}
+
 
 .currentPage {
   color:#FF9736;
@@ -60,12 +66,13 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  font-family: 'Asap', sans-serif;
   color: #DD8A4B;
-  font-size: 24px;
 }
 .logo h3 {
   margin-left: 8px;
+  font-weight: 400;
+  font-family: 'Asap', sans-serif;
+  font-size: 24px;
 }
 .nav {
   display: flex;
@@ -92,6 +99,8 @@ body {
   font-weight: 300;
 }
 
+
+
 .post-01 ,.post-02, .post-03 {
   margin-top: 120px;
   overflow: hidden;
@@ -104,6 +113,7 @@ body {
   font-size: 48px;
   color: #DC6041;
   font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 .little-description p {
   color: #fff;
@@ -262,10 +272,6 @@ body {
 
 .contacts {
   text-align: right;
-}
-.container h3 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 26px;
 }
 .container p {
   font-size: 16px;

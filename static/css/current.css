@@ -91,12 +91,15 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    font-family: 'Asap', sans-serif;
     color: #DD8A4B;
-    font-size: 24px;
 }
 .logo a {
     color: #DD8A4B;
+}
+.logo a h3 {
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
 }
 .logo h3 {
     margin-left: 8px;
@@ -125,9 +128,6 @@ body {
 .nav ul li a {
     font-weight: 300;
 }
-
-
-/* Rectangle 433 */
 
 
 .description {
@@ -318,11 +318,16 @@ body {
     display: flex;
 }
 .info-block__git-hub, .info-block__app-store, .info-block__google-play {
-    margin-right: 30px;
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 18px;
+}
+.info-block__git-hub {
+    margin-right: 30px;
+}
+.info-block__app-store {
+    margin-right: 20px;
 }
 .info-block__git-hub a{
     margin-left: 12px;
