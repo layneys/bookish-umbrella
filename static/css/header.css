@@ -1,0 +1,64 @@
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 77px;
+    background: #181C21;
+    overflow: hidden;
+    border-bottom: 2px solid;
+    border-image-source: linear-gradient(90deg, #813024 14%, rgba(176, 155, 151, 0.3), transparent 90%);
+    border-image-slice: 1;
+    z-index: 3;
+}
+.header-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    height: 77px;
+    display: flex;
+    align-items: center;
+}
+.logo h3 {
+    font-family: 'Asap', sans-serif;
+    margin-left: 7px;
+    color: #DD8A4B;
+    font-size: 24px;
+    font-weight: 400;
+}
+.nav {
+    position: relative;
+    left: -200px;
+}
+.nav ul {
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav ul li {
+    margin-left: 50px;
+    color: #fff;
+}
+.nav ul li a {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.mail {
+    height: 77px;
+    display: flex;
+    align-items: center;
+}
+.mail a {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}

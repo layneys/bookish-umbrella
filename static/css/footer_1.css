@@ -1,0 +1,77 @@
+.footer {
+    margin-top: 150px;
+    width: 100%;
+    height: 239px;
+    background: #20252C;
+}
+.footer-container {
+    position: relative;
+    color: #fff;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.links-to-social-networks {
+    position: relative;
+    left: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.soc-nets {
+    margin-right: 50px;
+}
+.soc-nets:hover {
+    cursor: pointer;
+}
+.VKontakte p {
+    margin-top: 5px;
+}
+.WhatsApp p {
+    margin-top: 10px;
+}
+.contacts {
+    text-align: right;
+}
+.contacts a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+.contacts p:first-of-type {
+    margin-top: 10px;
+}
+.contacts p {
+    font-size: 16px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.arrow-up {
+    transition: all .4s;
+    opacity: 0;
+    z-index: 5;
+    position: fixed;
+    bottom: 50px;
+    right: 23px;
+    border-radius: 50%;
+}
+.arrow-up:hover {
+    cursor: pointer;
+}
+.arrow-up:hover div img {
+    opacity: 1;
+}
+.arrow-up div {
+    background: rgba(49, 49, 49, 0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+}
+.arrow-up div img {
+    opacity: .2;
+    transition: all .3s;
+}
