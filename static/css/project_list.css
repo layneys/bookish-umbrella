@@ -61,7 +61,7 @@ body {
   height: 50px;
   position: absolute;
   left: -150px;
-  bottom: -10px;
+  bottom: -20px;
   z-index: -1;
   background:
           radial-gradient(ellipse 20% 100% at bottom, rgba(4, 103, 182, 0.25), rgba(47, 47, 47, 0))
@@ -72,7 +72,7 @@ body {
 
 .projects-wrapper {
   position: relative;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   height: 650px;
   overflow: hidden;
@@ -144,7 +144,7 @@ body {
   background: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: #000;
   overflow: hidden;
   border-radius: 10px;
@@ -152,6 +152,7 @@ body {
 .prj-inDev .description-inDev-prj {
   text-align: left;
   width: 50%;
+  margin-left: 50px;
 }
 .prj-inDev .description-inDev-prj h3 {
   font-family: 'Inter', sans-serif;
@@ -164,7 +165,10 @@ body {
   font-weight: 300;
 }
 .logo-inDev-prj {
+  width: 50%;
+  overflow: hidden;
   position: relative;
   right: 0;
   top: 2px;
+  text-align: center;
 }

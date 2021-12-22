@@ -21,6 +21,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+.pop-up-block__close-element {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
 .pop-up-block__image, .pop-up-block__video {
     width: 1400px;
     height: 700px;
@@ -28,7 +34,8 @@ body {
     display: none;
 }
 .pop-up-block__image {
-    border-radius: 20px;
+    border-radius: 25px;
+    background: transparent;
 }
 .pop-up-block img {
     width: 100%;
@@ -154,12 +161,19 @@ body {
     width: auto;
     display: flex;
     flex-wrap: nowrap;
-    transition: all .6s;
 }
 .slider__inside:hover {
     cursor: grab;
 }
 
+.test, .test_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
 .slider__block {
     position: relative;
     margin-right: 20px;
