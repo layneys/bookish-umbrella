@@ -6,9 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Проект</title>
     <link href="../../static/css/project.css" rel="stylesheet">
+    <link href="../../static/css/splide/splide-core.css" rel="stylesheet">
+    <link href="../../static/css/splide/splide.css" rel="stylesheet">
+    <script src="../../static/js/splide.js"></script>
+    <script src="../../static/js/splide-auto-scroll-extension.js"></script>
 </head>
 <body>
 <div class="pop-up-block" data-touch="yes">
+    <div class="pop-up-block__close-element"><img src="../../media/icons/close-icon.svg" alt="image" data-touch="yes"></div>
     <div class="pop-up-block__image" data-dont-touch="true">
         <img src="" alt="there must be image)" data-dont-touch="true">
     </div>
@@ -46,74 +51,79 @@
             </div>
         </div>
     </div>
-    <div class="slider container">
-        <div class="slider__left-button"><img src="../../media/icons/leftButton-slider.svg" alt="left-arrow"></div>
-        <div class="slider__outside">
-            <div class="slider__inside">
-                <div class="test">
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
-                        <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                </div>
-                <div class="test_2">
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
-                        <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                    <div class="slider__block">
-                        <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">
-                    </div>
-                </div>
-            </div>
+
+    <div class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
+                    <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">
+                </li>
+                <li class="splide__slide"><img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide"><img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false"></li>
+            </ul>
         </div>
-        <div class="slider__right-button"><img src="../../media/icons/rightButton-slider.svg" alt="right-button"></div>
     </div>
+
+    <script>
+
+    </script>
+
+<!--    <div class="slider container splide">-->
+<!--        <div class="slider__left-button"><img src="../../media/icons/leftButton-slider.svg" alt="left-arrow"></div>-->
+<!--        <div class="slider__outside splide__track">-->
+<!--            <ul class="slider__inside splide__list">-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">-->
+<!--                    <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/4cJpiOPKH14" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--                <li class="slider__block splide__slide">-->
+<!--                    <img src="../../media/imgs/plug.png" alt="image" data-image="true" ondragstart="return false">-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="slider__right-button"><img src="../../media/icons/rightButton-slider.svg" alt="right-button"></div>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        var splide = new Splide( '.splide', {-->
+<!--            type   : 'loop',-->
+<!--            perPage: 3,-->
+<!--            focus  : 'center',-->
+<!--        } );-->
+
+<!--        splide.mount();-->
+<!--    </script>-->
+
+
+
     <div class="workers container">
         <h3>Над проектом работали:</h3>
         <div class="workers__workers-container">
