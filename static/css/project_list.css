@@ -101,6 +101,9 @@ body {
   text-align: center;
   position: relative;
 }
+.project_no-shadow {
+  box-shadow: none !important;
+}
 .after-prjcts_decoration-blur-purple {
   text-align: center;
   position: relative;

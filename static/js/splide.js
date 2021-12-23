@@ -132,7 +132,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   }
 
   function forOwn(object, iteratee, right) {
-    if (object) {
+    if (object)
+    {
       var keys = Object.keys(object);
       keys = right ? keys.reverse() : keys;
 
@@ -1911,10 +1912,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (options.pauseOnFocus) {
-        bind(root, "focusin focusout", function (e) {
-          focused = e.type === "focusin";
-          autoToggle();
-        });
+        // bind(root, "focusin focusout", function (e) {
+        //   focused = e.type === "focusin";
+        //   autoToggle();
+        // });
       }
 
       on([EVENT_MOVE, EVENT_SCROLL, EVENT_REFRESH], interval.rewind);

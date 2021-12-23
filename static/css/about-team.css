@@ -58,7 +58,7 @@ main {
     height: 484px;
     border-radius: 13px;
     background: #323A43;
-    box-shadow: 0 0 50px -10px rgb(0, 0, 0);
+    box-shadow: 0 0 50px -15px rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;

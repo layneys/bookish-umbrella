@@ -198,6 +198,7 @@ body {
     height: 296px;
     margin-right: 20px !important;
     border-radius: 20px;
+    overflow: hidden;
     background: #813024;
 }
 .splide__list img {
