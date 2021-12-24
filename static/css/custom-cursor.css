@@ -1,56 +1,6 @@
-/*body {*/
-/*    cursor: none;*/
-/*}*/
-
-/*.cursor {*/
-/*    position: fixed;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    pointer-events: none;*/
-/*    width: 60px;*/
-/*    height: 60px;*/
-/*    background: rgb(220, 65, 214);*/
-/*    filter: blur(10px);*/
-/*    z-index: 99;*/
-/*    border-radius: 50%;*/
-/*}*/
-
-/*#noise {*/
-/*    position: fixed;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    top: 0px;*/
-/*    left: 0px;*/
-/*    pointer-events: none;*/
-/*    opacity: 0.03;*/
-/*}*/
-/*#ink-cursor {*/
-/*    pointer-events: none;*/
-/*    position: fixed;*/
-/*    display: block;*/
-/*    border-radius: 0;*/
-/*    -webkit-transform-origin: center center;*/
-/*    transform-origin: center center;*/
-/*    !*     mix-blend-mode: difference; *!*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    z-index: 1000;*/
-/*    !*     filter: url(#goo); *!*/
-/*}*/
-/*#ink-cursor span {*/
-/*    position: absolute;*/
-/*    display: block;*/
-/*    width: 30px;*/
-/*    height: 30px;*/
-/*    top: -10px;*/
-/*    left: -10px;*/
-/*    border-radius: 20px;*/
-/*    background-color: #9c480a;*/
-/*    -webkit-transform-origin: center center;*/
-/*    transform-origin: center center;*/
-/*    -webkit-transform: translate(-50%, -50%);*/
-/*    transform: translate(-50%, -50%);*/
-/*}*/
+*:hover {
+    cursor: none !important;
+}
 
 body {
     cursor: none;
@@ -75,7 +25,6 @@ body {
     width: 40px;
     height: 40px;
     mix-blend-mode: unset;
-    /*filter: url('#goo');*/
     background-color: rgba(220, 65, 214, 0.5);
 }
 

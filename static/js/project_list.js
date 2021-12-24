@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let footer = document.querySelector('.footer')
     window.addEventListener('scroll', function arrowPosition() {
         arrowUp.style.position = 'fixed';
-        console.log(document.documentElement.clientHeight)
-        console.log(footer.offsetTop);
         if(window.pageYOffset >= footer.offsetTop - document.documentElement.clientHeight) {
             arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
             arrowUp.style.bottom =  195  + 'px';
