@@ -7,6 +7,10 @@ html {
     scroll-behavior: smooth;
 }
 
+* :hover {
+    cursor: none !important;
+}
+
 body {
     background: #181C21;
 }
@@ -25,7 +29,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    cursor: pointer;
+    cursor: none;
 }
 .pop-up-block__image, .pop-up-block__video {
     width: 1400px;
@@ -63,7 +67,7 @@ body {
     transition: all .3s;
 }
 .hover:hover {
-    cursor: pointer;
+    cursor: none;
     color: #FF9736;
 }
 
@@ -152,7 +156,7 @@ body {
     filter: brightness(30%);
 }
 .imgButton:hover {
-    cursor: pointer;
+    cursor: none;
     filter: brightness(100%);
 }
 
@@ -181,7 +185,7 @@ body {
     transition: all .2s;
 }
 .splide__left-button img:hover, .splide__right-button img:hover {
-    cursor: pointer;
+    cursor: none;
     filter: brightness(100%);
 }
 .splide__track {
