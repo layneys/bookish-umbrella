@@ -74,7 +74,11 @@ body {
 .cursor-dot-outline {
     width: 40px;
     height: 40px;
-    mix-blend-mode: difference;
+    mix-blend-mode: unset;
     background-color: rgba(220, 65, 214, 0.5);
+}
+
+.goo {
+    position: absolute;
 }
 

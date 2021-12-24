@@ -300,11 +300,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
                     self.$outline.style.filter = "url('goo')";
+                    self.$outline.style.mixBlendMode = "difference";
                 });
                 el.addEventListener('mouseout', function() {
                     self.cursorEnlarged = false;
                     self.toggleCursorSize();
                     self.$outline.style.filter = "none";
+                    self.$outline.style.mixBlendMode = "unset";
                 });
             });
             document.querySelectorAll('img').forEach(function(el) {
@@ -314,11 +316,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
                     self.$outline.style.filter = "url('goo')";
+                    self.$outline.style.mixBlendMode = "difference";
                 });
                 el.addEventListener('mouseout', function() {
                     self.cursorEnlarged = false;
                     self.toggleCursorSize();
                     self.$outline.style.filter = "none";
+                    self.$outline.style.mixBlendMode = "unset";
                 });
             });
 
