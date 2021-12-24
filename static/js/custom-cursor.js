@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
-                    self.$outline.style.filter = "url('goo')";
+                    self.$outline.style.filter = "url('#goo')";
                     self.$outline.style.mixBlendMode = "difference";
                 });
                 el.addEventListener('mouseout', function() {
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
-                    self.$outline.style.filter = "url('goo')";
+                    self.$outline.style.filter = "url('#goo')";
                     self.$outline.style.mixBlendMode = "difference";
                 });
                 el.addEventListener('mouseout', function() {
