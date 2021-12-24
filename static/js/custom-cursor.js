@@ -251,7 +251,7 @@
 //
 //
 
-document.addEventListener('click', ()=> {
+document.addEventListener('DOMContentLoaded', ()=> {
 
     var cursor = {
         delay: 8,
@@ -273,21 +273,21 @@ document.addEventListener('click', ()=> {
             this.animateDotOutline();
         },
 
-//     updateCursor: function(e) {
-//         var self = this;
+        /*updateCursor: function(e) {
+        var self = this;
 
-//         console.log(e)
+        console.log(e)
 
-//         // Show the cursor
-//         self.cursorVisible = true;
-//         self.toggleCursorVisibility();
+        // Show the cursor
+        self.cursorVisible = true;
+        self.toggleCursorVisibility();
 
-//         // Position the dot
-//         self.endX = e.pageX;
-//         self.endY = e.pageY;
-//         self.$dot.style.top = self.endY + 'px';
-//         self.$dot.style.left = self.endX + 'px';
-//     },
+        // Position the dot
+        self.endX = e.pageX;
+        self.endY = e.pageY;
+        self.$dot.style.top = self.endY + 'px';
+        self.$dot.style.left = self.endX + 'px';
+    },*/
 
         setupEventListeners: function() {
             var self = this;
@@ -295,14 +295,33 @@ document.addEventListener('click', ()=> {
             // Anchor hovering
             document.querySelectorAll('a').forEach(function(el) {
                 el.addEventListener('mouseover', function() {
+                    //self.$outline.style.background = "filter()";
+
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
+                    self.$outline.style.filter = "url('goo')";
                 });
                 el.addEventListener('mouseout', function() {
                     self.cursorEnlarged = false;
                     self.toggleCursorSize();
+                    self.$outline.style.filter = "none";
                 });
             });
+            document.querySelectorAll('img').forEach(function(el) {
+                el.addEventListener('mouseover', function() {
+                    //self.$outline.style.background = "filter()";
+
+                    self.cursorEnlarged = true;
+                    self.toggleCursorSize();
+                    self.$outline.style.filter = "url('goo')";
+                });
+                el.addEventListener('mouseout', function() {
+                    self.cursorEnlarged = false;
+                    self.toggleCursorSize();
+                    self.$outline.style.filter = "none";
+                });
+            });
+
 
             // Click events
             document.addEventListener('mousedown', function() {
@@ -315,6 +334,7 @@ document.addEventListener('click', ()=> {
             });
 
 
+
             document.addEventListener('mousemove', function(e) {
                 // Show the cursor
                 self.cursorVisible = true;
@@ -322,7 +342,7 @@ document.addEventListener('click', ()=> {
 
                 // Position the dot
                 self.endX = e.pageX;
-                self.endY = e.pageY;
+                self.endY = e.pageY  - window.pageYOffset;
                 self.$dot.style.top = self.endY + 'px';
                 self.$dot.style.left = self.endX + 'px';
             });
