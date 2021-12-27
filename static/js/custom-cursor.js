@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
             // Anchor hovering
             document.querySelectorAll('a').forEach(el => Changes(el));
-            document.querySelectorAll('image').forEach(el => Changes(el));
+            document.querySelectorAll('img').forEach(el => Changes(el));
             document.querySelectorAll('button').forEach(el => Changes(el));
             function Changes(el) {
                 el.addEventListener('mouseover', function() {
