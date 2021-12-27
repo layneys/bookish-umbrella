@@ -33,6 +33,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     });
 
+    let projectsInDev = document.querySelectorAll('.prj-inDev');
+    projectsInDev.forEach(item => {
+        item.addEventListener('mousedown', function (e) {
+            let url = this.getAttribute('data-url');
+            if(e.button === 0) {
+                window.location.href = url;
+            } else if(e.button === 1) {
+                window.open(url);
+            }
+        });
+    })
+
+
     let post_01 = document.querySelector('.post-01');
     let arrowUp = document.querySelector('.arrow-up');
     window.addEventListener('scroll', function scrollArrow(){

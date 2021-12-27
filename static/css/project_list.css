@@ -175,3 +175,6 @@ body {
   top: 2px;
   text-align: center;
 }
+.logo-inDev-prj, .description-inDev-prj {
+  pointer-events: none;
+}
