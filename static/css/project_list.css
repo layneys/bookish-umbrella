@@ -1,7 +1,7 @@
-@import url('./reset.css');
-@import url('./fonts.css');
-@import url('./header.css');
-@import url('./footer_1.css');
+@import url('modules/reset.css');
+@import url('modules/fonts.css');
+@import url('modules/header.css');
+@import url('modules/footer_1.css');
 
 html {
   scroll-behavior: smooth;

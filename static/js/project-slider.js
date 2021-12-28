@@ -3,7 +3,7 @@ new Splide( '.splide', {
     focus: 'center',
     perPage: 3,
     autoplay: true,
-}).mount() ;
+}).mount();
 //window.splide.Extensions
 //autoplay: true,
 
@@ -14,7 +14,6 @@ let right = arrows.children[1].children[0].children[0];
 
 left.src = "../../media/icons/leftButton-slider.svg";
 right.src = "../../media/icons/rightButton-slider.svg";
-
 
 let popUpBlock = document.querySelector('.pop-up-block');
 let popUpBlock__image = document.querySelector('.pop-up-block__image');
@@ -42,6 +41,13 @@ sliderList.addEventListener("click", (e)=> {
         popUpBlock__image.children[0].src = target.src;
     }
 });
+
+let cursorDotInside = document.querySelector('.cursor-dot');
+let cursorDotOutside = document.querySelector('.cursor-dot-outline');
+popUpBlock__video.addEventListener('mouseenter', ()=> {
+    cursorDotInside.style.opacity = '0';
+    cursorDotOutside.style.opacity = '0';
+})
 
 window.addEventListener('click', (e)=> {
     if(e.target.getAttribute('data-video') || e.target.getAttribute('data-image')) return;
