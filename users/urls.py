@@ -5,4 +5,5 @@ app_name = "users"
 
 urlpatterns = [
     path("profile/<str:username>/", user_views.profile_page),
+    path("team/", user_views.team_page),
 ]

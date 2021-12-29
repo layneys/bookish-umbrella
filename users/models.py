@@ -24,7 +24,6 @@ class UserProfile(models.Model):
         upload_to="profile_pics",
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    role = models.CharField(max_length=64, blank=True)
     about = models.TextField(blank=True)
     vk_link = models.CharField(max_length=255, blank=True)
     tg_link = models.CharField(max_length=255, blank=True)

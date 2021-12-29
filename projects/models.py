@@ -21,6 +21,9 @@ class Project(models.Model):
         return f'Project {self.title}'
 
 
+
 class ProjectGalleryPicture(models.Model):
     image = models.ImageField(upload_to="gallery_images")
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="project_images")
+
+

@@ -38,118 +38,23 @@
             <p>Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных сфер, многие из них являются бывшими учениками</p>
         </div>
         <div class="team__list">
+            {% for user in users %}
             <div class="person-card">
                 <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/project-manager-circle.png" alt="image"></a>
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{user.avatar.url}}" alt="image"></a>
                 </div>
                 <div class="person-card__info">
-                    <h3>Поляниченко Дмитрий</h3>
-                    <p>Project Manager</p>
+                    <h3>{{ user.user.first_name}} {{ user.user.last_name }}</h3>
+                    <p> {% for skill in user.skills.all %}{{ skill.name }} {% endfor %}</p>
                 </div>
                 <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user.tg_link }}"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user.vk_link }}"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user.whatsapp}}"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
                 </div>
             </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/designer-circle.png" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Бредихин Андрей</h3>
-                    <p>illustrator, UI/UX-дизанер</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/developer-circle.png" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Федорин Данил</h3>
-                    <p>Unity Developer</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card" >
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/3d-artist-circle.jpg " alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Рубцова Софья</h3>
-                    <p>3D Artist</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/3d-artist-n-circle.jpg" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Жердева Анастасия</h3>
-                    <p>3D Artist</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/vfx-unity-developer-circle.jpg" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Возьянов Александр</h3>
-                    <p>VXF Developer</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/animator-circle.png" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Занько Алина</h3>
-                    <p>Animator</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
-            <div class="person-card">
-                <div class="person-card__image">
-                    <a href="#"><img src="../../media/imgs/unity-developer-s-circle.jpg" alt="image"></a>
-                </div>
-                <div class="person-card__info">
-                    <h3>Семен Настенко</h3>
-                    <p>Unity Developer</p>
-                </div>
-                <div class="person-card__link">
-                    <a href="#"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="#"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
 </main>

@@ -51,9 +51,9 @@
                 </div>
 
                 <div class="main__text">
-                    <h3>Андрей Бредихин</h3>
+                    <h3>{{ user.first_name}} {{user.last_name }}</h3>
                     <p>2D-artist</p>
-                    <a href="mailto:huy@gmain.com">сontack@gmail.com</a>
+                    <a href="mailto:huy@gmain.com">{{ user.email}}</a>
                 </div>
             </div>
 
@@ -84,59 +84,11 @@
 
                 <div class="work__projects">
                     <div class="work__top__items">
-
+                        {% for project in projects %}
                         <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
+                            <a href ="http://127.0.0.1:8000/project/{{project.id }}/"><img src="{{ project.preview_pic.url }}" alt="картинка"></a>
                         </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
-                        <div class="work__top__item">
-                            <img src="../../media/imgs/team-page/work-top/Rectangle 231.png" alt="картинка">
-                        </div>
-
+                        {% endfor %}
 
                     </div>
 
@@ -220,7 +172,7 @@
 
                     <div>
                         <a href="#">
-                            contack@gmail.com
+                            {{ user.email}}
                         </a>
                     </div>
 
@@ -257,14 +209,12 @@
                 </div>
 
                 <div class="skils__items">
-                   
+                   {% for skill in skills %}
                     <div class="skils__item">
-                        <p class="skils__item-text">illustrator</p>
+                        <p class="skils__item-text">{{ skill.name }}</p>
                     </div>
+                    {% endfor %}
 
-                    <div class="skils__item">
-                        <p class="skils__item-text">ui/ux</p>
-                    </div>
                     
                 </div>
 
@@ -277,48 +227,22 @@
                 </div>
 
                 <div class="software__items">
-                   
+                   {% for s in soft %}
                     <div class="software__item">
                        
                         <div class="software__item__divImg">
-                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
+                            <img src="{{s.icon.url}}" alt="иконка">
                         </div>
 
                         <div class="software__text">
                             <p>
-                                Раз
+                                {{ s.name }}
                             </p>
                         </div>
 
                     </div>
+                    {% endfor %}
 
-                    <div class="software__item">
-                       
-                        <div class="software__item__divImg">
-                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
-                        </div>
-
-                        <div class="software__text">
-                            <p>
-                                Раз
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="software__item">
-                       
-                        <div class="software__item__divImg">
-                            <img src="https://w7.pngwing.com/pngs/928/49/png-transparent-computer-icons-business-networking-internet-businessperson-internet-computer-network-company-text-thumbnail.png" alt="иконка">
-                        </div>
-
-                        <div class="software__text">
-                            <p>
-                                Раз
-                            </p>
-                        </div>
-
-                    </div>
 
                 </div>
 

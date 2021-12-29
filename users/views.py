@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from users.models import User, UserGalleryPicture, UserAchievement, Software, Skill
+from users.models import User, UserGalleryPicture, UserAchievement, Software, Skill, UserProfile
 from projects.models import Project
 
 
@@ -21,3 +21,12 @@ def profile_page(request, username):
                    "software": software,
                    },
     )
+
+
+def team_page(request):
+    users = UserProfile.objects.all()
+    return render(request,
+                  "../templates/users/about_team.html",
+                  {"users": users,
+                   },
+                  )
