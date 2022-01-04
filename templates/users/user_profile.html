@@ -11,10 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat&display=swap" rel="stylesheet">
 
-  
     <link rel="stylesheet" href="../../static/css/common-styles.css">
     <link rel="stylesheet" href="../../static/css/team/team.css">
+    <link rel="stylesheet" href="../../static/css/team/gallery.css">
 
+    <link rel="stylesheet" href="../../static/css/splide/splide-core.css">
+    <link rel="stylesheet" href="../../static/css/splide.css">
+
+    <script src="../../static/js/splide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -23,17 +28,23 @@
 
     <!-- main -->
     <section class="main">
-        <header class="header">
 
+        <header class="header">
             <div class="header__item">
-                <div><img class="header__item-logo" src="../../media/imgs/main/header-logo.svg" alt="иконка"></div>
+                <div><img class="header__item-logo" src="../../media/icons/logoHeader.png" alt="иконка"></div>
+                <div>
+                    <p class="header-title">
+                        CITG
+                    </p>
+                </div>
             </div>
 
             <div class="header__item">
                 <nav class="nav">
-                    <a class="nav__link" href="../../templates/home_page.html">главная</a>
-                    <a class="nav__link" href="#">проекты</a>
-                    <a class="nav__link" href="user_profile.html">команда</a>
+                    <a class="nav__link" href="http://127.0.0.1:8000/">Домашняя</a>
+                    <a class="nav__link" href="http://127.0.0.1:8000/projects/">Проекты</a>
+                    <a class="nav__link" href="http://127.0.0.1:8000/profile/{{ request.user.username }}/">Портфолио</a>
+                    <a class="nav__link" href="http://127.0.0.1:8000/team/">Команда</a>
                 </nav>
             </div>
 
@@ -51,19 +62,34 @@
                 </div>
 
                 <div class="main__text">
-                    <h3>{{ user.first_name}} {{user.last_name }}</h3>
+                    <h3>Андрей Бредихин</h3>
                     <p>2D-artist</p>
-                    <a href="mailto:huy@gmain.com">{{ user.email}}</a>
+                    <a href="mailto:huy@gmain.com">сontack@gmail.com</a>
                 </div>
             </div>
 
             <div class="main__bottom">
                 <div class="container">
-                    <button class="main__btn bgBtn">портфолио</button>
 
-                    <button class="main__btn">галерея</button>
+                    <div class="main__bottom__btn">
 
-                    <button class="main__btn">резюме</button>
+                        <button id="btn_portfolio" class="main__btn bgBtn">Портфолио</button>
+
+                    </div>
+
+                    <div class="main__bottom__btn">
+
+                        <button id="btn_gallery" class="main__btn">Галерея</button>
+
+                    </div>
+
+                    <div class="main__bottom__btn">
+
+                        <button id="btn_aboutPerson" class="main__btn">Обо мне</button>
+
+                    </div>
+
+
                 </div>
             </div>
 
@@ -71,34 +97,34 @@
 
     </section>
 
-    <section class="work container">
 
-        <div class="portfolio item-main hide">
-            <div class="work__top">
+    <section class="work">
 
-                <div>
-                    <p class="work__title">
-                        Участие в проектах
-                    </p>
-                </div>
+        <div class="portfolio container item-main">
 
-                <div class="work__projects">
-                    <div class="work__top__items">
-                        {% for project in projects %}
-                        <div class="work__top__item">
-                            <a href ="http://127.0.0.1:8000/project/{{project.id }}/"><img src="{{ project.preview_pic.url }}" alt="картинка"></a>
+            <div class="portfolio__subTitle">
+                <p>
+                    Участие в проектах
+                </p>
+            </div>
+
+            <div class="slider">
+
+                <div class="splide">
+
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            {% for project in projects %}
+
+                                <li class="splide__slide">
+                                     <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{project.preview_pic.url}}" style="width: 100%"></a>
+                                </li>
+
+                            {% endfor %}
+
                         </div>
-                        {% endfor %}
-
                     </div>
 
-                    <div class="work__projects__btnOpen">
-                        <button id="work__projects-btnOpen" class="work__projects-btnOpen">
-
-                            <img src="../../media/imgs/team-page/work-top/open.svg" alt="картинка">
-
-                        </button>
-                    </div>
                 </div>
 
             </div>
@@ -114,27 +140,27 @@
                 <div class="work__bottom__items">
 
                     <div class="show__gallery">
-                        <a href="">посмотреть все</a>
+                        <button id="btn_showGall">посмотреть все</button>
                     </div>
 
                     <div class="work__bottom__top">
-                        <div class="work__bottom__item">
-                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 258.png" alt="картинка">
+
+                        <div class="section-gal">
+                            <div class="grid">
+                                <div class="item item--medium">
+                                </div>
+
+                                <div class="item item--large">
+                                </div>
+
+                                <div class="item item--large">
+                                </div>
+
+                                <div class="item item--full">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="work__bottom__item">
-                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 259.png" alt="картинка">
-                        </div>
-
-                        <div class="work__bottom__item">
-                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 262.png" alt="картинка">
-                        </div>
-                    </div>
-
-                    <div class="work__bottom__bottom">
-                        <div class="work__bottom__item">
-                            <img src="../../media/imgs/team-page/work-bottom/Rectangle 260.png" alt="картинка">
-                        </div>
                     </div>
 
                 </div>
@@ -142,133 +168,290 @@
             </div>
         </div>
 
-        <div class="gallery item-main container hide">
+        <div class="gallery container item-main">
+
+            <div class="section-gal">
+                <div class="grid">
+
+                    <div class="item item--min">
+                    </div>
+
+                    <div class="item item--large">
+                    </div>
+
+                    <div class="item item--medium">
+                    </div>
+
+                    <div class="item item--large">
+                    </div>
+
+                    <div class="item item--full">
+                    </div>
+
+                    <div class="item item--min">
+                    </div>
+
+                    <div class="item item--large">
+                    </div>
+
+                    <div class="item">
+                    </div>
+
+                    <div class="item item--min">
+                    </div>
+
+                    <div class="item item--large">
+                    </div>
+
+                    <div class="item">
+                    </div>
+
+                    <div class="item item--min">
+                    </div>
+
+                    <div class="item item--min">
+                    </div>
+
+                    <div class="item item--width">
+                    </div>
+
+                    <div class="item item--full">
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 
-        <div class="resume item-main container">
+        <div class="resume container item-main">
 
-            <div class="resume__contact">
+            <div class="resume__skills">
 
-                <div class="resume__contact__top">
-                    <div>
-                        <h4 id="human-position">
-                            Uinity developer
-                        </h4>
-                    </div>
-
-                    <div>
-                        <a  class="resume__resumeAll" href="#">
-                            посмотреть подробное резюме
-                        </a>
-                    </div>
+                <div>
+                    <h3>Skills</h3>
                 </div>
 
-                <div class="resume__contact__emailDiv">
+                <div class="resume__skills__items">
 
-                    <div>
-                        <p>contact:</p>
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
                     </div>
 
-                    <div>
-                        <a href="#">
-                            {{ user.email}}
-                        </a>
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
                     </div>
 
-                </div>
 
-                <div class="resume__contact__links">
+                    <div class="resume__skills__item">
 
-                    <div>
-                        <a href="#">
-                            <img src="../../media/imgs/footer/vk.svg" alt="иконка">
-                        </a>
+                        <p>
+                            UX/UI
+                        </p>
+
                     </div>
 
-                    <div>
-                        <a href="#">
-                            <img src="../../media/imgs/footer/telegramm.svg" alt="иконка">
-                        </a>
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
                     </div>
 
-                    <div>
-                        <a href="#">
-                            <img src="../../media/imgs/footer/whatshap.svg" alt="иконка">
-                        </a>
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
                     </div>
 
                 </div>
 
             </div>
 
-            <div class="resume__skils">
+            <!-- slider -->
+            <div class="achi">
 
-                <div>
-                    <p>Skills</p>
-                </div>
-
-                <div class="skils__items">
-                   {% for skill in skills %}
-                    <div class="skils__item">
-                        <p class="skils__item-text">{{ skill.name }}</p>
-                    </div>
-                    {% endfor %}
-
-                    
-                </div>
-
-            </div>
-
-            <div class="resume__software">
-
-                <div>
-                    <p>Software</p>
-                </div>
-
-                <div class="software__items">
-                   {% for s in soft %}
-                    <div class="software__item">
-                       
-                        <div class="software__item__divImg">
-                            <img src="{{s.icon.url}}" alt="иконка">
-                        </div>
-
-                        <div class="software__text">
-                            <p>
-                                {{ s.name }}
-                            </p>
-                        </div>
-
-                    </div>
-                    {% endfor %}
-
-
-                </div>
-
-            </div>
-
-            <div class="resume__achive">
-
-                <div>
-                    <p>
+                <div class="achi__title">
+                    <h3>
                         Достижения и награды
-                    </p>
+                    </h3>
                 </div>
 
-                <div class="achive__items">
+                <div class="achi__content">
 
-                    <div class="achive__item">
-                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
+                    <div class="slider">
+
+                        <div class="splide splide_2">
+
+                            <div class="splide__track">
+                                <div class="splide__list">
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 280.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 282.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 287.png">
+                                    </li>
+
+                                    <li class="splide__slide">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 289.png">
+                                    </li>
+
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="achive__item">
-                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
-                    </div>
+                </div>
 
-                    <div class="achive__item">
-                        <img src="../../media/imgs/certificates/certificat.png" alt="картинка">
-                    </div>
+            </div>
+
+            <div class="resume_contacts">
+
+                <div class="contacts_item">
+
+                    <a href="https://ya.ru/" target="_blank">
+                        <img src="../../media/icons/vk-icon.png">
+                    </a>
+
+                </div>
+
+                <div class="contacts_item">
+
+                    <a href="https://ya.ru/" target="_blank">
+                        <img src="../../media/icons/tg-icon.png">
+                    </a>
+
+                </div>
+
+                <div class="contacts_item">
+
+                    <a href="https://ya.ru/" target="_blank">
+                        <img src="../../media/icons/what-icon.png">
+                    </a>
 
                 </div>
 
@@ -279,6 +462,106 @@
     </section>
 
 
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__top">
+
+                <div class="footer__icons">
+
+                    <div class="footer__item">
+
+                        <div>
+                            <a class="footer__link" href="https://ya.ru/" target="_blank">
+                                <img class="footer__img" src="../../media/imgs/footer/vk-icon.svg" alt="иконка">
+                            </a>
+                        </div>
+
+                        <div>
+                            <p>
+                                VKontakte
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="footer__item">
+
+                        <div>
+                            <a class="footer__link" href="https://ya.ru/" target="_blank">
+                                <img class="footer__img" src="../../media/imgs/footer/tg-icon.svg" alt="иконка">
+                            </a>
+                        </div>
+
+                        <div>
+                            <p>
+                                Telegramm
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="footer__item">
+
+                        <div>
+                            <a class="footer__link" href="https://ya.ru/" target="_blank">
+                                <img class="footer__img" src="../../media/imgs/footer/what-icon.svg" alt="иконка">
+                            </a>
+                        </div>
+
+                        <div>
+                            <p>
+                                WhatsApp
+                            </p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="footer__text">
+                    <a class="footer_tel" href="tel:+12312312">
+                        +12312312
+                    </a>
+
+                    <div class="footer__text-adressDiv">
+                        <address>
+                            <span>Ростов-на-Дону</span>
+                            <p>
+                                Пл.Ростовского Стрелкового Полка Народного Ополчения пл, 2,             
+                            </p>                
+                        </address>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript">
+        var splide = new Splide('.splide', {
+            perPage: 2,
+            cover: true
+        });
+
+        splide.mount();
+    </script>
+
+    <script type="text/javascript">
+        var splide = new Splide('.splide_2', {
+            perPage: 2,
+            cover: true
+        });
+
+        splide.mount();
+    </script>
 
     <script src="../../static/js/team/team-page.js"></script>
 </body>

@@ -132,8 +132,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   }
 
   function forOwn(object, iteratee, right) {
-    if (object)
-    {
+    if (object) {
       var keys = Object.keys(object);
       keys = right ? keys.reverse() : keys;
 
@@ -1827,15 +1826,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var arrow;
 
       if (prev2 === true) {
-        // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><img src='./img/splide/prev.png'/>";
-        // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><img src='./img/splide/prev.png'/>";
-        arrow = "<button class=\"" + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><div><img class='imgButton' src='./img/splide/prev.png'/></div>";
+        arrow = "<button class=\"" + "\"  type=\"button\"><div><img class='imgButton' src='../../media/imgs/splide/prev.svg'/></div>";
       }
 
       if (prev2 === false) {
-        // arrow = "<button class=\"" + classes.arrow + " " + (prev2 ? classes.prev : classes.next) + "\" type=\"button\"><img src='next.png'/>";
-        // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next1.png' type=\"button\"><img src='./img/splide/next.png'/>";
-        arrow = "<button class=\"" + "\" onmouseover=this.src='./img/splide/next1.png' type=\"button\"><div><img class='imgButton' src='./img/splide/next.png'/></div>";
+        arrow = "<button class=\"" + "\" type=\"button\"><div><img class='imgButton' src='../../media/imgs/splide/next.svg'/></div>";
       }
 
       return parseHtml(arrow);
@@ -1912,10 +1907,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (options.pauseOnFocus) {
-        // bind(root, "focusin focusout", function (e) {
-        //   focused = e.type === "focusin";
-        //   autoToggle();
-        // });
+        bind(root, "focusin focusout", function (e) {
+          focused = e.type === "focusin";
+          autoToggle();
+        });
       }
 
       on([EVENT_MOVE, EVENT_SCROLL, EVENT_REFRESH], interval.rewind);

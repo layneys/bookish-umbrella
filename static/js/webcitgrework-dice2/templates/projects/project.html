@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0 user-scalable=.5">
+    <meta charset="UTF-8">
+    <title>Current</title>
+    <link href="../../static/css/current.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="allScreen">
+    <div class="upDescription">
+        <!--<p name="littleDescription">Cosmic Driver</p>-->
+    </div>
+    <div class="belowInfo">
+        <!--<img src="./imgs/Background.svg" alt="photo" name="image" id="test" ondragstart="return false">-->
+    </div>
+
+</div>
+<div class="blackout"></div>
+<header class="header">
+    <div class="left-side">
+        <img src="../../media/imgs/logo_citg.png" style="height: 30px" class="logo" alt="">
+    </div>
+    <div class="middle">
+        <ul>
+            <li><a href="http://127.0.0.1:8000/">главная</a></li>
+            <li class="currentPage"><a href="http://127.0.0.1:8000/projects/">проекты</a></li>
+            <li><a href="#">команда</a></li>
+        </ul>
+    </div>
+    <div class="right-side">
+        <span><a href="">mail@.ru</a></span>
+    </div>
+</header>
+<div class="container">
+    <div class="description-container">
+        <div class="description">
+            <img src="{{ project.preview_pic.url }}" alt="" ondragstart="return false">
+            <div class="description-text">
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blackout-container">
+    <div class="container">
+        <div class="slider-container splide">
+            <div class="leftArrow"><img src="../../media/imgs/Panyatna.png" alt="" id="leftArrow"></div>
+            <div class="rightArrow"><img src="../../media/imgs/rightArray.png" alt="" id="rightArrow"></div>
+            <div id="slider" class="splide__track">
+                <div id="inner-slider" class="splide__list"><div >
+                    <iframe src="https://www.youtube.com/embed/{{ project.video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscree name="image"></iframe>
+                </div>
+                    {% for pic in pictures %}
+                        <div class="slideBar splide__slide"><img class="toDownload" loading="lazy" name="image" src="{{pic.image.url}}" alt="" data-url="http://citg/projects/imgs/spaceback.svg" ondragstart="return false"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="aboutInfo-container">
+            <div class="workers-container">
+
+                <h2>Над проектом работали:</h2>
+                <div class="workers-list">
+                    {% for dev in devs %}
+                    <div class="worker">
+                        <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/"><img class="toDownload" src="{{ dev.avatar.url}}" alt="" data-url="http://citg/projects/imgs/designer.png"/></a>
+                        <div class="worker-data">
+                            <h3>{{ dev.user.first_name }} {{ dev.user.last_name}}</h3>
+                            <p>{% for skill in dev.skills.all %}{{ skill }}{% if not devs.last %}, {% endif %} {% endfor %} </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    </div>
+            </div>
+            <div class="references-container">
+                <h2>Ссылки на проект:</h2>
+                <div class="references-list">
+                    <div class="references">
+                        <a href="{{project.github_link }}"><img src="../../media/imgs/GitHub.png" alt=""></a>
+                    </div>
+                    <div class="references">
+                        <a href="{{ project.appstore_link }}"><img src="../../media/imgs/AppStore.png" alt=""></a>
+                    </div>
+                    <div class="references">
+                        <a href="{{project.playmarket_link}}"><img src="../../media/imgs/PlayMarket.png" alt=""></a>
+                    </div>
+                </div>
+                <a href="#">https://itsomelink/insidempty/beliveme</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script>
+    document.addEventListener("DOMContentLoaded", ()=> {
+        var splide = new Splide( '.splide', {
+            type   : 'loop',
+            drag   : 'free',
+            perPage: 3,
+        } );
+        splide.mount();
+        let slideBars = document.querySelectorAll('.slideBar');
+        for(let i = 0; i < slideBars.length; ++i) {
+            console.log(slideBars[i])
+            slideBars[i].addEventListener('click', ()=> {
+                console.log('click');
+            })
+        }
+    })
+</script>-->
+
+<script src="../../static/js/current.js"></script>
+</body>
+</html>
+
