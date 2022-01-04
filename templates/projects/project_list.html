@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <title>Проекты</title>
     <link href="../../static/css/project_list.css" rel="stylesheet">
-    <link href="../../static/css/custom-cursor.css" rel="stylesheet">
+    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
     <script src="../../static/js/custom-cursor.js"></script>
 </head>
 <body>
+<script src="../../static/js/modules-connect/connect-header.js"></script>
 
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>
 
+<<<<<<< HEAD
 <header class="header">
     <div class="container">
         <div class="header-data">
@@ -35,6 +37,8 @@
         </div>
     </div>
 </header>
+=======
+>>>>>>> development
 <main class="main">
     <div class="post-01">
         <div class="container">
@@ -86,7 +90,7 @@
           {% for project in in_development %}
 
 
-            <div class="prj-inDev">
+            <div class="prj-inDev" data-url="some-url/?id=343">
                 <div class="description-inDev-prj">
                     <h3>{{project.title}}</h3>
                     <p>{{ project.description}}</p>
@@ -101,35 +105,8 @@
         </div>
     </div>
 </main>
-<footer class="footer">
-    <div class="container footer-container">
-        <div class="links-to-social-networks">
-            <div class="soc-nets telegram">
-                <a href="#"><img src="../../media/icons/telegramm-icon.svg" alt="image of social network"></a>
-                <p>Telegram</p>
-            </div>
-            <div class="soc-nets VKontakte">
-               <a href="#"><img src="../../media/icons/vk-icon.svg" alt="image of social network"></a>
-                <p>VKontakte</p>
-            </div>
-            <div class="soc-nets WhatsApp">
-                <a href="#"><img src="../../media/icons/whatsapp-icon.svg" alt="image of social network"></a>
-                <p>WhatsApp</p>
-            </div>
-        </div>
-        <div class="contacts">
-            <a href="tel:+123-456-789">+123.456.789</a>
-            <p>Ростов-на-Дону</p>
-            <p>пл. Ростовского Стрелкового</p>
-            <p>Полка Народного Ополочения пл, 2.</p>
-        </div>
-        <div class="arrow-up">
-            <div class="arrow-up-inside">
-                <img src="../../media/imgs/arrow-up.svg" alt="image of arrow up">
-            </div>
-        </div>
-    </div>
-</footer>
+
+<script src="../../static/js/modules-connect/connect-footer-1.js"></script>
 
     <script src="../../static/js/project_list.js"></script>
 </body>

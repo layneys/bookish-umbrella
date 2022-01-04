@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.querySelectorAll('a').forEach(el => Changes(el));
             document.querySelectorAll('img').forEach(el => Changes(el));
             document.querySelectorAll('button').forEach(el => Changes(el));
+            document.querySelectorAll('.prj-inDev').forEach(el => Changes(el));
+            document.querySelectorAll('.person-card').forEach(el => Changes(el));
             function Changes(el) {
                 el.addEventListener('mouseover', function() {
                     //self.$outline.style.background = "filter()";

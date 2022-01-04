@@ -1,25 +1,23 @@
-// let container = document.querySelector('.container');
-// let arrowUp = document.querySelector('.arrow-up');
-// let footer = document.querySelector('.footer');
-// window.addEventListener('scroll', function scrollArrow(){
-//     if(document.documentElement.scrollTop > post_01.offsetTop + post_01.clientHeight - 300) {
-//         arrowUp.style.opacity = '1';
-//     } else {
-//         arrowUp.style.opacity = '0';
-//     }
-// });
-// window.addEventListener('scroll', function arrowPosition() {
-//     arrowUp.style.position = 'fixed';
-//     if(window.pageYOffset > footer.offsetTop - 800) {
-//         arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
-//         arrowUp.style.bottom =  195  + 'px';
-//         //...
-//     } else {
-//         arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
-//         arrowUp.style.bottom =  100  + 'px';
-//     }
-// })
-//
-// arrowUp.onclick =  () => {
-//     document.documentElement.scrollTo(0,0);
-// }
+let person_card_array = document.querySelectorAll('.person-card');
+person_card_array.forEach(card => {
+    card.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+
+        let target = e.target;
+        let data_field = e.target.getAttribute('data-field');
+        if (e.button === 0) {
+            if (data_field === 'all' || data_field === 'info' || data_field === 'image') {
+                console.log('test');
+                window.location.href = this.getAttribute('data-url');
+            } else if (data_field === 'link') {
+                window.location.href = target.parentNode.getAttribute('href');
+            }
+        } else if (e.button === 1) {
+            if (data_field === 'all' || data_field === 'info' || data_field === 'image') {
+                window.open(this.getAttribute('data-url'));
+            } else if (data_field === 'link') {
+                window.open(target.parentNode.getAttribute('href'));
+            }
+        }
+    });
+});

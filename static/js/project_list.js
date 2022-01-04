@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
         project_wrapper.style.height = height + 'px';
     });
+
     let decorationBlur_blue = document.querySelector('.little-description_decoration-blur');
     let decorationBlur_purple = document.querySelector('.after-prjcts_decoration-blur-purple');
     window.addEventListener('scroll', function addRemoveBlur() {
@@ -33,6 +34,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     });
 
+    let projectsInDev = document.querySelectorAll('.prj-inDev');
+    projectsInDev.forEach(item => {
+        item.addEventListener('mousedown', function (e) {
+            let url = this.getAttribute('data-url');
+            if(e.button === 0) {
+                window.location.href = url;
+            } else if(e.button === 1) {
+                window.open(url);
+            }
+        });
+    })
+
+
     let post_01 = document.querySelector('.post-01');
     let arrowUp = document.querySelector('.arrow-up');
     window.addEventListener('scroll', function scrollArrow(){
@@ -42,18 +56,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
             arrowUp.style.opacity = '0';
         }
     });
+
     let footer = document.querySelector('.footer')
     window.addEventListener('scroll', function arrowPosition() {
         arrowUp.style.position = 'fixed';
-        if(window.pageYOffset >= footer.offsetTop - document.documentElement.clientHeight) {
-            arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
+        arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
+        let top = window.pageYOffset + Math.floor(window.innerHeight / footer.clientHeight) * footer.clientHeight;
+        if(top >= footer.offsetTop - 70) {
             arrowUp.style.bottom =  195  + 'px';
-            //...
         } else {
-            arrowUp.style.left = container.offsetLeft + container.clientWidth + 20 +  'px';
             arrowUp.style.bottom =  100  + 'px';
         }
-    })
+    });
 
     arrowUp.onclick =  () => {
         document.documentElement.scrollTo(0,0);
