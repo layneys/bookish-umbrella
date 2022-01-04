@@ -11,14 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat&display=swap" rel="stylesheet">
 
+    <link href="../../static/css/modules/reset.css" rel="stylesheet">
+    <link href="../../static/css/modules/fonts.css" rel="stylesheet">
+    <link href="../../static/css/modules/header.css" rel="stylesheet">
+    <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../../static/css/common-styles.css">
     <link rel="stylesheet" href="../../static/css/team/team.css">
     <link rel="stylesheet" href="../../static/css/team/gallery.css">
 
     <link rel="stylesheet" href="../../static/css/splide/splide-core.css">
-    <link rel="stylesheet" href="../../static/css/splide.css">
+    <link rel="stylesheet" href="../../static/css/splide/splide.css">
 
-    <script src="../../static/js/splide.js"></script>
+    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
+    <script src="../../static/js/custom-cursor.js"></script>
+
+    <script src="../../static/js/libs/splide.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Document</title>
@@ -26,10 +34,16 @@
 
 <body>
 
+    <div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+
+    <script src="../../static/js/modules-connect/connect-header.js"></script>
+
     <!-- main -->
     <section class="main">
 
-        <header class="header">
+        <!-- <header class="header">
             <div class="header__item">
                 <div><img class="header__item-logo" src="../../media/icons/logoHeader.png" alt="иконка"></div>
                 <div>
@@ -51,8 +65,7 @@
             <div class="header__item">
                 <a class="mail" href="mailto:huy@gmain.com">сontack@gmail.com</a>
             </div>
-
-        </header>
+        </header> -->
 
         <div class="main__content">
 
@@ -117,7 +130,7 @@
                             {% for project in projects %}
 
                                 <li class="splide__slide">
-                                     <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{project.preview_pic.url}}" style="width: 100%"></a>
+                                    <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{project.preview_pic.url}}" style="width: 100%"></a>
                                 </li>
 
                             {% endfor %}
@@ -429,7 +442,7 @@
 
             </div>
 
-            <div class="resume_contacts">
+            <!-- <div class="resume_contacts">
 
                 <div class="contacts_item">
 
@@ -455,7 +468,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
 
@@ -466,7 +479,7 @@
 
 
     <!-- footer -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
 
             <div class="footer__top">
@@ -541,8 +554,9 @@
             </div>
 
         </div>
-    </footer>
+    </footer> -->
 
+    <script src="../../static/js/modules-connect/connect-footer-1.js"></script>
 
 
     <script type="text/javascript">

@@ -38,6 +38,8 @@ button {
 img {
   outline: none;
 }
+
+
 .btn {
   font-size: 20px;
   background-color: #F2682E;
@@ -92,20 +94,23 @@ img {
 .btnRight div img {
   width: 100%;
 }
-.header {
+
+
+
+/* .header {
   background-color: #181C21;
   -webkit-box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
-          box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
+  box-shadow: 0px 296.222px 270.569px rgba(0, 0, 0, 0.0527836);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   height: 68px;
   letter-spacing: .1em;
   border-bottom: 2px solid;
@@ -124,20 +129,24 @@ img {
 .header .nav .nav__link:first-child {
   margin-left: 0;
 }
+
 .header .header__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .header .header__item .header-title {
-  color: #DD8A4B;
-  font-size: 24px;
-  padding-left: 15px;
-}
-.footer {
+    color: #DD8A4B;
+    font-size: 24px;
+    padding-left: 15px;
+} */
+
+
+
+/* .footer {
   background-color: #20252C;
   padding: 50px 0;
 }
@@ -193,7 +202,10 @@ img {
 }
 .footer .footer__top .footer__text .footer__text-adressDiv {
   margin-top: 25px;
-}
+} */
+
+
+
 .popup__bg {
   position: fixed;
   top: 0;

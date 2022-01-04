@@ -35,10 +35,10 @@ function DisplayWorkTopItem(arg) {
 }
 
 let workProjectsBtnOpen = document.querySelector(".work__projects-btnOpen"),
-    imgBtn = workProjectsBtnOpen.querySelector("img");
+    imgBtn = workProjectsBtnOpen?.querySelector("img");
 
 
-workProjectsBtnOpen.addEventListener("click", (e) => {
+workProjectsBtnOpen?.addEventListener("click", (e) => {
 
     if (workTopItem[8].classList.contains("hide")) {
 

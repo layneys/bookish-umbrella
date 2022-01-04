@@ -3,6 +3,14 @@ a {
     text-decoration: none;
 }
 
+.hover {
+    transition: all .3s;
+}
+.hover:hover {
+    cursor: pointer;
+    color: #FF9736;
+}
+
 .header {
     position: fixed;
     top: 0;
