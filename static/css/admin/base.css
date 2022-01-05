@@ -12,7 +12,7 @@
   --primary-fg: #fff;
 
   --body-fg: #fff;
-  --body-bg: #fff;
+  --body-bg: #707070;
   --body-quiet-color: #666;
   --body-loud-color: #000;
 
@@ -40,7 +40,7 @@
   --message-warning-bg: #ffc;
   --message-error-bg: #ffefef;
 
-  --darkened-bg: #f8f8f8; /* A bit darker than --body-bg */
+  --darkened-bg: #444444; /* A bit darker than --body-bg */
   --selected-bg: #e4e4e4; /* E.g. selected table cells */
   --selected-row: #ffc;
 
@@ -93,6 +93,12 @@
   }
 }
 
+/*#content {*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*}*/
+
+
 html, body {
     height: 100%;
 }
@@ -103,19 +109,22 @@ body {
     font-size: 14px;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: var(--body-fg);
-    background: var(--body-bg);
+    /*background: var(--body-bg);*/
+    background: #000;
 }
 
 /* LINKS */
 
 a:link, a:visited {
-    color: var(--link-fg);
+    /*color: var(--link-fg);*/
+    color: #fff;
     text-decoration: none;
     transition: color 0.15s, background 0.15s;
 }
 
 a:focus, a:hover {
-    color: var(--link-hover-color);
+    /*color: var(--link-hover-color);*/
+    color: #ff5a00;
 }
 
 a:focus {
@@ -125,6 +134,8 @@ a:focus {
 a img {
     border: none;
 }
+
+
 
 a.section:link, a.section:visited {
     color: var(--header-link-color);
@@ -155,7 +166,8 @@ h1 {
     margin: 0 0 20px;
     font-weight: 300;
     font-size: 20px;
-    color: var(--body-quiet-color);
+    /*color: var(--body-quiet-color);*/
+    color: #fff;
 }
 
 h2 {
@@ -316,7 +328,8 @@ table {
 td, th {
     font-size: 13px;
     line-height: 16px;
-    border-bottom: 1px solid var(--hairline-color);
+    /*border-bottom: 1px solid var(--hairline-color);*/
+    border-bottom: 1px solid #ff5a00;
     vertical-align: top;
     padding: 8px;
 }
@@ -497,7 +510,8 @@ input[type=number], input[type=tel], textarea, select, .vTextField {
     border-radius: 4px;
     padding: 5px 6px;
     margin-top: 0;
-    color: var(--body-fg);
+    /*color: var(--body-fg);*/
+    color: #000;
     background-color: var(--body-bg);
 }
 
@@ -595,7 +609,8 @@ input[type=button][disabled].default {
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    background: var(--primary);
+    /*background: var(--primary);*/
+    background: #ff5a00;
     color: var(--header-link-color);
 }
 
@@ -851,6 +866,7 @@ table#change-history tbody th {
 }
 
 #content {
+    margin: 0 auto;
     padding: 20px 40px;
 }
 
@@ -878,11 +894,13 @@ table#change-history tbody th {
 /* COLUMN TYPES */
 
 .colMS {
-    margin-right: 300px;
+    /*margin-right: 300px;*/
+    width: 100%;
+    text-align: center;
 }
 
 .colSM {
-    margin-left: 300px;
+    /*margin-left: 300px;*/
 }
 
 .colSM #content-related {
