@@ -3,7 +3,7 @@
 .login {
     /*background: var(--darkened-bg);*/
     height: auto;
-    background: red;
+    background: #000000;
 }
 
 .login #header {
