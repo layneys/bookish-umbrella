@@ -4879,13 +4879,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (prev2 === true) {
         // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><img src='./img/splide/prev.png'/>";
         // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><img src='./img/splide/prev.png'/>";
-        arrow = "<button class=\"" + "\" onmouseover=this.src='./img/splide/next.png' type=\"button\"><div><img class='imgButton' src='./img/splide/prev.png'/></div>";
+        arrow = "<button class=\"" + "\" onmouseover=this.src='../../media/imgs/splide/next.png' type=\"button\"><div><img class='imgButton' src='../../media/imgs/splide/prev.png'/></div>";
       }
 
       if (prev2 === false) {
         // arrow = "<button class=\"" + classes.arrow + " " + (prev2 ? classes.prev : classes.next) + "\" type=\"button\"><img src='next.png'/>";
         // arrow = "<button class=\"" + classes.arrow +  " " + (prev2 ? classes.prev : classes.next) + "\" onmouseover=this.src='./img/splide/next1.png' type=\"button\"><img src='./img/splide/next.png'/>";
-        arrow = "<button class=\"" + "\" onmouseover=this.src='./img/splide/next1.png' type=\"button\"><div><img class='imgButton' src='./img/splide/next.png'/></div>";
+        arrow = "<button class=\"" + "\" onmouseover=this.src='../../media/imgs/splide/next1.png' type=\"button\"><div><img class='imgButton' src='../../media/imgs/splide/next.png'/></div>";
       }
 
       return parseHtml(arrow);

@@ -26,7 +26,7 @@
     <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
     <script src="../../static/js/custom-cursor.js"></script>
 
-    <script src="../../static/js/libs/splide.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Document</title>
@@ -71,13 +71,13 @@
 
             <div class="main__top">
                 <div>
-                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
+                    <img class="main__top-img" src="{{ user.profile.avatar.url }}" alt="картинка">
                 </div>
 
                 <div class="main__text">
-                    <h3>Андрей Бредихин</h3>
-                    <p>2D-artist</p>
-                    <a href="mailto:huy@gmain.com">сontack@gmail.com</a>
+                    <h3>{{ user.first_name}} {{ user.last_name }}</h3>
+                    <p></p>
+                    <a href="mailto:huy@gmain.com">{{ user.email }}</a>
                 </div>
             </div>
 
@@ -245,141 +245,17 @@
                 </div>
 
                 <div class="resume__skills__items">
+                    {% for skill in skills %}
 
-                    <div class="resume__skills__item">
+                        <div class="resume__skills__item">
 
-                        <p>
-                            UX/UI
-                        </p>
+                            <p>
+                                {{ skill.name }}
+                            </p>
 
-                    </div>
+                        </div>
+                    {% endfor %}
 
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
 
                 </div>
 
@@ -558,7 +434,7 @@
 
     <script src="../../static/js/modules-connect/connect-footer-1.js"></script>
 
-
+<script src="../../static/js/libs/splide.js"></script>
     <script type="text/javascript">
         var splide = new Splide('.splide', {
             perPage: 2,

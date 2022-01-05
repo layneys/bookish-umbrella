@@ -12,6 +12,15 @@ class Software(models.Model):
         return f'{self.name}'
 
 
+# class Role(models.Model):
+#     name = models.CharField(max_length=255, blank=True)
+#
+#     def __str__(self):
+#         return f'{self.name}'
+
+
+
+
 class Skill(models.Model):
     name = models.CharField(max_length=255, blank=True)
 
@@ -30,6 +39,7 @@ class UserProfile(models.Model):
     whatsapp = models.CharField(max_length=255, blank=True)
     software = models.ManyToManyField(Software)
     skills = models.ManyToManyField(Skill)
+
 
     def __str__(self):
         return f"User {self.user.first_name} {self.user.last_name}"

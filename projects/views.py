@@ -35,3 +35,13 @@ def project_list(request):
                    "completed_projects": completed,
                    "contest_projects": contest_projects,
                    } )
+
+
+def header(request):
+    return render(request, "../templates/modules/header.html")
+
+def footer_1(request):
+    return render(request, "../templates/modules/footer_1.html")
+
+def footer_2(request):
+    return render(request, "../templates/modules/footer_2.html")

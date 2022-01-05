@@ -19,4 +19,5 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Skill)
+# admin.site.register(Role)
 admin.site.register(Software)
