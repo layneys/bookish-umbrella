@@ -11,7 +11,7 @@
   --accent: #ffffff;
   --primary-fg: #fff;
 
-  --body-fg: #fff;
+  --body-fg: #000;
   --body-bg: #fff;
   --body-quiet-color: #666;
   --body-loud-color: #000;
@@ -314,12 +314,17 @@ table {
 }
 
 td, th {
-    font-size: 13px;
+
     line-height: 16px;
     border-bottom: 1px solid var(--hairline-color);
     vertical-align: top;
     padding: 8px;
 }
+
+td, th, section {
+    font-size: 15px;
+}
+
 
 th {
     font-weight: 600;
