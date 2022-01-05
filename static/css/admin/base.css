@@ -6,14 +6,14 @@
 
 /* VARIABLE DEFINITIONS */
 :root {
-  --primary: #79aec8;
+  --primary: #ff5a00;
   --secondary:  #ff5a00;
   --accent: #ffffff;
   --primary-fg: #fff;
 
   --body-bg: #707070;
   --body-fg: #000;
-  --body-quiet-color: #666;
+  --body-quiet-color: #ffffff;
   --body-loud-color: #000;
 
   --header-color: #ffffff;
@@ -25,9 +25,9 @@
   --breadcrumbs-link-fg: var(--body-bg);
   --breadcrumbs-bg: var(--primary);
 
-  --link-fg: #447e9b;
-  --link-hover-color: #036;
-  --link-selected-fg: #5b80b2;
+  --link-fg: #ff5a00;
+  --link-hover-color: #000;
+  --link-selected-fg: #ff5a00;
 
   --hairline-color: #e8e8e8;
   --border-color: #ccc;
@@ -42,10 +42,11 @@
 
   --darkened-bg: #444444; /* A bit darker than --body-bg */
   --selected-bg: #e4e4e4; /* E.g. selected table cells */
-  --selected-row: #ffc;
+  --selected-row: #000000;
 
   --button-fg: #fff;
-  --button-bg: var(--primary);
+  /*--button-bg: var(--primary);*/
+  --button-bg: #ff5a00;
   --button-hover-bg: #5b5b5b;
   --default-button-bg: var(--secondary);
   --default-button-hover-bg: #205067;
@@ -66,7 +67,7 @@
 
     --body-fg: #eeeeee;
     --body-bg: #121212;
-    --body-quiet-color: #e0e0e0;
+    --body-quiet-color: #ffffff;
     --body-loud-color: #ffffff;
 
     --breadcrumbs-link-fg: #000000;
@@ -389,11 +390,13 @@ thead th {
 }
 
 thead th a:link, thead th a:visited {
-    color: var(--body-quiet-color);
+    /*color: var(--body-quiet-color);*/
+    color: #ff5a00;
 }
 
 thead th.sorted {
-    background: var(--selected-bg);
+    /*background: var(--selected-bg);*/
+    background: #000;
 }
 
 thead th.sorted .text {
@@ -738,7 +741,8 @@ div.breadcrumbs {
 }
 
 div.breadcrumbs a {
-    color: var(--breadcrumbs-link-fg);
+    /*color: var(--breadcrumbs-link-fg);*/
+    color: #000;
 }
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
