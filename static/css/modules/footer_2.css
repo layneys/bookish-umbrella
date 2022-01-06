@@ -1,0 +1,55 @@
+.footer {
+    width: 100%;
+    height: 239px;
+    background: #20252C;
+    margin-top: 120px;
+}
+.info-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+.info-block__soc-networks {
+    display: flex;
+}
+.info-block__soc-networks a div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block__git-hub, .info-block__app-store, .info-block__google-play {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+.info-block__git-hub {
+    margin-right: 20px;
+}
+.info-block__app-store {
+    margin-right: 20px;
+}
+.info-block__git-hub a{
+    margin-left: 12px;
+}
+.info-block__app-store a {
+    margin-left: 20px;
+}
+.info-block__google-play a {
+    margin-left: 30px;
+}
+.info-block__git-hub p, .info-block__app-store p{
+    margin-top: 5px;
+}
+.info-block__link {
+    margin-top: 20px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+.info-block__link a {
+    color: #DC6041;
+}

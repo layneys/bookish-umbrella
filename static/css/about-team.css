@@ -3,6 +3,14 @@
 @import url('modules/header.css');
 @import url('modules/footer_1.css');
 
+
+.mouse-enter {
+    transition: all ease-in-out .3s;
+}
+.mouse-enter:hover {
+    transform: scale(1.05);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -10,21 +18,13 @@ html {
 body {
     background: #181C21;
 }
-.currentPage {
-    color:#FF9736;
-}
+
 .container {
     height: 100%;
     width: 1645px;
     margin: 0 auto;
 }
-.hover {
-    transition: all .3s;
-}
-.hover:hover {
-    cursor: pointer;
-    color: #FF9736;
-}
+
 main {
     margin-top: 150px;
 }

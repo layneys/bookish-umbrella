@@ -23,14 +23,22 @@
 .soc-nets {
     margin-right: 50px;
 }
-.soc-nets:hover {
-    cursor: pointer;
+.soc-nets a div {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.telegram p {
+    margin-top: 6px;
 }
 .VKontakte p {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 .WhatsApp p {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 .contacts {
     text-align: right;

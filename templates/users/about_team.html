@@ -5,6 +5,7 @@
     <meta name="viewport"  content="width=device-width, minimum-scale=.5">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Команада</title>
+
     <link href="../../static/css/about-team.css" rel="stylesheet">
     
     <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
@@ -22,7 +23,7 @@
         </div>
         <div class="team__list">
             {% for user in users %}
-            <div class="person-card">
+            <div class="person-card mouse-enter">
                 <div class="person-card__image">
                     <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{user.avatar.url}}" alt="image"></a>
                 </div>
@@ -41,7 +42,7 @@
     </div>
 </main>
 
-<script src="../../static/js/modules-connect/connect-footer-1.js"></script>\
+<script src="../../static/js/modules-connect/connect-footer-1.js"></script>
 
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport"  content="width=device-width, minimum-scale=.5">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Проект</title>
     <link href="../../static/css/project.css" rel="stylesheet">
+    <link href="../../static/css/modules/footer_2.css" rel="stylesheet">
     <link href="../../static/css/splide/splide-core.css" rel="stylesheet">
     <link href="../../static/css/splide/splide.css" rel="stylesheet">
     <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
+
     <script src="../../static/js/libs/splide.js"></script>
     <script src="../../static/js/libs/splide-auto-scroll-extension.js"></script>
     <script src="../../static/js/custom-cursor.js"></script>
@@ -54,7 +57,7 @@
         <h3>Над проектом работали:</h3>
         <div class="workers__workers-container">
             {% for dev in devs %}
-                <div class="workers__worker-card">
+                <div class="workers__worker-card mouse-enter">
                     <div class="workers__image">
                         <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/designer.jpg" alt="there must be image"></a>
                     </div>

@@ -3,12 +3,23 @@ a {
     text-decoration: none;
 }
 
+
+.header-elements {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color ease-in-out .4s;
+}
+.header-elements[data-hover]:hover {
+    background: #F8682A;
+}
+
 .hover {
     transition: all .3s;
 }
 .hover:hover {
-    cursor: pointer;
-    color: #FF9736;
+    /*color: #FF9736;*/
 }
 
 .header {
@@ -25,14 +36,13 @@ a {
     z-index: 3;
 }
 .header-data {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .logo {
-    height: 77px;
-    display: flex;
-    align-items: center;
+    height: 100%;
 }
 .logo h3 {
     font-family: 'Asap', sans-serif;
@@ -52,7 +62,8 @@ a {
     align-items: center;
 }
 .nav ul li {
-    margin-left: 50px;
+    height: 100%;
+    margin-left: 0px;
     color: #fff;
 }
 .nav ul li a {
@@ -60,12 +71,17 @@ a {
     font-size: 14px;
     font-weight: 400;
 }
+.nav ul li a div {
+    width: 100px;
+}
+
 .mail {
-    height: 77px;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 .mail a {
+    height: 100%;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 400;
