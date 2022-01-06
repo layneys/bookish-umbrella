@@ -67,9 +67,6 @@
     right: 23px;
     border-radius: 50%;
 }
-.arrow-up:hover {
-    cursor: pointer;
-}
 .arrow-up:hover div img {
     opacity: 1;
 }

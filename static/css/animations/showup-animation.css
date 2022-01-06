@@ -1,0 +1,24 @@
+.animation-show-up {
+    animation: showUp ease-in 1.5s;
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .3;
+    }
+    75% {
+        opacity: .5;
+    }
+    90% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 1;
+    }
+}

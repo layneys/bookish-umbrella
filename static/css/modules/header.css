@@ -15,13 +15,6 @@ a {
     background: #F8682A;
 }
 
-.hover {
-    transition: all .3s;
-}
-.hover:hover {
-    /*color: #FF9736;*/
-}
-
 .header {
     position: fixed;
     top: 0;

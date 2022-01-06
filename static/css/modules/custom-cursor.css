@@ -1,3 +1,6 @@
+* {
+    cursor: none !important;
+}
 *:hover {
     cursor: none !important;
 }
