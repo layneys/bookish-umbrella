@@ -10,6 +10,7 @@
 
 db.sqlite3
 
+package-lock.json
 
 
 ###virtualenv###

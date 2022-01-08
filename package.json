@@ -1,0 +1,16 @@
+{
+  "name": "web-citg",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-nunjucks": "^5.1.0",
+    "gulp-nunjucks-render": "^2.2.3"
+  }
+}
