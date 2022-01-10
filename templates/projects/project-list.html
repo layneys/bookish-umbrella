@@ -20,9 +20,25 @@
 </head>
 <body>
 
-{% include "../modules/header.njk" %}
-
-
+<header class="header">
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/"><div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"><h3>CITG</h3></div></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                </ul>
+            </div>
+            <div class="mail">
+                <a class="hover" href="mailto:itsomemail@mail.com"><div class="header-elements">itsomemail@mail.com</div></a>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>
 
@@ -39,7 +55,7 @@
             <div class="container prj-container">
                 <!--                {% for project in completed_projects %}-->
                 <!--                <div class="project prj-element-of-array">-->
-                <!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{project.preview_pic.url}}"></a>-->
+                <!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a>-->
                 <!--                </div>-->
                 <!--                {% endfor %}-->
 
@@ -69,7 +85,7 @@
             <button id="load-more">Развернуть</button>
         </div>
     </div>
-    <div class="post-02 animation-section">
+    <div class="post-02 animation-section-1 animation-section">
         <div class="container">
             <div class="little-description">
                 <h2>02</h2>
@@ -78,13 +94,13 @@
         </div>
         <div class="container prj-container">
             <!-- {% for project in contest_projects %}
-             <div class="project project_no-shadow"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
-             {% endfor %}-->
+            <div class="project project_no-shadow"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
+            {% endfor %}-->
 
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block animation-show-up"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block animation-show-up"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block animation-show-up"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block animation-show-up"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
         </div>
     </div>
     <div class="post-03 animation-section">
@@ -98,8 +114,8 @@
             <!--          {% for project in in_development %}-->
             <!--            <div class="prj-inDev project" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">-->
             <!--                <div class="description-inDev-prj">-->
-            <!--                    <h3>{{project.title}}</h3>-->
-            <!--                    <p>{{ project.description}}</p>-->
+            <!--                    <h3>{{ project.title }}</h3>-->
+            <!--                    <p>{{ project.description }}</p>-->
             <!--                </div>-->
             <!--                <div class="logo-inDev-prj">-->
             <!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt="image"></a>-->
@@ -107,37 +123,37 @@
             <!--            </div>-->
             <!--            {% endfor %}-->
 
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block animation-show-up" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+                <div class="logo-inDev-prj">
+                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="prj-inDev project animation-section__block animation-show-up" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+                <div class="description-inDev-prj">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
                 </div>
                 <div class="logo-inDev-prj">
                     <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
                 </div>
             </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block animation-show-up" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
-                </div>
-                <div class="logo-inDev-prj animation-section__block">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
-                </div>
-            </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
-                <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
                 </div>
                 <div class="logo-inDev-prj">
                     <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
                 </div>
             </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block animation-show-up" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ <project class="descript"></project>ion}}</p>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
                 </div>
                 <div class="logo-inDev-prj">
                     <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
@@ -147,8 +163,47 @@
     </div>
 </main>
 
-{% include "../modules/footer_1.njk" %}
-
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="links-to-social-networks">
+            <div class="soc-nets telegram">
+                <a href="#">
+                   <div>
+                       <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
+                       <p>Telegram</p>
+                   </div>
+                </a>
+            </div>
+            <div class="soc-nets VKontakte">
+                <a href="#">
+                    <div>
+                        <img src="../../media/icons/vk-icon.svg" alt="image of social network">
+                        <p>VKontakte</p>
+                    </div>
+                </a>
+            </div>
+            <div class="soc-nets WhatsApp">
+                <a href="#">
+                    <div>
+                        <img src="../../media/icons/whatsapp-icon.svg" alt="image of social network">
+                        <p>WhatsApp</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contacts">
+            <a href="tel:+123-456-789">+123.456.789</a>
+            <p>Ростов-на-Дону</p>
+            <p>пл. Ростовского Стрелкового</p>
+            <p>Полка Народного Ополочения пл, 2.</p>
+        </div>
+        <div class="arrow-up">
+            <div class="arrow-up-inside">
+                <img src="../../media/imgs/arrow-up.svg" alt="image of arrow up">
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="../../static/js/project_list.js"></script>
 </body>
 </html>

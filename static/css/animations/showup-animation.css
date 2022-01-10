@@ -1,24 +1,21 @@
 .animation-show-up {
-    animation: showUp ease-in 1.5s;
+    transition: all 1.5s;
+    transform: translateY(200px);
+    opacity: 0;
 }
 
-@keyframes showUp {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 0;
-    }
-    50% {
-        opacity: .3;
-    }
-    75% {
-        opacity: .5;
-    }
-    90% {
-        opacity: .7;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+
+
+/*@keyframes showUp {*/
+/*    0% {*/
+/*        transform: translateY(60px);*/
+/*        opacity: 0;*/
+/*    }*/
+/*    50% {*/
+/*        opacity: .5;*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateY(0px);*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/

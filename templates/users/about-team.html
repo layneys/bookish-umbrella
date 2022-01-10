@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, minimum-scale=.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Команада</title>
+    <link href="../../static/css/modules/reset.css" rel="stylesheet">
+    <link href="../../static/css/modules/fonts.css" rel="stylesheet">
+    <link href="../../static/css/modules/header.css" rel="stylesheet">
+    <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
+
+    <link href="../../static/css/about-team.css" rel="stylesheet">
+
+    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
+    <script src="../../static/js/custom-cursor.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/"><div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"><h3>CITG</h3></div></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                </ul>
+            </div>
+            <div class="mail">
+                <a class="hover" href="mailto:itsomemail@mail.com"><div class="header-elements">itsomemail@mail.com</div></a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="team container">
+        <div class="team__header">
+            <h2>О Команде</h2>
+            <p>Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных сфер, многие из них являются бывшими учениками</p>
+        </div>
+        <div class="team__list">
+            {% for user in users %}
+            <div class="person-card mouse-enter">
+                <div class="person-card__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{user.avatar.url}}" alt="image"></a>
+                </div>
+                <div class="person-card__info">
+                    <h3>{{ user.user.first_name}} {{ user.user.last_name }}</h3>
+                    <p> {% for skill in user.skills.all %}{{ skill.name }} {% endfor %}</p>
+                </div>
+                <div class="person-card__link">
+                    <a href="{{ user.tg_link }}"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user.vk_link }}"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user.whatsapp}}"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="links-to-social-networks">
+            <div class="soc-nets telegram">
+                <a href="#">
+                   <div>
+                       <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
+                       <p>Telegram</p>
+                   </div>
+                </a>
+            </div>
+            <div class="soc-nets VKontakte">
+                <a href="#">
+                    <div>
+                        <img src="../../media/icons/vk-icon.svg" alt="image of social network">
+                        <p>VKontakte</p>
+                    </div>
+                </a>
+            </div>
+            <div class="soc-nets WhatsApp">
+                <a href="#">
+                    <div>
+                        <img src="../../media/icons/whatsapp-icon.svg" alt="image of social network">
+                        <p>WhatsApp</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contacts">
+            <a href="tel:+123-456-789">+123.456.789</a>
+            <p>Ростов-на-Дону</p>
+            <p>пл. Ростовского Стрелкового</p>
+            <p>Полка Народного Ополочения пл, 2.</p>
+        </div>
+        <div class="arrow-up">
+            <div class="arrow-up-inside">
+                <img src="../../media/imgs/arrow-up.svg" alt="image of arrow up">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+
+<script src="../../static/js/about_team.js"></script>
+</body>
+</html>

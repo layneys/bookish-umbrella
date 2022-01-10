@@ -1,13 +1,8 @@
-@import url('modules/reset.css');
-@import url('modules/fonts.css');
-@import url('modules/header.css');
-
-
 .mouse-enter {
     transition: all ease-in-out .3s;
 }
 .mouse-enter:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 html {
@@ -123,21 +118,22 @@ body {
 .splide {
     position: relative;
     width: 1620px;
-    height: 296px;
+    height: 294px;
     margin: 120px auto;
+    /*background: #0c9a9a;*/
 }
 .splide__arrows {
     /*display: none;*/
 }
 .splide__arrows button:first-child {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: -100px;
 }
 .splide__arrows button:last-child {
     position: absolute;
-    top: 120px;
-    right: -100px;
+    top: 130px;
+    right: -80px;
 }
 .splide__arrows button {
     background: transparent;
@@ -187,22 +183,26 @@ body {
     position: relative;
     margin: 0 auto;
     width: 1620px;
-    height: 296px;
-    overflow: hidden;
+    height: 350px;
+    /*background: black;*/
+    /*overflow: hidden;*/
 }
 .splide__list {
 }
 .splide__slide {
     width: 524px;
-    height: 296px;
-    margin-right: 20px !important;
+    height: 294px;
+    align-items: center;
+    margin-left: 10px !important;
+    margin-top: 20px !important;
+    margin-right: 10px !important;
     border-radius: 20px;
-    overflow: hidden;
-    background: #813024;
+    /*overflow: hidden;*/
+    /*background: #813024;*/
 }
 .splide__list img {
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 270px;
 }
 .video-image {
     position: absolute;

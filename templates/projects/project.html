@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Проект</title>
+
+    <link href="../../static/css/modules/reset.css" rel="stylesheet">
+    <link href="../../static/css/modules/fonts.css" rel="stylesheet">
+    <link href="../../static/css/modules/header.css" rel="stylesheet">
     <link href="../../static/css/project.css" rel="stylesheet">
     <link href="../../static/css/modules/footer_2.css" rel="stylesheet">
     <link href="../../static/css/splide/splide-core.css" rel="stylesheet">
@@ -27,29 +31,47 @@
     </div>
 </div>
 
-<script src="../../static/js/modules-connect/connect-header.js"></script>
-
-
+<header class="header">
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/"><div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"><h3>CITG</h3></div></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
+                    <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                </ul>
+            </div>
+            <div class="mail">
+                <a class="hover" href="mailto:itsomemail@mail.com"><div class="header-elements">itsomemail@mail.com</div></a>
+            </div>
+        </div>
+    </div>
+</header>
 <main class="main">
     <div class="description" style = "background-image: url('{{ project.preview_pic.url }}');">
         <div class="description__description-container container">
             <div class="description__description-text">
                 <h2>{{ project.title }}</h2>
-                    <p>{{ project.description }}</p>
+                <p>{{ project.description }}</p>
             </div>
         </div>
     </div>
     <div class="splide">
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide">
+                <li class="splide__slide mouse-enter">
                     <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                     <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                 </li>
+              <!--  {% for img in project.project_images.all%}
+                <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
+                {% endfor %}-->
 
-                {% for img in project.project_images.all%}
-                    <li class="splide__slide"><img src="{{img.image.url}}" alt="image" data-image="true" ondragstart="return false"></li>
-                {% endfor %}
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/database.png" alt="image" data-image="true" ondragstart="return false"></li>
+
             </ul>
         </div>
     </div>
@@ -57,24 +79,56 @@
         <h3>Над проектом работали:</h3>
         <div class="workers__workers-container">
             {% for dev in devs %}
-                <div class="workers__worker-card mouse-enter">
-                    <div class="workers__image">
-                        <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/designer.jpg" alt="there must be image"></a>
-                    </div>
-                    <div class="workers__description">
-                        <h4>{{ dev.user.last_name }} {{ dev.user.first_name }}</h4>
-                        <p>{% for skill in dev.user.profile.skills.all %}{{ skill.name }} {% endfor %}</p>
-                    </div>
+            <div class="workers__worker-card mouse-enter">
+                <div class="workers__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/designer.jpg" alt="there must be image"></a>
                 </div>
+                <div class="workers__description">
+                    <h4>{{ dev.user.last_name }} {{ dev.user.first_name }}</h4>
+                    <p>{% for skill in dev.user.profile.skills.all %}{{ skill.name }} {% endfor %}</p>
+                </div>
+            </div>
             {% endfor %}
 
-            </div>
         </div>
     </div>
 </main>
 
-<script src="../../static/js/modules-connect/connect-footer-2.js"></script>
-
+<footer class="footer">
+    <div class="container">
+        <div class="info-block">
+            <div class="info-block__soc-networks">
+                <div class="info-block__git-hub">
+                    <a href="#" ondragstart="return false">
+                        <div>
+                            <img src="../../media/icons/GitHub-icon.svg" alt="github image">
+                            <p>GitHub</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="info-block__app-store">
+                    <a href="#" ondragstart="return false">
+                      <div>
+                          <img src="../../media/icons/AppStore-icon.svg" alt="github image">
+                          <p>AppStore</p>
+                      </div>
+                    </a>
+                </div>
+                <div class="info-block__google-play">
+                    <a href="#" ondragstart="return false">
+                        <div>
+                            <img src="../../media/icons/GooglePlay-icon.svg" alt="github image">
+                            <p>GooglePlay</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="info-block__link">
+                <a href="#">cosmicdriver.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>
 

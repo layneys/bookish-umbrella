@@ -7,13 +7,13 @@
     <title>Команада</title>
 
     <link href="../../static/css/about-team.css" rel="stylesheet">
-    
+
     <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
     <script src="../../static/js/custom-cursor.js"></script>
 </head>
 <body>
 
-<script src="../../static/js/modules-connect/connect-header.js"></script>
+{{> header}}
 
 <main>
     <div class="team container">
@@ -25,16 +25,16 @@
             {% for user in users %}
             <div class="person-card mouse-enter">
                 <div class="person-card__image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{user.avatar.url}}" alt="image"></a>
+                    <a href="http://127.0.0.1:8000/profile/{{ user_user_username }}/"><img src="{{user_avatar_url}}" alt="image"></a>
                 </div>
                 <div class="person-card__info">
-                    <h3>{{ user.user.first_name}} {{ user.user.last_name }}</h3>
-                    <p> {% for skill in user.skills.all %}{{ skill.name }} {% endfor %}</p>
+                    <h3>{{ user_user_first_name}} {{ user_user_last_name }}</h3>
+                    <p> {% for skill in user.skills.all %}{{ skill_name }} {% endfor %}</p>
                 </div>
                 <div class="person-card__link">
-                    <a href="{{ user.tg_link }}"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="{{ user.vk_link }}"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="{{ user.whatsapp}}"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user_tg_link }}"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user_vk_link }}"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
+                    <a href="{{ user_whatsapp}}"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
                 </div>
             </div>
             {% endfor %}
@@ -42,7 +42,7 @@
     </div>
 </main>
 
-<script src="../../static/js/modules-connect/connect-footer-1.js"></script>
+{{> footer_1}}
 
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>

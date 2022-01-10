@@ -1,15 +1,57 @@
 document.addEventListener('DOMContentLoaded', ()=> {
-    let animationSection = document.querySelectorAll('.animation-section');
+    //let animationSection = document.querySelectorAll('.animation-section');
+
+    let sections = document.querySelectorAll('.animation-section');
+    let animBlocks  = [];
+    sections.forEach(item => {
+        animBlocks.push(new AnimationBlock(item));
+    });
 
     window.addEventListener('scroll', ()=> {
-        animationSection.forEach(section => {
-            if(window.pageYOffset + window.screen.availHeight - 100 > section.offsetTop) {
-                let blocks = section.querySelectorAll('.animation-section__block');
-                blocks.forEach(block => {
-                    block.classList.add('animation-show-up');
-                })
+        animBlocks.forEach(item => {
+            if(window.pageYOffset + window.screen.availHeight - 100 > item._animationSection.offsetTop && !item._isDone) {
+                item.ShowUp();
             }
         })
     });
-
 });
+
+class AnimationBlock {
+    _animationSection = null;
+    _blocks = null;
+    _index = -1;
+    _alreadyThere = [];
+    _delay = 500;
+    _isDone = false;
+
+    constructor(section) {
+        this._animationSection = section;
+        this._blocks = this._animationSection.querySelectorAll('.animation-show-up');
+    }
+    ShowUp() {
+        this._blocks.forEach(item => {
+            setTimeout(()=> {
+                this._index = Math.floor(Math.random() * this._blocks.length);
+                this.Check(this._blocks, this._alreadyThere, this._index);
+            }, this._delay);
+
+            this._delay += 500;
+        });
+
+        this._isDone = true;
+    }
+    Check(blocks, alTh, ind) {
+        if(alTh.includes(ind)) {
+            while (alTh.includes(ind)) {
+                ind = Math.floor(Math.random() * this._blocks.length);
+            }
+        }
+
+        alTh.push(ind);
+        this.AddProps(blocks, ind);
+    }
+    AddProps(blocks, ind) {
+        blocks[ind].style.opacity = '1';
+        blocks[ind].style.transform = 'translateY(0)';
+    }
+}

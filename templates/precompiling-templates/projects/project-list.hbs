@@ -20,8 +20,7 @@
 </head>
 <body>
 
-{% include "../modules/header.njk" %}
-
+{{> header }}
 
 <div class="cursor-dot-outline"></div>
 <div class="cursor-dot"></div>
@@ -39,27 +38,27 @@
             <div class="container prj-container">
                 <!--                {% for project in completed_projects %}-->
                 <!--                <div class="project prj-element-of-array">-->
-                <!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{project.preview_pic.url}}"></a>-->
+                <!--                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="{{project_preview_pic_url}}"></a>-->
                 <!--                </div>-->
                 <!--                {% endfor %}-->
 
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
                 <div class="project prj-element-of-array">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a>
                 </div>
 
             </div>
@@ -78,13 +77,13 @@
         </div>
         <div class="container prj-container">
             <!-- {% for project in contest_projects %}
-             <div class="project project_no-shadow"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="{{ project.preview_pic.url }}"></a></div>
-             {% endfor %}-->
+            <div class="project project_no-shadow"><a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="{{ project_preview_pic_url }}"></a></div>
+            {% endfor %}-->
 
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
-            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
+            <div class="project project_no-shadow animation-section__block"><a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img alt="Photo" src="../../media/imgs/plug.png"></a></div>
         </div>
     </div>
     <div class="post-03 animation-section">
@@ -96,58 +95,58 @@
         </div>
         <div class="container prj-container">
             <!--          {% for project in in_development %}-->
-            <!--            <div class="prj-inDev project" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">-->
+            <!--            <div class="prj-inDev project" data-url="http://127.0.0.1:8000/project/{{ project_id }}/">-->
             <!--                <div class="description-inDev-prj">-->
-            <!--                    <h3>{{project.title}}</h3>-->
-            <!--                    <p>{{ project.description}}</p>-->
+            <!--                    <h3>{{project_title}}</h3>-->
+            <!--                    <p>{{ project_description}}</p>-->
             <!--                </div>-->
             <!--                <div class="logo-inDev-prj">-->
-            <!--                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{ project.preview_pic.url }}" alt="image"></a>-->
+            <!--                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img src="{{ project_preview_pic_url }}" alt="image"></a>-->
             <!--                </div>-->
             <!--            </div>-->
             <!--            {% endfor %}-->
 
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project_id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
+                    <h3>{{project_title}}</h3>
+                    <p>{{ project_description}}</p>
                 </div>
                 <div class="logo-inDev-prj">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img src="../../media/imgs/directory.png" alt="image"></a>
                 </div>
             </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project_id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
+                    <h3>{{project_title}}</h3>
+                    <p>{{ project_description}}</p>
                 </div>
                 <div class="logo-inDev-prj animation-section__block">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
                 </div>
             </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project_id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ project.description}}</p>
+                    <h3>{{project_title}}</h3>
+                    <p>{{ project_description}}</p>
                 </div>
                 <div class="logo-inDev-prj">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
                 </div>
             </div>
-            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project.id }}/">
+            <div class="prj-inDev project animation-section__block" data-url="http://127.0.0.1:8000/project/{{ project_id }}/">
                 <div class="description-inDev-prj">
-                    <h3>{{project.title}}</h3>
-                    <p>{{ <project class="descript"></project>ion}}</p>
+                    <h3>{{project_title}}</h3>
+                    <p>{{ project_description }}</p>
                 </div>
                 <div class="logo-inDev-prj">
-                    <a href="http://127.0.0.1:8000/project/{{ project.id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
+                    <a href="http://127.0.0.1:8000/project/{{ project_id }}/"><img src="../../media/imgs/directory.png  " alt="image"></a>
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-{% include "../modules/footer_1.njk" %}
+{{> footer_1 }}
 
 <script src="../../static/js/project_list.js"></script>
 </body>

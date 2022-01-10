@@ -7,8 +7,11 @@ body {
   overflow-x: hidden;
 }
 
-.currentPage {
-  color:#FF9736;
+.mouse-enter {
+  transition: all ease-in-out .3s;
+}
+.mouse-enter:hover {
+  transform: scale(1.05);
 }
 
 .container {
