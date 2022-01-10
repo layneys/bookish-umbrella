@@ -1,22 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=> {
-    //let animationSection = document.querySelectorAll('.animation-section');
-
-    let sections = document.querySelectorAll('.animation-section');
-    let animBlocks  = [];
-    sections.forEach(item => {
-        animBlocks.push(new AnimationShowUp(item));
-    });
-
-    window.addEventListener('scroll', ()=> {
-        animBlocks.forEach(item => {
-            if(window.pageYOffset + window.screen.availHeight - 100 > item._animationSection.offsetTop && !item._isDone) {
-                item.ShowUp();
-            }
-        })
-    });
-});
-
-class AnimationShowUp {
+export class AnimationShowUp {
     _animationSection = null;
     _blocks = null;
     _index = -1;
