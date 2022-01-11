@@ -11,6 +11,7 @@
     <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
 
     <link href="../../static/css/about-team.css" rel="stylesheet">
+    <link href="../../static/css/animations/showup-animation.css" rel="stylesheet">
 
     <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
     <script src="../../static/js/custom-cursor.js"></script>
@@ -43,22 +44,76 @@
             <p>Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных сфер, многие из них являются бывшими учениками</p>
         </div>
         <div class="team__list">
-            {% for user in users %}
-            <div class="person-card mouse-enter">
-                <div class="person-card__image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{user.avatar.url}}" alt="image"></a>
+<!--            {% for user in users %}-->
+            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
+                <div class="person-card__image" data-field="image">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
                 </div>
-                <div class="person-card__info">
-                    <h3>{{ user.user.first_name}} {{ user.user.last_name }}</h3>
-                    <p> {% for skill in user.skills.all %}{{ skill.name }} {% endfor %}</p>
+                <div class="person-card__info" data-field="info">
+                    <h3 data-field="info">Бредихин Андрей</h3>
+                    <p data-field="info">illustrator, UI/UX-дизанер</p>
                 </div>
-                <div class="person-card__link">
-                    <a href="{{ user.tg_link }}"><img src="../../media/icons/telegram-rectangle-icon.svg" alt="image"></a>
-                    <a href="{{ user.vk_link }}"><img src="../../media/icons/vk-%20rectangle-icon.svg" alt="image"></a>
-                    <a href="{{ user.whatsapp}}"><img src="../../media/icons/whatsapp-rectangle-icon.svg" alt="image"></a>
+                <div class="person-card__link" data-field="info">
+                   <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
+                        <div class='person-card__show-more'>
+                            <p>Show</p>
+                            <p>more</p>
+                        </div>
+                   </a>
                 </div>
             </div>
-            {% endfor %}
+<!--            {% endfor %}-->
+            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
+                <div class="person-card__image" data-field="image">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
+                </div>
+                <div class="person-card__info" data-field="info">
+                    <h3 data-field="info">Бредихин Андрей</h3>
+                    <p data-field="info">illustrator, UI/UX-дизанер</p>
+                </div>
+                <div class="person-card__link" data-field="info">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
+                        <div class='person-card__show-more'>
+                            <p>Show</p>
+                            <p>more</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
+                <div class="person-card__image" data-field="image">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
+                </div>
+                <div class="person-card__info" data-field="info">
+                    <h3 data-field="info">Бредихин Андрей</h3>
+                    <p data-field="info">illustrator, UI/UX-дизанер</p>
+                </div>
+                <div class="person-card__link" data-field="info">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
+                        <div class='person-card__show-more'>
+                            <p>Show</p>
+                            <p>more</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
+                <div class="person-card__image" data-field="image">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
+                </div>
+                <div class="person-card__info" data-field="info">
+                    <h3 data-field="info">Бредихин Андрей</h3>
+                    <p data-field="info">illustrator, UI/UX-дизанер</p>
+                </div>
+                <div class="person-card__link" data-field="info">
+                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
+                        <div class='person-card__show-more'>
+                            <p>Show</p>
+                            <p>more</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </main>

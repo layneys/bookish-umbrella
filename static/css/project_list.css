@@ -46,6 +46,17 @@ body {
 .little-description_decoration-blur {
   transition: all .3s;
 }
+.little-description_decoration-blur:after {
+  content: "";
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  left: -200px;
+  top: 200px;
+  z-index: -1;
+  background:
+          radial-gradient(ellipse 30% 55% at right, #36242B, rgba(47, 47, 47, 0))
+}
 .little-description_decoration-blur:before {
   content: "";
   width: 100%;
@@ -56,28 +67,33 @@ body {
   z-index: -1;
   background:
           radial-gradient(ellipse 20% 100% at bottom, rgba(4, 103, 182, 0.25), rgba(47, 47, 47, 0))
-          /*radial-gradient(ellipse 70% 70% at bottom left, #0F182D, transparent),*/
-          /*radial-gradient(ellipse 70% 70% at bottom right, #0F182D, transparent),*/
-          /*linear-gradient(to top, transparent, rgba(24, 28, 33, 0));*/
+  /*radial-gradient(ellipse 70% 70% at bottom left, #0F182D, transparent),*/
+  /*radial-gradient(ellipse 70% 70% at bottom right, #0F182D, transparent),*/
+  /*linear-gradient(to top, transparent, rgba(24, 28, 33, 0));*/
 }
 
 .projects-wrapper {
   position: relative;
-  margin-top: 20px;
-  width: 100%;
+  width: 1660px;
   height: 650px;
+  margin: 20px auto 0;
   overflow: hidden;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
   background-image: url("../../media/imgs/post-01-background.png");
   transition: all .4s;
+  border-radius: 14px;
 }
 .prj-container {
   position: relative;
   margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
+}
+.post-01 .prj-container {
+  position: relative;
+  left: 20px;
 }
 .project {
   margin-right: 20px;
@@ -114,9 +130,7 @@ body {
   width: 100%;
   height: 50px;
   background:
-          radial-gradient(ellipse 13% 80% at top,
-          rgba(128, 0, 128, 0.4),
-          rgba(47, 47, 47, 0))
+          radial-gradient(ellipse 13% 80% at top, rgba(128, 0, 128, 0.4), rgba(47, 47, 47, 0))
 }
 
 .after-prjcts button {

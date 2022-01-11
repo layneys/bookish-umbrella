@@ -1,21 +1,5 @@
 .animation-show-up {
-    transition: all 1.5s;
+    transition: all  .9s;
     transform: translateY(200px);
     opacity: 0;
 }
-
-
-
-/*@keyframes showUp {*/
-/*    0% {*/
-/*        transform: translateY(60px);*/
-/*        opacity: 0;*/
-/*    }*/
-/*    50% {*/
-/*        opacity: .5;*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateY(0px);*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/

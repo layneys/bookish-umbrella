@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     sections.forEach(item => {
         animBlocks.push(new AnimationShowUp(item));
     });
-
     window.addEventListener('scroll', ()=> {
         animBlocks.forEach(item => {
             if(window.pageYOffset + window.screen.availHeight - 100 > item._animationSection.offsetTop && !item._isDone) {
@@ -14,7 +13,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
             }
         })
     });
+
+
+    let scaleBlocks = document.querySelectorAll('.mouse-enter');
+    scaleBlocks.forEach(item => {
+        item.addEventListener('mouseover',  () => {
+            item.style.transform = 'scale(1.05)';
+        });
+        item.addEventListener('mouseout', ()=> {
+           item.style.transform = 'scale(1)';
+        });
+    });
 });
+
+
 
 class AnimationShowUp {
     _animationSection = null;
@@ -39,6 +51,7 @@ class AnimationShowUp {
         });
 
         this._isDone = true;
+        //this.AddInlineProp();
     }
     Check(blocks, alTh, ind) {
         if(alTh.includes(ind)) {
@@ -53,5 +66,14 @@ class AnimationShowUp {
     AddProps(blocks, ind) {
         blocks[ind].style.opacity = '1';
         blocks[ind].style.transform = 'translateY(0)';
+
+        setTimeout(()=> {
+            blocks[ind].style.transition = 'all ease-in-out 0.3s';
+        }, 1500);
     }
+    // AddInlineProp() {
+    //     this._blocks.forEach(item => {
+    //         item.style.transition = 'none';
+    //     });
+    // }
 }
