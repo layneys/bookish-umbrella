@@ -2,8 +2,6 @@ a {
     color: #fff;
     text-decoration: none;
 }
-
-
 .header-elements {
     height: 100%;
     display: flex;
@@ -12,6 +10,7 @@ a {
     transition: background-color ease-in-out .4s;
 }
 .header-elements[data-hover]:hover {
+    color: #fff;
     background: #F8682A;
 }
 
