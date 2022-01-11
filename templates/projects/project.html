@@ -66,12 +66,9 @@
                     <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                     <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                 </li>
-              <!--  {% for img in project.project_images.all%}
+                {% for img in project.project_images.all%}
                 <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
-                {% endfor %}-->
-
-                <li class="splide__slide mouse-enter"><img src="../../media/imgs/database.png" alt="image" data-image="true" ondragstart="return false"></li>
-
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -81,7 +78,7 @@
             {% for dev in devs %}
             <div class="workers__worker-card mouse-enter">
                 <div class="workers__image">
-                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/designer.jpg" alt="there must be image"></a>
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="{{ user.avatar.url }}" alt="there must be image"></a>
                 </div>
                 <div class="workers__description">
                     <h4>{{ dev.user.last_name }} {{ dev.user.first_name }}</h4>
