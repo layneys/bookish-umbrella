@@ -2,6 +2,10 @@ a {
     color: #fff;
     text-decoration: none;
 }
+.current {
+    color: #FF9736;
+}
+
 .header-elements {
     height: 100%;
     display: flex;
