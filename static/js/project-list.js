@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     });
 
-    arrowUp.onclick =  () => {
+    arrowUp.onclick = () => {
         document.documentElement.scrollTo(0,0);
     }
 })
+

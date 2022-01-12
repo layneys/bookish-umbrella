@@ -29,6 +29,18 @@
     <div class="pop-up-block__video" data-dont-touch="true">
         <iframe src="/" frameborder="0" data-dont-touch="true"></iframe>
     </div>
+    <div class="loader">
+        <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__circle"
+                    stroke="#FF9736"
+                    stroke-width="4"
+                    fill="transparent"
+                    r="52"
+                    cx="60"
+                    cy="60"
+            />
+        </svg>
+    </div>
 </div>
 
 <header class="header">
@@ -50,7 +62,7 @@
         </div>
     </div>
 </header>
-<script src="../../static/js/current-page.js"></script>
+<script async src="../../static/js/current-page.js"></script>
 
 <main class="main">
     <div class="description" style = "background-image: url('{{ project.preview_pic.url }}');">
@@ -68,9 +80,16 @@
                     <img src="../../media/imgs/spaceHalloween-background.png" alt="image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                     <img class="video-image" src="../../media/icons/start-video-icon.svg"  alt="" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                 </li>
-                {% for img in project.project_images.all%}
+                <!--{% for img in project.project_images.all%}
                 <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
-                {% endfor %}
+                {% endfor %}-->
+
+
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/directory.png" data-url-normal-image="pngSpaceBack.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/plug.png" alt="image" data-url-normal-image="zyz.gif" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/navigation.png" data-url-normal-image="testBack.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/hungryFrog.png" data-url-normal-image="spaceman-background.png" alt="image" data-image="true" ondragstart="return false"></li>
+                <li class="splide__slide mouse-enter"><img src="../../media/imgs/spaceman.png" data-url-normal-image="plug.png" alt="image" data-image="true" ondragstart="return false"></li>
             </ul>
         </div>
     </div>

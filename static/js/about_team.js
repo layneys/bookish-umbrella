@@ -27,10 +27,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
         card.addEventListener('mouseover', function () {
             this.style.background = '#fff';
             this.querySelector('.person-card__show-more').style.opacity = '1';
+            this.querySelector('.person-card__info').querySelector('h3').style.color = '#000';
         });
         card.addEventListener('mouseout', function () {
             this.style.background = '#323A43';
             this.querySelector('.person-card__show-more').style.opacity = '0';
+            this.querySelector('.person-card__info').querySelector('h3').style.color = '#fff';
         });
     });
 })

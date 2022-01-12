@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     button.addEventListener('click', ()=> {
         let height = 0;
-        for(let i = 0; i < realized_projects_array.length; ++i)
-            console.log("offsetTop:" + realized_projects_array[i].offsetTop)
         if(!isOpen) {
             isOpen = true;
             button.innerText = 'HIDE';
