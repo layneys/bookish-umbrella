@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
 //window.splide.Extensions
 //autoplay: true,
 
+    let lastIdLoader = -1;
+
     let sliderImages = document.querySelectorAll('[data-url-normal-image]');
     let alreadyThere = new Map();
     for(let i = 0; i < sliderImages.length; ++i) {
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         let id = value.getAttribute('data-id');
         let url = value.getAttribute('data-url-normal-image');
 
-       collectionOfHighQualityImage.set(id, new ImageStorage(url, id));
+        collectionOfHighQualityImage.set(id, new ImageStorage(url, id));
     });
 
 
@@ -79,13 +81,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
             popUpBlock.style.display = 'flex';
             popUpBlock__image.style.display = 'block';
 
-            let highQvltImg = collectionOfHighQualityImage.get(target.getAttribute('data-id'));
+            lastIdLoader = target.getAttribute('data-id');
+            let highQvltImg = collectionOfHighQualityImage.get(lastIdLoader);
             if(highQvltImg._image.isLoaded) {
                 popUpBlock__image.children[0].src = highQvltImg._image.src;
                 loader.style.display = 'none';
             } else {
                 popUpBlock__image.children[0].src = target.src;
                 loader.style.display = 'block';
+                highQvltImg._image.isSearchCircle = true;
             }
         }
     });
@@ -105,6 +109,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
             popUpBlock__video.style.display = 'none';
             popUpBlock__image.children[0].src = "";
             popUpBlock__video.children[0].src = videoLink;
+
+            collectionOfHighQualityImage.get(lastIdLoader)._image.isSearchCircle = false;
         }
     });
 })
@@ -118,7 +124,7 @@ class ImageStorage {
     _isLoaded = false;
 
     constructor(url, id) {
-        Image.prototype.load = function (url, circle) {
+        Image.prototype.load = function (url) {
             let thisImg = this;
             let xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
@@ -128,21 +134,34 @@ class ImageStorage {
                 let blob = new Blob([this.response]);
                 thisImg.src = window.URL.createObjectURL(blob);
             };
-            xhr.addEventListener('progress', function (e) {
-                //let circumference = circle.r.baseVal.value * 2 * Math.PI;
+            xhr.onprogress = function (e) {
                 thisImg.completedPercatage = parseInt((e.loaded / e.total) * 100);
-                //const offset = circumference - thisImg.completedPercatage / 100 * circumference;
-                //circle.style.strokeDashoffset = offset;
-            });
+                let circle = document.querySelector('circle')
+                let circumference = circle.r.baseVal.value * 2 * Math.PI;
+                const offset = circumference - thisImg.completedPercatage / 100 * circumference;
+                if(thisImg.isSearchCircle) {
+                    circle.style.strokeDashoffset = offset;
+                } else {
+                    circle.style.strokeDashoffset = offset * 0;
+                    circle = null;
+
+                }
+            };
             xhr.onloadstart = function () {
                 thisImg.completedPercatage = 0;
             };
             xhr.onloadend = () => {
                 thisImg.isLoaded = true;
+                if(thisImg.isSearchCircle) {
+                    thisImg.isSearchCircle = false;
+                    document.querySelector('.pop-up-block__image').querySelector('img').src = thisImg.src;
+                    document.querySelector('.loader').style.display = 'none';
+                }
             }
             xhr.send();
         };
         Image.prototype.isLoaded = false;
+        Image.prototype.isSearchCircle = false;
         Image.prototype.completedPercentage = 0;
 
         this._image = new Image();
@@ -155,7 +174,6 @@ class ImageStorage {
     }
 
     _load() {
-       this._image.load(this._url, this._circle);
+        this._image.load(this._url, this._circle);
     }
 }
-
