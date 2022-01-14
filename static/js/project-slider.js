@@ -33,18 +33,23 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
     let loader = document.querySelector('.loader');
-    let circleLoader = document.querySelector('circle');
+    let circleLoader = loader.querySelector('.progress-ring__circle');
+    let underLoader = loader.querySelector('.progress-ring__under-circle');
     let radius = circleLoader.r.baseVal.value;
     let circumference = radius * 2 * Math.PI;
 
     circleLoader.style.strokeDasharray = `${circumference} ${circumference}`;
     circleLoader.style.strokeDashoffset = `${circumference}`;
 
-    setProgress(30)
+    underLoader.style.strokeDasharray =  `${circumference} ${circumference}`;
+    underLoader.style.strokeDashoffset = `${circumference}`;
 
-    function setProgress(percent) {
+    setProgress(30, circleLoader);
+    setProgress(100, underLoader);
+
+    function setProgress(percent, circle) {
         const offset = circumference - percent / 100 * circumference;
-        circleLoader.style.strokeDashoffset = offset;
+        circle.style.strokeDashoffset = offset;
     }
 
     let arrows = document.querySelector('.splide__arrows');
@@ -84,8 +89,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
             lastIdLoader = target.getAttribute('data-id');
             let highQvltImg = collectionOfHighQualityImage.get(lastIdLoader);
             if(highQvltImg._image.isLoaded) {
-                popUpBlock__image.children[0].src = highQvltImg._image.src;
+                let image = popUpBlock__image.children[0];
+                image.src = highQvltImg._image.src;
+                image.style.filter = 'blur(0px)';
                 loader.style.display = 'none';
+
             } else {
                 popUpBlock__image.children[0].src = target.src;
                 loader.style.display = 'block';
@@ -119,9 +127,7 @@ class ImageStorage {
     _image = null;
     _circle = null;
     _url = "";
-    _loadState = 0;
     _id = 0;
-    _isLoaded = false;
 
     constructor(url, id) {
         Image.prototype.load = function (url) {
@@ -136,7 +142,8 @@ class ImageStorage {
             };
             xhr.onprogress = function (e) {
                 thisImg.completedPercatage = parseInt((e.loaded / e.total) * 100);
-                let circle = document.querySelector('circle')
+                let circle = document.querySelector('.progress-ring__circle')
+                console.log(circle);
                 let circumference = circle.r.baseVal.value * 2 * Math.PI;
                 const offset = circumference - thisImg.completedPercatage / 100 * circumference;
                 if(thisImg.isSearchCircle) {
@@ -144,7 +151,6 @@ class ImageStorage {
                 } else {
                     circle.style.strokeDashoffset = offset * 0;
                     circle = null;
-
                 }
             };
             xhr.onloadstart = function () {
@@ -154,7 +160,9 @@ class ImageStorage {
                 thisImg.isLoaded = true;
                 if(thisImg.isSearchCircle) {
                     thisImg.isSearchCircle = false;
-                    document.querySelector('.pop-up-block__image').querySelector('img').src = thisImg.src;
+                    let img = document.querySelector('.pop-up-block__image').querySelector('img');
+                    img.src = thisImg.src;
+                    img.style.filter = 'blur(0px)';
                     document.querySelector('.loader').style.display = 'none';
                 }
             }
@@ -168,7 +176,7 @@ class ImageStorage {
         this._url = `../../media/imgs/${url}`;
         this._id = id;
 
-        this._circle = document.querySelector('circle');
+        this._circle = document.querySelector('.progress-ring__circle');
 
         this._load();
     }

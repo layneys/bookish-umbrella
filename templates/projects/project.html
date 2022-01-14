@@ -31,6 +31,15 @@
     </div>
     <div class="loader">
         <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__under-circle"
+                    stroke="rgba(128, 128, 128, 0.2)"
+                    stroke-width="4"
+                    fill="transparent"
+                    r="52"
+                    cx="60"
+                    cy="60"
+                    stroke-dashoffset="0"
+            />
             <circle class="progress-ring__circle"
                     stroke="#FF9736"
                     stroke-width="4"
@@ -65,7 +74,8 @@
 <script async src="../../static/js/current-page.js"></script>
 
 <main class="main">
-    <div class="description" style = "background-image: url('{{ project.preview_pic.url }}');">
+    <!-- style = "background-image: url('{{ project.preview_pic.url }}');" -->
+    <div class="description">
         <div class="description__description-container container">
             <div class="description__description-text">
                 <h2>{{ project.title }}</h2>
@@ -96,7 +106,7 @@
     <div class="workers container">
         <h3>Над проектом работали:</h3>
         <div class="workers__workers-container">
-            {% for dev in devs %}
+            <!--{% for dev in devs %}
             <div class="workers__worker-card mouse-enter">
                 <div class="workers__image">
                     <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="{{ user.avatar.url }}" alt="there must be image"></a>
@@ -106,7 +116,44 @@
                     <p>{% for skill in dev.user.profile.skills.all %}{{ skill.name }} {% endfor %}</p>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %}-->
+
+            <div class="workers__worker-card mouse-enter">
+                <div class="workers__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/3d-artist.jpg" alt="there must be image"></a>
+                </div>
+                <div class="workers__description">
+                    <h4>Рубцова Софбя</h4>
+                    <p>3D Artist</p>
+                </div>
+            </div>
+            <div class="workers__worker-card mouse-enter">
+                <div class="workers__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/3d-artist.jpg" alt="there must be image"></a>
+                </div>
+                <div class="workers__description">
+                    <h4>Рубцова Софбя</h4>
+                    <p>3D Artist</p>
+                </div>
+            </div>
+            <div class="workers__worker-card mouse-enter">
+                <div class="workers__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/3d-artist.jpg" alt="there must be image"></a>
+                </div>
+                <div class="workers__description">
+                    <h4>Рубцова Софбя</h4>
+                    <p>3D Artist</p>
+                </div>
+            </div>
+            <div class="workers__worker-card mouse-enter">
+                <div class="workers__image">
+                    <a href="http://127.0.0.1:8000/profile/{{ dev.user.username }}/" ondragstart="return false"><img src="../../media/imgs/3d-artist.jpg" alt="there must be image"></a>
+                </div>
+                <div class="workers__description">
+                    <h4>Рубцова Софбя</h4>
+                    <p>3D Artist</p>
+                </div>
+            </div>
 
         </div>
     </div>

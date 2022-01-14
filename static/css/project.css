@@ -47,6 +47,7 @@ body {
 .pop-up-block img {
     width: 100%;
     height: 100%;
+    filter: blur(10px);
 }
 .pop-up-block__video {
     display: none;
@@ -60,6 +61,7 @@ body {
     z-index: 10;
     top: 45%;
     left: 45%;
+    color: rgba(128, 128, 128, 0.5);
 }
 .progress-ring__circle {
     transition: 0.35s stroke-dashoffset;

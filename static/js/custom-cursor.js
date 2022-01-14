@@ -40,23 +40,34 @@ document.addEventListener('DOMContentLoaded', ()=> {
             var self = this;
 
             // Anchor hovering
-            document.querySelectorAll('a').forEach(el => Changes(el));
+            // Array.from(document.getElementsByTagName('img')).forEach(el => Changes(el))
+            document.querySelectorAll('a').forEach(el => LittleChanges(el));
             document.querySelectorAll('img').forEach(el => Changes(el));
-            document.querySelectorAll('button').forEach(el => Changes(el));
+            document.querySelectorAll('button').forEach(el => LittleChanges(el));
             document.querySelectorAll('.prj-inDev').forEach(el => Changes(el));
-            document.querySelectorAll('.person-card').forEach(el => Changes(el));
+            document.querySelectorAll('.person-card').forEach(el => LittleChanges(el));
+            function LittleChanges(el) {
+                el.addEventListener('mouseover', function() {
+                    self.cursorEnlarged = true;
+                    self.toggleCursorSize();
+                });
+                el.addEventListener('mouseout', function() {
+                    self.cursorEnlarged = false;
+                    self.toggleCursorSize();
+                });
+            }
             function Changes(el) {
                 el.addEventListener('mouseover', function() {
-                    //self.$outline.style.background = "filter()";
-
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
                     self.$outline.style.mixBlendMode = "difference";
+                    self.$outline.style.background = "#DC41D6";
                 });
                 el.addEventListener('mouseout', function() {
                     self.cursorEnlarged = false;
                     self.toggleCursorSize();
                     self.$outline.style.mixBlendMode = "unset";
+                    self.$outline.style.background = " rgba(137, 148, 176, 0.5)";
                 });
             }
 
@@ -89,15 +100,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.addEventListener('mouseenter', function(e) {
                 self.cursorVisible = true;
                 self.toggleCursorVisibility();
-                self.$dot.style.opacity = 1;
-                self.$outline.style.opacity = 1;
+                self.$dot.style.opacity = '1';
+                self.$outline.style.opacity = '1';
             });
 
             document.addEventListener('mouseleave', function(e) {
                 self.cursorVisible = true;
                 self.toggleCursorVisibility();
-                self.$dot.style.opacity = 0;
-                self.$outline.style.opacity = 0;
+                self.$dot.style.opacity = '0';
+                self.$outline.style.opacity = '0';
             });
         },
 
@@ -128,11 +139,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
             var self = this;
 
             if (self.cursorVisible) {
-                self.$dot.style.opacity = 1;
-                self.$outline.style.opacity = 1;
+                self.$dot.style.opacity = '1';
+                self.$outline.style.opacity = '1';
             } else {
-                self.$dot.style.opacity = 0;
-                self.$outline.style.opacity = 0;
+                self.$dot.style.opacity = '0';
+                self.$outline.style.opacity = '0';
             }
         }
     }
