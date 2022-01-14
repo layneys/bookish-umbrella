@@ -138,12 +138,14 @@ class ImageStorage {
 
             xhr.onload = function (e) {
                 let blob = new Blob([this.response]);
+                console.log(this.response)
+                console.log(blob)
                 thisImg.src = window.URL.createObjectURL(blob);
+                console.log(thisImg.src);
             };
             xhr.onprogress = function (e) {
                 thisImg.completedPercatage = parseInt((e.loaded / e.total) * 100);
                 let circle = document.querySelector('.progress-ring__circle')
-                console.log(circle);
                 let circumference = circle.r.baseVal.value * 2 * Math.PI;
                 const offset = circumference - thisImg.completedPercatage / 100 * circumference;
                 if(thisImg.isSearchCircle) {
@@ -164,6 +166,8 @@ class ImageStorage {
                     img.src = thisImg.src;
                     img.style.filter = 'blur(0px)';
                     document.querySelector('.loader').style.display = 'none';
+
+
                 }
             }
             xhr.send();
