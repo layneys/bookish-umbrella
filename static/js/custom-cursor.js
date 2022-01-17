@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.querySelectorAll('.prj-inDev').forEach(el => Changes(el));
             document.querySelectorAll('.person-card').forEach(el => LittleChanges(el));
             document.querySelectorAll('[data-cursor-hover]').forEach(el => LittleChanges(el));
+            let splide = document.querySelector('.splide__list');
+            splide.addEventListener('mouseover', e => {
+                self.cursorEnlarged = true;
+                self.toggleCursorSize();
+                self.$outline.style.mixBlendMode = "difference";
+                self.$outline.style.background = "#DC41D6";
+            })
+            splide.addEventListener('mouseleave', e => {
+                self.cursorEnlarged = false;
+                self.toggleCursorSize();
+                self.$outline.style.mixBlendMode = "unset";
+                self.$outline.style.background = " rgba(137, 148, 176, 0.5)";
+            })
             function LittleChanges(el) {
                 el.addEventListener('mouseover', function() {
                     self.cursorEnlarged = true;
@@ -58,7 +71,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 });
             }
             function Changes(el) {
-                el.addEventListener('mouseover', function() {
+                el.addEventListener('mouseover', function(e) {
                     self.cursorEnlarged = true;
                     self.toggleCursorSize();
                     self.$outline.style.mixBlendMode = "difference";

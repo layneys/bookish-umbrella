@@ -3,12 +3,14 @@ import { ImageStorage } from "./image/image-storage.js";
 document.addEventListener('DOMContentLoaded', ()=> {
     new Splide( '.splide', {
         type: 'loop',
-        focus: 'center',
+        focus: 'left',
         perPage: 3,
-        autoplay: true,
     }).mount();
+    //      autoplay: true,
 //window.splide.Extensions
 //autoplay: true,
+
+
 
     let lastIdObjectImage = -1;
 
@@ -168,7 +170,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
             UnsubscribeToLoader(lastIdObjectImage);
         }
     });
-
 
     function CheckForLoadingImage(highQvltImg, target) {
         if(highQvltImg._image.isLoaded) {
