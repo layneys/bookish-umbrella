@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.querySelectorAll('button').forEach(el => LittleChanges(el));
             document.querySelectorAll('.prj-inDev').forEach(el => Changes(el));
             document.querySelectorAll('.person-card').forEach(el => LittleChanges(el));
+            document.querySelectorAll('[data-cursor-hover]').forEach(el => LittleChanges(el));
             function LittleChanges(el) {
                 el.addEventListener('mouseover', function() {
                     self.cursorEnlarged = true;

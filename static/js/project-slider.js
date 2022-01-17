@@ -1,3 +1,5 @@
+import { ImageStorage } from "./image/image-storage.js";
+
 document.addEventListener('DOMContentLoaded', ()=> {
     new Splide( '.splide', {
         type: 'loop',
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 //window.splide.Extensions
 //autoplay: true,
 
-    let lastIdLoader = -1;
+    let lastIdObjectImage = -1;
 
     let sliderImages = document.querySelectorAll('[data-url-normal-image]');
     let alreadyThere = new Map();
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         if(alreadyThere.has(key)) {
             sliderImages[i].setAttribute('data-id', alreadyThere.get(key).getAttribute('data-id'));
         } else {
-            sliderImages[i].setAttribute('data-id', i);
+            sliderImages[i].setAttribute('data-id', `${i}`);
             alreadyThere.set(sliderImages[i].getAttribute('data-url-normal-image'), sliderImages[i]);
         }
     }
@@ -44,12 +46,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
     underLoader.style.strokeDasharray =  `${circumference} ${circumference}`;
     underLoader.style.strokeDashoffset = `${circumference}`;
 
-    setProgress(30, circleLoader);
+    setProgress(0, circleLoader);
     setProgress(100, underLoader);
 
     function setProgress(percent, circle) {
         const offset = circumference - percent / 100 * circumference;
-        circle.style.strokeDashoffset = offset;
+        circle.style.strokeDashoffset = offset.toString();
     }
 
     let arrows = document.querySelector('.splide__arrows');
@@ -64,43 +66,88 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let popUpBlock__image = document.querySelector('.pop-up-block__image');
     let popUpBlock__video = document.querySelector('.pop-up-block__video');
 
+    let leftButton = popUpBlock.querySelector('.pop-up-block__left-button');
+    let rightButton = popUpBlock.querySelector('.pop-up-block__right-button');
+
+    let prevImageElementId = -1;
+    let nextImageElementId = -1;
+
+    //let minElementId = 0;
+    let maxElementId = collectionOfHighQualityImage.size;
+
     let videoIsThere = false;
     let videoLink = "/";
 
     let sliderList = document.querySelector('.splide__list');
     sliderList.addEventListener("click", (e)=> {
         let target = e.target;
+
+        findNext(target);
+        findPrev(target);
+
         if(target.getAttribute('data-video') && !videoIsThere) {
             popUpBlock.style.display = 'flex';
             popUpBlock__video.style.display = 'block';
-            popUpBlock__video.children[0].src = target.getAttribute('data-src');
-            videoLink = target.getAttribute('data-src');
-            videoIsThere = true;
+            if(!videoIsThere) {
+                videoLink = target.getAttribute('data-src');
+                popUpBlock__video.children[0].src = videoLink;
+                videoIsThere = true;
+            }
             loader.style.display = 'none';
-        } else if(target.getAttribute('data-video') && videoIsThere) {
-            popUpBlock.style.display = 'flex';
-            popUpBlock__video.style.display = 'block';
-            loader.style.display = 'none';
+            leftButton.style.display = rightButton.style.display = 'none';
         }
         if(target.getAttribute('data-image')) {
             popUpBlock.style.display = 'flex';
             popUpBlock__image.style.display = 'block';
+            lastIdObjectImage = target.getAttribute('data-id');
+            let highQvltImg = collectionOfHighQualityImage.get(lastIdObjectImage);
 
-            lastIdLoader = target.getAttribute('data-id');
-            let highQvltImg = collectionOfHighQualityImage.get(lastIdLoader);
-            if(highQvltImg._image.isLoaded) {
-                let image = popUpBlock__image.children[0];
-                image.src = highQvltImg._image.src;
-                image.style.filter = 'blur(0px)';
-                loader.style.display = 'none';
+            CheckForLoadingImage(highQvltImg, target);
 
-            } else {
-                popUpBlock__image.children[0].src = target.src;
-                loader.style.display = 'block';
-                highQvltImg._image.isSearchCircle = true;
-            }
+            leftButton.style.display = rightButton.style.display = 'flex';
         }
     });
+    leftButton.addEventListener('click', ()=> {
+        UnsubscribeToLoader(lastIdObjectImage);
+
+        let prevElementInCollection = collectionOfHighQualityImage.get(prevImageElementId);
+        let prevElementInDOMSlider = sliderList.querySelector(`[data-id="${prevImageElementId}"]`);
+
+        CheckForLoadingImage(prevElementInCollection, prevElementInDOMSlider);
+
+        findPrev(prevElementInDOMSlider);
+    });
+    rightButton.addEventListener('click', ()=> {
+        UnsubscribeToLoader(lastIdObjectImage)
+
+        let nextElementInCollection = collectionOfHighQualityImage.get(nextImageElementId);
+        let nextElementInDOMSlider = sliderList.querySelector(`[data-id="${nextImageElementId}"]`)
+
+        CheckForLoadingImage(nextElementInCollection, nextElementInDOMSlider);
+
+        findNext(nextElementInDOMSlider);
+    })
+
+    function findPrev(current) {
+        let currentId = +current.getAttribute('data-id');
+        let prevId = currentId - 1 < 0 ? maxElementId - 1 : currentId - 1;
+
+        prevImageElementId = prevId.toString();
+        lastIdObjectImage = prevImageElementId;
+
+        nextImageElementId = Number.parseInt(prevImageElementId) + 2 < maxElementId ? Number.parseInt(prevImageElementId) + 2 : 0;
+        nextImageElementId = nextImageElementId.toString();
+    }
+    function  findNext(current) {
+        let currentId = +current.getAttribute('data-id');
+        let nextId = currentId + 1 < maxElementId ? currentId + 1 : 0;
+
+        nextImageElementId = nextId.toString();
+        lastIdObjectImage = nextImageElementId;
+
+        prevImageElementId = Number.parseInt(nextImageElementId) - 2 < 0 ? collectionOfHighQualityImage.size - 1 : Number.parseInt(nextImageElementId) - 2 ;
+        prevImageElementId = prevImageElementId.toString();
+    }
 
     let cursorDotInside = document.querySelector('.cursor-dot');
     let cursorDotOutside = document.querySelector('.cursor-dot-outline');
@@ -118,12 +165,37 @@ document.addEventListener('DOMContentLoaded', ()=> {
             popUpBlock__image.children[0].src = "";
             popUpBlock__video.children[0].src = videoLink;
 
-            collectionOfHighQualityImage.get(lastIdLoader)._image.isSearchCircle = false;
+            UnsubscribeToLoader(lastIdObjectImage);
         }
     });
+
+
+    function CheckForLoadingImage(highQvltImg, target) {
+        if(highQvltImg._image.isLoaded) {
+            AddImage(highQvltImg)
+        } else {
+            popUpBlock__image.children[0].src = target.src;
+            loader.style.display = 'block';
+            SubscribeToLoader(highQvltImg);
+        }
+    }
+    function AddImage(highQvltImg) {
+        let image = popUpBlock__image.children[0];
+        image.src = highQvltImg._image.src;
+        image.style.filter = 'blur(0px)';
+        loader.style.display = 'none';
+    }
+    function SubscribeToLoader(collectionObj) {
+        collectionObj._image.isSearchCircle = true;
+    }
+    function UnsubscribeToLoader(id) {
+        collectionOfHighQualityImage.get(id)._image.isSearchCircle = false;
+        setProgress(0, circleLoader);
+    }
+
 })
 
-class ImageStorage {
+/*class ImageStorage {
     _image = null;
     _circle = null;
     _url = "";
@@ -188,4 +260,4 @@ class ImageStorage {
     _load() {
         this._image.load(this._url, this._circle);
     }
-}
+}*/
