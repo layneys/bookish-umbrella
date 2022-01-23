@@ -10,420 +10,124 @@
     <!-- fonsts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap" rel="stylesheet">
 
-    <link href="../../static/css/modules/reset.css" rel="stylesheet">
-    <link href="../../static/css/modules/fonts.css" rel="stylesheet">
-    <link href="../../static/css/modules/header.css" rel="stylesheet">
-    <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
 
-    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
-    <script src="../../static/js/custom-cursor.js"></script>
 
     <link rel="stylesheet" href="../static/css/splide/splide-core.css">
     <link rel="stylesheet" href="../static/css/splide/splide.css">
     <link rel="stylesheet" href="../static/css/common-styles.css">
+    <link rel="stylesheet" href="../static/css/team/gallery.css">
 
     <link rel="stylesheet" href="../static/css/main.css">
 
 
-    <script src="../static/js/libs/splide.js"></script>
+    <script src="../static/js/splide.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="../static/js/rellax.min.js"></script> -->
 
 
-    <title>Document</title>
+    <title>Главная</title>
 </head>
 
 <body>
-    
-    <div class="cursor-dot-outline"></div>
-    <div class="cursor-dot"></div>
 
-    <script src="../static/js/modules-connect/connect-header.js"></script>
+    <header class="header">
+
+        <div class="header__item">
+            <div><img class="header__item-logo" src="../media/icons/logoHeader.png" alt="иконка"></div>
+            <div>
+                <p class="header-title">
+                    CITG
+                </p>
+            </div>
+        </div>
+
+        <div class="header__item">
+            <nav class="nav">
+                <a class="nav__link" href="../templates/home_page.html">Главная</a>
+                <a class="nav__link" href="#">Проекты</a>
+                <a class="nav__link" href="../templates/users/user_profile.html">Команда</a>
+            </nav>
+        </div>
+
+        <div class="header__item">
+            <a class="mail-test" href="mailto:huy@gmain.com">сontack@gmail.com</a>
+        </div>
+
+    </header>
 
     <!-- main -->
     <section class="main">
 
-        <!-- <header class="header">
-
-            <div class="header__item">
-                <div><img class="header__item-logo" src="../media/icons/logoHeader.png" alt="иконка"></div>
-                <div>
-                    <p class="header-title">
-                        CITG
-                    </p>
-                </div>
-            </div>
-
-            <div class="header__item">
-                <nav class="nav">
-                    <a class="nav__link" href="http://127.0.0.1:8000/">Домашняя</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/projects/">Проекты</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/profile/{{ request.user.username }}/"f>Портфолио</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/team/">Команда</a>
-                </nav>
-            </div>
-
-            <div class="header__item">
-                <a class="mail" href="mailto:huy@gmain.com">сontack@gmail.com</a>
-            </div>
-
-        </header> -->
-
         <div class="main__content">
+
             <div class="main__content-item">
-                <div>
+                <div class="">
                     <h1 class="main__content-title">Center IT Gravity</h1>
                 </div>
 
-                <dvi>
-                    <p class="text__block">
+                <dvi class="">
+                    <p class="text__block-main">
                         Мощная среда для твоего развития
                     </p>
                 </dvi>
             </div>
-        </div>
-
-        <div class="num__page">
-
-            <div class="num__page__left">
-                <img src="../media/imgs/main/left-page.png" alt="картинка">
-            </div>
-
-            <div class="num__page__right">
-                <p class="num__page-text">
-                    01
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- advanteges -->
-    <section class="advanteges">
-        <div class="container">
-
-            <div class="advanteges__content">
-
-                <div class="advanteges__left">
-
-                    <div>
-                        <h1 class="advanteges__title">
-                            Преимущества
-                        </h1>
-                    </div>
-
-                    <div>
-                        <p class="advanteges__subTitle">
-                            Здесь действия так же выжны, как и эмоции
-                        </p>
-                    </div>
-
-                    <div>
-                        <p class="advanteges__text">
-                            Под руководством специалистов, выступающих в качестве менторов, все заинтересованные ребята
-                            проходят самые разные курсы обучения. После этого Центр подключает их к текущим проектам или
-                            дает новые.
-                        </p>
-
-                        <p class="advanteges__text">
-                            На текущий момент Центр IT-Притяжения предоставляет помощь в обучении по следующим
-                            специальностям:
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="advanteges__right">
-
-
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- devepolers -->
-    <section class="devepolers">
-        <div class="developers__items">
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="developer__item">
-
-                <div>
-                    <p class="developer-title">
-                        I
-                    </p>
-                </div>
-
-                <dvi>
-                    <p class="developer-text">
-                        Unity 3D developer
-                    </p>
-                </dvi>
-
-                <div>
-                    <p class="developer-subtext">
-                        text
-                    </p>
-                </div>
-
-            </div>
-
-
-
-            <div class="developers__btn">
-                <button class="btn">
-                    Связаться с нами
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- projects -->
-    <section class="projects">
-
-        <div class="projects__top">
 
             <div>
+
+                <div class="about__GITG">
+
+                    <div class="about__items">
+
+                        <div class="about__text">
+                            <div>
+                                <p class="about__GITG-title">
+                                    Центр IT-Притяжения - это целая экосистема для реализации себя в сфере IT.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p class="about__GITG-subtitle">
+                                    Это площадка, где школьники и студенты могут пройти весь путь становления
+                                    “айтишника” от
+                                    нуля до Pro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about__img">
+
+                            <img  id="toSecond"  class="about-img" src="../media/imgs/splide/next.svg" alt="иконка">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <div class="num__page">
 
                     <div class="num__page__left">
@@ -438,17 +142,316 @@
 
                 </div>
 
-                <div>
-                    <p>
+            </div>
 
+        </div>
+
+    </section>
+
+    <!-- advanteges -->
+    <section id="post-01" class="advanteges">
+
+
+        <div class="advanteges__content">
+
+            <div class="advanteges__left">
+
+                <div class="">
+                    <h1 class="advanteges__title">
+                        Преимущества
+                    </h1>
+                </div>
+
+                <div class="">
+                    <p class="advanteges__subTitle">
+                        Здесь действия так же выжны, как и эмоции
                     </p>
+                </div>
+
+                <div class="">
+                    <p class="advanteges__text">
+                        Под руководством специалистов, выступающих в качестве менторов, все заинтересованные ребята
+                        проходят самые разные курсы обучения. После этого Центр подключает их к текущим проектам или
+                        дает новые.
+                    </p>
+
+                    <p class="advanteges__text">
+                        На текущий момент Центр IT-Притяжения предоставляет помощь в обучении по следующим
+                        специальностям:
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="advanteges__right">
+
+                <div class="advanteges__item ">
+
+                    <div class="advanteges__img">
+                        <img class="advanteges-img" src="../media/imgs/main/advanteges/1.png" alt="иконка">
+                    </div>
+
+                    <div class="advanteges__text">
+                        <p>
+                            Создавай мечту
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="advanteges__item ">
+
+                    <div class="advanteges__img">
+                        <img class="advanteges-img" src="../media/imgs/main/advanteges/2.png" alt="иконка">
+                    </div>
+
+                    <div class="advanteges__text">
+                        <p>
+                            Развивайся
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="advanteges__item ">
+
+                    <div class="advanteges__img">
+                        <img class="advanteges-img" src="../media/imgs/main/advanteges/3.png" alt="иконка">
+                    </div>
+
+                    <div class="advanteges__text">
+                        <p>
+                            Твори
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+    </section>
+
+    <!-- devepolers -->
+    <section class="devepolers">
+
+        <div class="developers__content">
+
+            <div>
+                <h1 class="developers__title ">
+                    Мы обучаем
+                </h1>
+            </div>
+
+            <div class="developers__items">
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">I</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            Unity 3D developer
+                        </p>
+                    </dvi>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">IV</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            3D Animation
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Maya
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">VII</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            Mobile Developer
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Android / IOS
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">II</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            VFX Developer
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Unity 3D
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">V</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            2D Design
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            PhotoShop
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">VIII</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            .NET Developer
+                        </p>
+                    </dvi>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">III</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            Web Developer
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Front / Back / Fullstack
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">VI</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            3D Design
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Maya
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developer__item ">
+
+                    <div>
+                        <p class="developer-title">IX</p>
+                    </div>
+
+                    <dvi>
+                        <p class="developer-text">
+                            Python developer
+                        </p>
+                    </dvi>
+
+                    <div>
+                        <p class="developer-subtext">
+                            Web / Datasince
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="developers__btn ">
+                    <button class="btn">
+                        Contact us
+                    </button>
                 </div>
             </div>
 
-            <div class="projects__top__text">
-                <p class="projects-title">
+        </div>
+
+    </section>
+
+
+
+    <!-- projects -->
+    <section id="projects" class="projects">
+
+        <div class="bg__violet">
+
+        </div>
+
+        <div class="projects__top">
+
+            <div class="num__page ">
+
+                <div class="num__page__left">
+                    <img src="../media/imgs/main/left-page.png" alt="картинка">
+                </div>
+
+                <div class="num__page__right">
+                    <p class="num__page-text">
+                        02
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="projects__top__text ">
+                <h1 class="projects-title">
                     У нас есть разные проекты
-                </p>
+                </h1>
 
                 <p class="projects-subtitle">
                     от Казуальных игр до настоящего искуственного интелекта
@@ -457,155 +460,197 @@
 
         </div>
 
-        <div class="projects__items">
+        <div class="container">
 
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
+            <div class="projects__items">
 
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-            <div class="projects__item">
-                <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
-            </div>
-
-        </div>
-
-        <div class="projects__showAll">
-            <a class="projects-showAll btn" href="#">посмотреть всё</a>
-        </div>
-
-        <div class="reward__div">
-            <p class="reward">
-                Награды
-            </p>
-        </div>
-
-
-    </section>
-
-
-    <section class="slider">
-
-        <div class="splide">
-
-            <div class="splide__track">
-                <div class="splide__list">
-                    <li class="splide__slide">
-                        <img class="certificates__item-img" src="../media/imgs/slider/certificat.png" alt="сертификат">
-                    </li>
-    
-                    <li class="splide__slide">
-                        <img class="certificates__item-img"
-                            src="https://img2.fonwall.ru/o/aw/zakat-pole-kolosya-czoz.jpg" alt="сертификат">
-                    </li>
-    
-                    <li class="splide__slide">
-                        <img class="certificates__item-img"
-                            src="https://10wallpaper.com/wallpaper/1680x1050/1603/2016_Windows_10_scenery_theme_desktop_wallpaper_04_1680x1050.jpg"
-                            alt="сертификат">
-                    </li>
-    
-                    <li class="splide__slide">
-                        <img class="certificates__item-img"
-                            src="https://i10.fotocdn.net/s113/68b08dbc59f3ce29/public_pin_l/2552876898.jpg"
-                            alt="сертификат">
-                    </li>
-    
-                    <li class="splide__slide">
-                        <img class="certificates__item-img" src="https://images5.alphacoders.com/688/688755.jpg"
-                            alt="сертификат">
-                    </li>
-    
-                    <li class="splide__slide">
-                        <img class="certificates__item-img"
-                            src="https://i.artfile.ru/4900x3270_660669_[www.ArtFile.ru].jpg" alt="сертификат">
-                    </li>
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
                 </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
+                <div class="projects__item ">
+                    <img class="projects__item-img" src="../media/imgs/projects/1.png" alt="проект">
+                </div>
+
             </div>
-    
+
+            <div class="projects__showAll ">
+                <a class="projects-showAll btn" href="#">LOAD MORE</a>
+            </div>
+        </div>
+
+        <div class="projects__bottom">
+
+            <div class="reward__div ">
+                <h1 class="reward">
+                    Награды
+                </h1>
+            </div>
+
+            <div class="slider ">
+
+                <div class="slider__content">
+                    <div class="splide">
+
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img" src="../media/imgs/slider/certificat.png"
+                                        alt="сертификат">
+                                </li>
+
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img"
+                                        src="https://img2.fonwall.ru/o/aw/zakat-pole-kolosya-czoz.jpg" alt="сертификат">
+                                </li>
+
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img"
+                                        src="https://10wallpaper.com/wallpaper/1680x1050/1603/2016_Windows_10_scenery_theme_desktop_wallpaper_04_1680x1050.jpg"
+                                        alt="сертификат">
+                                </li>
+
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img"
+                                        src="https://i10.fotocdn.net/s113/68b08dbc59f3ce29/public_pin_l/2552876898.jpg"
+                                        alt="сертификат">
+                                </li>
+
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img"
+                                        src="https://images5.alphacoders.com/688/688755.jpg" alt="сертификат">
+                                </li>
+
+                                <li class="splide__slide item">
+                                    <img class="certificates__item-img"
+                                        src="https://i.artfile.ru/4900x3270_660669_[www.ArtFile.ru].jpg"
+                                        alt="сертификат">
+                                </li>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
+
+
+
 
     <!-- team -->
     <section class="team">
-        <div class="container">
 
-            <div class="team__content">
+        <div class="bg__violet"></div>
 
-                <div class="team__top">
-                    <img src="../media/imgs/team/team.png" alt="картинка">
+        <div class="team__test">
+
+            <div class="num__page ">
+
+                <div class="num__page__left">
+                    <img src="../media/imgs/main/left-page.png" alt="картинка">
                 </div>
 
-                <div class="team__bottom">
+                <div class="num__page__right">
+                    <p class="num__page-text">
+                        03
+                    </p>
+                </div>
 
-                    <div class="team__bottom-text">
-                        <div>
-                            <p class="text__block">
-                                Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из
-                                разных сфер, многие из них являются бывшими учениками. Именно поэтому Центр может
-                                позволить себе помощь в обучении в таком количестве профессий. Основные кадры площадки
-                                помимо коммерческой разработки также обладают опытом в сфере обучения. Все ученики
-                                Центра, как бывшие, так и текущие являются победителями и призерами множества конкурсов,
-                                хакатонов и т.д.
-                            </p>
-                        </div>
+            </div>
 
-                        <div class="team__btn">
-                            <button class="team-btn">
-                                <div>
+            <div class="container">
+
+                <div class="team__content">
+
+                    <div class="team__bottom">
+
+                        <div class="team__bottom-text">
+                            <div class="">
+                                <p class="text__block">
+                                    Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из
+                                    разных сфер, многие из них являются бывшими учениками. Именно поэтому Центр может
+                                    позволить себе помощь в обучении в таком количестве профессий. Основные кадры
+                                    площадки
+                                    помимо коммерческой разработки также обладают опытом в сфере обучения. Все ученики
+                                    Центра, как бывшие, так и текущие являются победителями и призерами множества
+                                    конкурсов,
+                                    хакатонов и т.д.
+                                </p>
+                            </div>
+
+                            <div class="team__btn ">
+                                <button class="team-btn">
                                     <div>
-                                        О команде
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
+                                        <div>
+                                            <p class="team__btn-text">
+                                                О команде
+                                            </p>
+                                        </div>
 
-                    <img class="team__bottom-img" src="../media/imgs/team/fox.png" alt="картинка">
+                                        <div>
+                                            <img src="../media/imgs/team/about-team.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="team__img ">
+
+                            <img class="team__bottom-img" src="../media/imgs/GITG/team.png" alt="картинка">
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
-     
-    
-     <!-- footer -->
-     <!-- <footer class="footer">
+
+
+    <!-- footer -->
+    <footer class="footer">
         <div class="container">
 
             <div class="footer__top">
@@ -616,7 +661,7 @@
 
                         <div>
                             <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/icons/vk-icon.svg" alt="иконка">
+                                <img class="footer__img" src="../media/imgs/footer/vk-icon.svg" alt="иконка">
                             </a>
                         </div>
 
@@ -632,7 +677,7 @@
 
                         <div>
                             <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/icons/telegramm-icon.svg" alt="иконка">
+                                <img class="footer__img" src="../media/imgs/footer/tg-icon.svg" alt="иконка">
                             </a>
                         </div>
 
@@ -648,7 +693,7 @@
 
                         <div>
                             <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/icons/whatsapp-icon.svg" alt="иконка">
+                                <img class="footer__img" src="../media/imgs/footer/what-icon.svg" alt="иконка">
                             </a>
                         </div>
 
@@ -657,22 +702,28 @@
                                 WhatsApp
                             </p>
                         </div>
-                        
+
                     </div>
 
                 </div>
 
                 <div class="footer__text">
                     <a class="footer_tel" href="tel:+12312312">
-                        +12312312
+                        +123.456.789
                     </a>
 
                     <div class="footer__text-adressDiv">
                         <address>
-                            <span>Ростов-на-Дону</span>
-                            <p>
-                                Пл.Ростовского Стрелкового Полка Народного Ополчения пл, 2,             
-                            </p>                
+
+                            <span class="city">Ростов-на-Дону</span>
+                            <p class="city__adress">
+                                Пл.Ростовского Стрелкового
+                            </p>
+
+                            <p class="city__adress">
+                                Полка Народного Ополчения пл, 2,
+                            </p>
+
                         </address>
                     </div>
                 </div>
@@ -680,14 +731,45 @@
             </div>
 
         </div>
-    </footer> -->
+    </footer>
 
-    <script src="../static/js/modules-connect/connect-footer-1.js"></script>
+
+
+    <div class="popup__bg">
+
+        <div class="popup">
+
+            <button id="btnPrev" class="btnLeft">
+                <img src="../media/imgs/splide/prev1.svg" alt="кнопка вперёд">
+            </button>
+
+            <div class="popup_leftImg">
+                <img id="popup-img" src="${pathImg}" alt="картинка">
+            </div>
+
+            <div class="popup_rightDiv">
+                <p>
+                    1 место за участие в хакатон 2020
+                </p>
+            </div>
+
+            <button id="btnNext" class="btnRight">
+                <img src="../media/imgs/splide/next1.svg" alt="кнопка вперёд">
+            </button>
+
+        </div>
+
+        <div class="modal__imgClose-img">
+            <img src="../media/icons/icon-close-modal.svg" alt="картинка">
+        </div>
+
+    </div>
 
 
     <script type="text/javascript">
         var splide = new Splide('.splide', {
-            perPage: 2,
+            type: 'loop',
+            perPage: 3,
             cover: true
         });
 
@@ -696,7 +778,7 @@
 
 
     <script src="../static/js/index.js"></script>
-    
+
 </body>
 
 </html>
