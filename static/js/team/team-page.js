@@ -1,5 +1,6 @@
 "use strict";
 
+
 window.addEventListener("load", () => {
 
     let arrDiv = document.querySelectorAll(".item-main");
@@ -8,21 +9,25 @@ window.addEventListener("load", () => {
         arrDiv[i].classList.add("hide");
     }
 
+    let gallery = document.querySelector('.gallery');
+    let itemGal = gallery.querySelectorAll('.item');
+
+    for (let i = 9; i < itemGal.length; i++) {
+        itemGal[i].classList.add("hide");
+    }
+
 });
+
 
 document.addEventListener('click', (e) => {
     let popupBgM = document.querySelector('.Mpopup__bg');
     let popupBg = document.querySelector('.popup__bg');
     let popup = document.querySelector('.popup');
+    let body = document.querySelector('body');
 
     if (e.target === popupBg) {
         popupBg.classList.remove('active');
         popup.classList.remove('active');
-
-        let body = document.querySelector("body");
-        let modal = body.querySelector(".popup__bg");
-
-        body.removeChild(modal);
 
         body.classList.remove("hideScroll");
 
@@ -30,24 +35,71 @@ document.addEventListener('click', (e) => {
 
     if (e.target === popupBgM) {
         CloseModalWork();
-
     }
 });
 
+
+const itemClassesMyWorks = {
+    1: "item--medium",
+    2: "item--large",
+    3: "item--large",
+    4: "item--medium"
+};
+
+const itemClassesGall = {
+    1: "item--large",
+    2: "item--large",
+    3: "item--medium",
+    4: "item--width",
+    5: "item--min",
+    6: "item--min",
+    7: "item--width",
+    8: "item--width",
+    9: "item--full"
+};
+
+
+const SetItemClassMyWorks = () => {
+
+    //four elements of myWorks
+    let myWorks = document.querySelector('.work__bottom__top');    
+    let arrMyWorks = myWorks.querySelectorAll('.item');    
+
+    for (let i = 0; i < arrMyWorks.length; i++) {
+                            
+        arrMyWorks[i].classList.add(itemClassesMyWorks[i+1]);                 
+                            
+    }
+
+    //gallery's elements
+    let gallery = document.querySelector('.gallery');    
+    let arrGall = gallery.querySelectorAll('.item');    
+
+    let temp = 1;
+    for (let i = 0; i < arrGall.length; i++) {
+                            
+        arrGall[i].classList.add(itemClassesGall[temp]);                 
+                            
+        temp++;
+
+        if (temp === 10)
+            temp = 1;
+    }
+
+};
+
+
 function CloseModalWork() {
-    let popupBgM = document.querySelector('.Mpopup__bg');
     let popupM = document.querySelector('.Mpopup');
-
+    let popupBgM = document.querySelector('.Mpopup__bg');
+    let body = document.querySelector('body');
     popupBgM.classList.remove('Mactive');
+
     popupM.classList.remove('Mactive');
-
-    let body = document.querySelector("body");
-    let modal = body.querySelector(".Mpopup__bg");
-
     body.classList.remove("hideScroll");
-
-    body.removeChild(modal);
 }
+
+
 
 const AddBtnSlider = (sectName) => {
     let sec = document.querySelector(sectName),
@@ -70,6 +122,7 @@ const AddBtnSlider = (sectName) => {
 };
 
 
+
 const ShowSection = (nameS, btnsS, index) => {
 
     let arrDiv = document.querySelectorAll(".item-main");
@@ -86,6 +139,7 @@ const ShowSection = (nameS, btnsS, index) => {
 };
 
 
+
 const BtnShowS = () => {
 
     let btnsS = document.querySelectorAll(".main__btn");
@@ -100,8 +154,93 @@ const BtnShowS = () => {
 
 };
 
+
+
+const SetMoreDetBbotImgs = (el) => {
+
+    let moreDetBbotImgs = document.querySelector('#more__det_botImgs');
+    let arrImgDetBot = el.querySelectorAll('.more__det_item');
+
+
+    while (moreDetBbotImgs.firstChild) {
+        moreDetBbotImgs.removeChild(moreDetBbotImgs.lastChild);
+    }
+
+    arrImgDetBot.forEach(item => {
+
+        let img = item.querySelector('img');
+
+        let div = document.createElement("div");
+        div.classList.add("more__det_item");
+        div.innerHTML = `
+                    <img src="${img.getAttribute("src")}">
+                `;
+
+        moreDetBbotImgs.appendChild(div);
+
+    });
+
+    // item--full
+    if (arrImgDetBot.length % 2 !== 0) {
+
+        moreDetBbotImgs.lastChild.classList.add("item--full");
+
+    }
+
+};
+
+const SetSfteareUsed = (el) => {
+
+    //soft
+    let arrSoftImg = el.querySelectorAll('.more_det_soft-item');
+    let moreDetSoft = document.querySelector('#more_det_soft');
+
+    while (moreDetSoft.firstChild) {
+        moreDetSoft.removeChild(moreDetSoft.lastChild);
+    }
+    
+    arrSoftImg.forEach(item => {
+
+        let img = item.querySelector("img");
+        let text = item.querySelector("p");
+
+        let div = document.createElement("div");
+        div.classList.add("more_det_soft-item");
+        div.innerHTML = `
+            <div class="soft_img">
+                <img src="${img.getAttribute("src")}"
+                    alt="картинка">
+            </div>
+            
+            <div class="soft_text">
+                <p class="title_programm">
+                   ${text.textContent}
+                </p>
+            </div>
+            `;
+
+            moreDetSoft.appendChild(div);
+
+    });
+
+};
+
+const SetAboutWork = (el) => {
+
+    let moreDetText = document.querySelector('.more_det-text');
+    
+    moreDetText.innerHTML = "";
+
+    if (el.dataset.text == undefined) {
+        moreDetText.innerHTML = "";
+    } else {
+        moreDetText.innerHTML = el.dataset.text;
+    }
+
+};
+
 let iNextWork;
-const NextWork = (arrWork) => {
+const NextWork = (arrWork, boolCh) => {
 
     if (iNextWork >= arrWork.length) {
         iNextWork = 0;
@@ -120,24 +259,46 @@ const NextWork = (arrWork) => {
     let styleM;
     if (iNextWork + 1 === arrWork.length) {
         styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+        SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+        SetSfteareUsed(arrWork[arrWork.length - 1]);
+        SetAboutWork(arrWork[arrWork.length - 1]);
+        
     } else {
         styleM = arrWork[iNextWork + 1].currentStyle || window.getComputedStyle(arrWork[iNextWork + 1], false);
+
+        SetMoreDetBbotImgs(arrWork[iNextWork]);
+        SetSfteareUsed(arrWork[iNextWork]);
+        SetAboutWork(arrWork[iNextWork]);
+
     }
 
     let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
 
-    let moreDetItem = document.querySelector(".more_det_work");
-    moreDetItem.style.backgroundImage = `url("${pathM}")`;
+    let moreDetItem = document.querySelectorAll(".more_det_work");
+
+    if (boolCh) {
+        moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
+        moreDetItem[0].style.display = "none";
+
+        moreDetItem[1].style.display = "block";
+    } else {
+        moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
+        moreDetItem[1].style.display = "none";
+
+        moreDetItem[0].style.display = "block";
+    }
+
 
     iNextWork++;
 
 };
 
-const ShowDelWork = (section) => {
+
+const ShowDelWork = (section, boolCh) => {
 
     let sec = document.querySelector(section);
     let arrWork = sec.querySelectorAll(".item");
-
 
     for (let i = 0; i < arrWork.length; i++) {
 
@@ -146,146 +307,22 @@ const ShowDelWork = (section) => {
 
             let divT = e.target;
 
-            let body = document.querySelector("body");
+            let body = document.querySelector("body").classList.add("hideScroll");
             let style = divT.currentStyle || window.getComputedStyle(arrWork[i], false),
                 path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 
-            body.classList.add("hideScroll");
 
-            let modal = document.createElement("div");
-            modal.classList.add("Mpopup__bg");
-            modal.innerHTML = `
-            <div class="Mpopup">
+            //text
+            SetAboutWork(divT);
 
-            <div class="more__det">
-
-            <div class="more__det__imgs">
-
-                <div>
-                    <img src="${path}">
-                </div>
-
-            </div>
-
-            <div class="more__det__close">
-                <img id="more_det-close" src="../../media/icons/close-icon.svg" alt="иконка">
-            </div>
-
-            <div class="more__det__info">
-
-                <div class="more_det_top">
-
-                    <div class="more_det_img">
-                        <img src="../../media/imgs/team-page/main/human.png" alt="каритнка">
-                    </div>
-
-                    <div>
-                        <p class="person_name">
-                            Андрей Бредихин
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="more_det_item">
-
-                    <div>
-                        <p class="more_det_title">
-                            About work
-                        </p>
-                    </div>
-
-                    <div class="more_det_text">
-                        <p class="more_det-text">
-                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-                            consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="more_det_item">
-
-                    <div>
-                        <p class="more_det_title">
-                            Next work
-                        </p>
-                    </div>
-
-                    <div class="more_det_work">
-                        <img id="next_img" src="../../media/icons/next-icon.svg" alt="картинка">
-                    </div>
-
-                </div>
-
-                <div class="more_det_item">
-
-                    <div>
-                        <p class="more_det_title">
-                            About work
-                        </p>
-                    </div>
-
-                    <div class="more_det_soft">
-
-                        <div class="soft_img">
-                            <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg" alt="картинка">
-                        </div>
-
-                        <div class="soft_text">
-                            <p class="title_programm">
-                                PhotoShop
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="more_det_item">
-
-                    <div>
-                        <p class="more_det_title">
-                            Contack
-                        </p>
-                    </div>
-
-                    <div class="more_det_links">
-
-                        <div class="more_det_link-item">
-                            <a class="more_det_link" href="https://ya.ru/" target="_blank">
-                                <img class="more_det_img" src="../../media/icons/vk-icon.png" alt="иконка">
-                            </a>
-                        </div>
-
-                        <div class="more_det_link-item">
-                            <a class="more_det_link" href="https://ya.ru/" target="_blank">
-                                <img class="more_det_img" src="../../media/icons/tg-icon.png" alt="иконка">
-                            </a>
-                        </div>
-
-
-                        <div class="more_det_link-item">
-                            <a class="more_det_link" href="https://ya.ru/" target="_blank">
-                                <img class="more_det_img" src="../../media/icons/what-icon.png" alt="иконка">
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+            //soft
+            SetSfteareUsed(divT);
+           
             
-            </div>
-            `
+            //img right
+            let mainPopupImg = document.querySelector('#main__popup_img');
+            mainPopupImg.setAttribute("src", path);
 
-            body.appendChild(modal);
-
-
-            // for img right
             let styleM;
             if (i + 1 === arrWork.length) {
                 styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
@@ -295,8 +332,19 @@ const ShowDelWork = (section) => {
 
             let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
 
-            let moreDetItem = document.querySelector(".more_det_work");
-            moreDetItem.style.backgroundImage = `url("${pathM}")`;
+            let moreDetItem = document.querySelectorAll(".more_det_work");
+
+            if (boolCh) {
+                moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
+                moreDetItem[0].style.display = "none";
+
+                moreDetItem[1].style.display = "block";
+            } else {
+                moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
+                moreDetItem[1].style.display = "none";
+
+                moreDetItem[0].style.display = "block";
+            }
 
 
             let popupBg = document.querySelector('.Mpopup__bg');
@@ -311,16 +359,22 @@ const ShowDelWork = (section) => {
                 iNextWork = i + 1;
             }
 
-            let nextImg = document.querySelector("#next_img")
-                    .addEventListener("click", function () { NextWork(arrWork) });
+            SetMoreDetBbotImgs(divT);
 
-
-            let imgClose = document.querySelector("#more_det-close")
-            .addEventListener("click", CloseModalWork);
         });
 
     }
 
+    if (boolCh) {
+        let nextImg = document.querySelector("#next_img2")
+            .addEventListener("click", function () { NextWork(arrWork, boolCh) });
+    } else {
+        let nextImg = document.querySelector("#next_img")
+            .addEventListener("click", function () { NextWork(arrWork, boolCh) });
+    }
+
+    let imgClose = document.querySelector("#more_det-close")
+        .addEventListener("click", CloseModalWork);
 };
 
 
@@ -337,36 +391,26 @@ function ModalSWindow() {
             let imgSlide = slide.querySelector("img");
             let pathImg = imgSlide.src;
 
+            let popupLeftImg = document.querySelector('.popup_leftImg');
+            let img = popupLeftImg.querySelector('img');
+            img.setAttribute("src", pathImg);
+
             body.classList.add("hideScroll");
-
-            let modal = document.createElement("div");
-            modal.classList.add("popup__bg");
-            modal.innerHTML = `
-            <div class="popup">
-
-            <div class="popup_leftImg">
-                <img src="${pathImg}" alt="картинка">
-            </div>
-
-            <div class="popup_rightDiv">
-                <div>
-                    <p>
-                        1 место за участие в хакатон 2020
-                    </p>
-                </div>
-            </div>
-            
-            </div>
-            `
-
-            body.appendChild(modal);
 
             let popupBg = document.querySelector('.popup__bg');
             let popup = document.querySelector('.popup');
 
+            let imgClose = document.querySelector(".modal__imgClose-img");
+
+            imgClose.addEventListener("click", () => {
+                let modal = document.querySelector(".popup__bg");
+                popupBg.classList.remove('active'); // Добавляем класс 'active' для фона
+                popup.classList.remove('active'); // И для самого окна
+                body.classList.remove("hideScroll");
+            });
+
             popupBg.classList.add('active'); // Добавляем класс 'active' для фона
             popup.classList.add('active'); // И для самого окна
-
 
         });
 
@@ -375,10 +419,90 @@ function ModalSWindow() {
 }
 
 
+const Anchor = () => {
+
+    let container = document.querySelector('.container');
+    let post_01 = document.querySelector('#post-01');
+    let arrowUp = document.querySelector('.arrow-up');
+
+    window.addEventListener('scroll', function scrollArrow() {
+
+        if (document.documentElement.scrollTop > post_01.offsetTop + post_01.clientHeight - 300) {
+
+            arrowUp.classList.add("animation-show-up");
+            arrowUp.classList.remove("animation-hide-up");
+
+        } else {
+
+            arrowUp.classList.remove("animation-show-up");
+            arrowUp.classList.add("animation-hide-up");
+
+        }
+
+    });
+
+
+    let footer = document.querySelector('.footer');
+    window.addEventListener('scroll', function arrowPosition() {
+
+        arrowUp.style.position = 'fixed';
+        arrowUp.style.left = container.offsetLeft + container.clientWidth + 60 + 'px';
+
+        let top = window.pageYOffset + Math.floor(window.innerHeight / footer.clientHeight) * footer.clientHeight;
+
+        if (top >= footer.offsetTop) {
+            arrowUp.style.bottom = footer.clientHeight - (arrowUp.clientHeight / 2) + 'px';
+        } else {
+            arrowUp.style.bottom = 100 + 'px';
+        }
+
+    });
+
+    let toFirst = document.querySelector('#toFirst');
+    arrowUp.addEventListener("click", (e) => {
+        e.preventDefault()
+        const blockID = toFirst.getAttribute('href').substr(1);
+
+        document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+
+};
+
+
+let hideItems = 9;
+const ShowHideItem = () => {
+
+    let gallery = document.querySelector('.gallery');
+    let itemGal = gallery.querySelectorAll('.item');
+
+
+    for (hideItems; hideItems < itemGal.length; hideItems++) {
+
+        itemGal[hideItems].classList.remove("hide");
+
+    }
+
+};
+
+
+const LoadMomeGallery = () => {
+    let galleryBtn = document.querySelector('#gallery-btn')
+        .addEventListener("click", ShowHideItem);
+
+};
+
+
+
 
 BtnShowS();
 AddBtnSlider(".portfolio");
 AddBtnSlider(".resume");
-ShowDelWork(".gallery");
-ShowDelWork(".work__bottom__top");
+ShowDelWork(".gallery", true);
+ShowDelWork(".work__bottom__top", false);
 ModalSWindow();
+Anchor();
+LoadMomeGallery();
+SetItemClassMyWorks();

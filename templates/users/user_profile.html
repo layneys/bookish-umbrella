@@ -9,41 +9,55 @@
     <!-- fonsts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <link href="../../static/css/modules/reset.css" rel="stylesheet">
-    <link href="../../static/css/modules/fonts.css" rel="stylesheet">
-    <link href="../../static/css/modules/header.css" rel="stylesheet">
-    <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;700&family=Inter:wght@900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="../../static/css/common-styles.css">
     <link rel="stylesheet" href="../../static/css/team/team.css">
     <link rel="stylesheet" href="../../static/css/team/gallery.css">
 
     <link rel="stylesheet" href="../../static/css/splide/splide-core.css">
-    <link rel="stylesheet" href="../../static/css/splide/splide.css">
+    <link rel="stylesheet" href="../../static/css/splide.css">
 
-    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
-    <script src="../../static/js/custom-cursor.js"></script>
-
-
+    <script src="../../static/js/libs/splide.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <title>Document</title>
+    <title>Команда</title>
 </head>
 
 <body>
 
-    <div class="cursor-dot-outline"></div>
-<div class="cursor-dot"></div>
-
-
-    <script src="../../static/js/modules-connect/connect-header.js"></script>
-
     <!-- main -->
-    <section class="main">
+    <section id="post-01" class="main ">
 
-        <!-- <header class="header">
+        <header class="header">
+
             <div class="header__item">
                 <div><img class="header__item-logo" src="../../media/icons/logoHeader.png" alt="иконка"></div>
                 <div>
@@ -55,53 +69,80 @@
 
             <div class="header__item">
                 <nav class="nav">
-                    <a class="nav__link" href="http://127.0.0.1:8000/">Домашняя</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/projects/">Проекты</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/profile/{{ request.user.username }}/">Портфолио</a>
-                    <a class="nav__link" href="http://127.0.0.1:8000/team/">Команда</a>
+                    <a class="nav__link" href="../home_page.html">Главная</a>
+                    <a class="nav__link" href="#">Проекты</a>
+                    <a class="nav__link" href="../templates/users/user_profile.html">Команда</a>
                 </nav>
             </div>
 
             <div class="header__item">
                 <a class="mail" href="mailto:huy@gmain.com">сontack@gmail.com</a>
             </div>
-        </header> -->
+
+        </header>
 
         <div class="main__content">
 
             <div class="main__top">
                 <div>
-                    <img class="main__top-img" src="{{ user.profile.avatar.url }}" alt="картинка">
+                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
                 </div>
 
                 <div class="main__text">
-                    <h3>{{ user.first_name}} {{ user.last_name }}</h3>
-                    <p></p>
-                    <a href="mailto:huy@gmain.com">{{ user.email }}</a>
+                    <h3 class="main__title-human">Андрей Бредихин</h3>
+                    <p class="main__about">
+                        illustrator, UI/UX-дизайнер
+                    </p>
+                </div>
+
+                <div class="skills__icons">
+
+                    <div class="skills__icons-item">
+                        <img src="../../media/icons/skills-human/1.png" alt="картинка">
+                    </div>
+
+                    <div class="skills__icons-item">
+                        <img src="../../media/icons/skills-human/2.png" alt="картинка">
+                    </div>
+
+                    <div class="skills__icons-item">
+                        <img src="../../media/icons/skills-human/3.png" alt="картинка">
+                    </div>
+
                 </div>
             </div>
 
             <div class="main__bottom">
                 <div class="container">
 
-                    <div class="main__bottom__btn">
+                    <div class="main__bottom__items">
+                        <div class="main__bottom__btn">
 
-                        <button id="btn_portfolio" class="main__btn bgBtn">Портфолио</button>
+                            <button id="btn_portfolio" class="main__btn bgBtn">Портфолио</button>
 
+                        </div>
+
+                        <div class="main__bottom__btn">
+
+                            <button id="btn_gallery" class="main__btn">Галерея</button>
+
+                        </div>
+
+                        <div class="main__bottom__btn">
+
+                            <button id="btn_aboutPerson" class="main__btn">Обо мне</button>
+
+                        </div>
                     </div>
 
-                    <div class="main__bottom__btn">
+                    <div class="main__bottom__load">
 
-                        <button id="btn_gallery" class="main__btn">Галерея</button>
-
-                    </div>
-
-                    <div class="main__bottom__btn">
-
-                        <button id="btn_aboutPerson" class="main__btn">Обо мне</button>
+                        <button id="loadPotfolio">
+                            <p class="loadPotfolio-text">Load</p>
+                            <p class="loadPotfolio-text">portfolio</p>
+                        </button>
 
                     </div>
-
 
                 </div>
             </div>
@@ -113,197 +154,51 @@
 
     <section class="work">
 
-        <div class="portfolio container item-main">
+        <div class="portfolio item-main container">
 
-            <div class="portfolio__subTitle">
-                <p>
-                    Участие в проектах
-                </p>
-            </div>
 
-            <div class="slider">
+            <div class="portfolio__top__top">
 
-                <div class="splide">
+                <div class="portfolio__top ">
 
-                    <div class="splide__track">
-                        <div class="splide__list">
-                            {% for project in projects %}
-
-                                <li class="splide__slide">
-                                    <a href = "http://127.0.0.1:8000/project/{{ project.id }}/"><img src="{{project.preview_pic.url}}" style="width: 100%"></a>
-                                </li>
-
-                            {% endfor %}
-
-                        </div>
+                    <div class="portfolio__subTitle">
+                        <p class="portfolio--subTitle">
+                            Участие в проектах
+                        </p>
                     </div>
-
-                </div>
-
-            </div>
-
-            <div class="work__bottom">
-
-                <div>
-                    <p class="work__title">
-                        Галерея
-                    </p>
-                </div>
-
-                <div class="work__bottom__items">
-
-                    <div class="show__gallery">
-                        <button id="btn_showGall">посмотреть все</button>
-                    </div>
-
-                    <div class="work__bottom__top">
-
-                        <div class="section-gal">
-                            <div class="grid">
-                                <div class="item item--medium">
-                                </div>
-
-                                <div class="item item--large">
-                                </div>
-
-                                <div class="item item--large">
-                                </div>
-
-                                <div class="item item--full">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="gallery container item-main">
-
-            <div class="section-gal">
-                <div class="grid">
-
-                    <div class="item item--min">
-                    </div>
-
-                    <div class="item item--large">
-                    </div>
-
-                    <div class="item item--medium">
-                    </div>
-
-                    <div class="item item--large">
-                    </div>
-
-                    <div class="item item--full">
-                    </div>
-
-                    <div class="item item--min">
-                    </div>
-
-                    <div class="item item--large">
-                    </div>
-
-                    <div class="item">
-                    </div>
-
-                    <div class="item item--min">
-                    </div>
-
-                    <div class="item item--large">
-                    </div>
-
-                    <div class="item">
-                    </div>
-
-                    <div class="item item--min">
-                    </div>
-
-                    <div class="item item--min">
-                    </div>
-
-                    <div class="item item--width">
-                    </div>
-
-                    <div class="item item--full">
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="resume container item-main">
-
-            <div class="resume__skills">
-
-                <div>
-                    <h3>Skills</h3>
-                </div>
-
-                <div class="resume__skills__items">
-                    {% for skill in skills %}
-
-                        <div class="resume__skills__item">
-
-                            <p>
-                                {{ skill.name }}
-                            </p>
-
-                        </div>
-                    {% endfor %}
-
-
-                </div>
-
-            </div>
-
-            <!-- slider -->
-            <div class="achi">
-
-                <div class="achi__title">
-                    <h3>
-                        Достижения и награды
-                    </h3>
-                </div>
-
-                <div class="achi__content">
 
                     <div class="slider">
 
-                        <div class="splide splide_2">
+                        <div class="splide">
 
                             <div class="splide__track">
                                 <div class="splide__list">
 
-                                    <li class="splide__slide">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
-                                    </li>
-
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 279.png">
                                     </li>
 
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 280.png">
                                     </li>
 
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 281.png">
                                     </li>
 
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 282.png">
                                     </li>
 
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 287.png">
                                     </li>
 
-                                    <li class="splide__slide">
+                                    <li class="splide__slide item">
                                         <img src="../../media/imgs/team-page/works/Rectangle 289.png">
                                     </li>
 
@@ -318,7 +213,502 @@
 
             </div>
 
-            <!-- <div class="resume_contacts">
+
+            <div class="work__bottom__bottom">
+                <div class="work__bottom">
+
+                    <div class="work__bottom-text">
+                        <p class="work__title">
+                            Мои работы
+                        </p>
+
+                        <div class="show__gallery">
+                            <button id="btn_showGall">Посмотреть ещё</button>
+                        </div>
+
+                    </div>
+
+                    <div class="work__bottom__items">
+
+                        <div class="work__bottom__top">
+
+                            <div class="section-gal">
+                                <div class="grid">
+
+                                    <div class="item"
+                                        data-text="Никитос пидарас Никитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарас"
+                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+
+                                        <div class="more__det_botImgs hide">
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="item-soft hide">
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="item"
+                                        data-text="SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION "
+                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+
+                                        <div class="more__det_botImgs hide">
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="item-soft hide">
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="item"
+                                        data-text="fISTING fISTING fISTING fISTING fISTING fISTING fISTING fISTING fISTING "
+                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+
+                                        <div class="more__det_botImgs hide">
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="item-soft hide">
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                                        alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        PhotoShop
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="item" data-text="ass ass ass ass ass ass ass ass ass ass ass ass "
+                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+
+                                        <div class="more__det_botImgs hide">
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                            <div class="more__det_item">
+                                                <img src="../../media/imgs/team-page/works/124.png">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="gallery container item-main">
+
+            <div class="section-gal">
+                <div class="grid">
+
+                    <div class="item"
+                        data-text="Никитос пидарас Никитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарас"
+                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+
+                        <div class="more__det_botImgs hide">
+
+                            <div class="more__det_item">
+                                <img src="../../media/imgs/team-page/works/124.png">
+                            </div>
+
+                            <div class="more__det_item">
+                                <img src="../../media/imgs/team-page/works/124.png">
+                            </div>
+
+                            <div class="more__det_item">
+                                <img src="../../media/imgs/team-page/works/124.png">
+                            </div>
+
+                        </div>
+
+                        <div class="item-soft hide">
+
+                            <div class="more_det_soft-item">
+                                <div class="soft_img">
+                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                        alt="картинка">
+                                </div>
+
+                                <div class="soft_text">
+                                    <p class="title_programm">
+                                        PhotoShop
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="more_det_soft-item">
+                                <div class="soft_img">
+                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                        alt="картинка">
+                                </div>
+
+                                <div class="soft_text">
+                                    <p class="title_programm">
+                                        PhotoShop
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="more_det_soft-item">
+                                <div class="soft_img">
+                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
+                                        alt="картинка">
+                                </div>
+
+                                <div class="soft_text">
+                                    <p class="title_programm">
+                                        PhotoShop
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="gallery__btn">
+                <button id="gallery-btn" class="btn">LOAD MORE</button>
+            </div>
+
+        </div>
+
+        <div class="resume container item-main">
+
+            <div class="resume__skills">
+
+                <div>
+                    <h3 class="resume__skills--title">Skills</h3>
+                </div>
+
+                <div class="resume__skills__items">
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                    <div class="resume__skills__item">
+
+                        <p>
+                            UX/UI
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- slider -->
+            <div class="achi">
+
+                <div class="achi__title">
+                    <h3 class="achi--title">
+                        Достижения и награды
+                    </h3>
+                </div>
+
+                <div class="achi__content">
+
+                    <div class="slider">
+
+                        <div class="splide splide_2">
+
+                            <div class="splide__track">
+                                <div class="splide__list">
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 280.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 282.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 287.png">
+                                    </li>
+
+                                    <li class="splide__slide item">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 289.png">
+                                    </li>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="resume_contacts">
 
                 <div class="contacts_item">
 
@@ -344,18 +734,15 @@
 
                 </div>
 
-            </div> -->
+            </div>
 
         </div>
 
     </section>
 
 
-
-
-
     <!-- footer -->
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="container">
 
             <div class="footer__top">
@@ -407,22 +794,28 @@
                                 WhatsApp
                             </p>
                         </div>
-                        
+
                     </div>
 
                 </div>
 
                 <div class="footer__text">
                     <a class="footer_tel" href="tel:+12312312">
-                        +12312312
+                        +123.456.789
                     </a>
 
                     <div class="footer__text-adressDiv">
                         <address>
-                            <span>Ростов-на-Дону</span>
-                            <p>
-                                Пл.Ростовского Стрелкового Полка Народного Ополчения пл, 2,             
-                            </p>                
+
+                            <span class="city">Ростов-на-Дону</span>
+                            <p class="city__adress">
+                                Пл.Ростовского Стрелкового
+                            </p>
+
+                            <p class="city__adress">
+                                Полка Народного Ополчения пл, 2,
+                            </p>
+
                         </address>
                     </div>
                 </div>
@@ -430,13 +823,178 @@
             </div>
 
         </div>
-    </footer> -->
+    </footer>
 
-    <script src="../../static/js/modules-connect/connect-footer-1.js"></script>
+    <div class="arrow-up">
+        <div class="arrow-up-inside">
+            <a id="toFirst" href="#post-01">
+                <img src="../../media/imgs/arrow-up.svg" alt="image of arrow up">
+            </a>
+        </div>
+    </div>
 
-<script src="../../static/js/libs/splide.js"></script>
+
+
+    <div class="popup__bg">
+
+        <div class="popup">
+
+            <div class="popup_leftImg">
+                <img src="${pathImg}" alt="картинка">
+            </div>
+
+            <div class="popup_rightDiv">
+                <div>
+                    <p>
+                        1 место за участие в хакатон 2020
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal__imgClose-img">
+            <img src="../../media/icons/icon-close-modal.svg" alt="картинка">
+        </div>
+
+    </div>
+
+
+    <div class="Mpopup__bg">
+
+        <div class="Mpopup">
+
+            <div class="more__det">
+
+                <div class="more__det__imgs">
+
+                    <div>
+                        <img id="main__popup_img" src="">
+                    </div>
+
+                    <div id="more__det_botImgs" class="more__det_botImgs">
+
+
+                    </div>
+
+                </div>
+
+                <div class="more__det__close">
+                    <img id="more_det-close" src="../../media/icons/close-icon.svg" alt="иконка">
+                </div>
+
+                <div class="more__det__info">
+
+                    <div class="more_det_top">
+
+                        <div class="more_det_img">
+                            <img src="../../media/imgs/team-page/main/human.png" alt="каритнка">
+                        </div>
+
+                        <div>
+                            <p class="person_name">
+                                Андрей Бредихин
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="more_det_item">
+
+                        <div>
+                            <p class="more_det_title">
+                                About work
+                            </p>
+                        </div>
+
+                        <div class="more_det_text">
+                            <p class="more_det-text">
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="more_det_item">
+
+                        <div>
+                            <p class="more_det_title">
+                                Next work
+                            </p>
+                        </div>
+
+                        <div class="more_det_work">
+                            <img id="next_img" src="../../media/icons/next-icon.svg" alt="картинка">
+                        </div>
+
+                        <div class="more_det_work">
+                            <img id="next_img2" src="../../media/icons/next-icon.svg" alt="картинка">
+                        </div>
+
+                    </div>
+
+                    <div class="more_det_item">
+
+                        <div>
+                            <p class="more_det_title">
+                                Software Used
+                            </p>
+                        </div>
+
+                        <div id="more_det_soft">
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="more_det_item">
+
+                        <div>
+                            <p class="more_det_title">
+                                Contack
+                            </p>
+                        </div>
+
+                        <div class="more_det_links">
+
+                            <div class="more_det_link-item">
+                                <a class="more_det_link" href="https://ya.ru/" target="_blank">
+                                    <img class="more_det_img" src="../../media/icons/vk-icon.png" alt="иконка">
+                                </a>
+                            </div>
+
+                            <div class="more_det_link-item">
+                                <a class="more_det_link" href="https://ya.ru/" target="_blank">
+                                    <img class="more_det_img" src="../../media/icons/tg-icon.png" alt="иконка">
+                                </a>
+                            </div>
+
+
+                            <div class="more_det_link-item">
+                                <a class="more_det_link" href="https://ya.ru/" target="_blank">
+                                    <img class="more_det_img" src="../../media/icons/what-icon.png" alt="иконка">
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
     <script type="text/javascript">
         var splide = new Splide('.splide', {
+            type: 'loop',
             perPage: 2,
             cover: true
         });
@@ -446,7 +1004,7 @@
 
     <script type="text/javascript">
         var splide = new Splide('.splide_2', {
-            perPage: 2,
+            type: 'loop',
             cover: true
         });
 

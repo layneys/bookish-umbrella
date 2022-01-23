@@ -30,7 +30,7 @@ def project_list(request):
     in_development= Project.objects.filter(status="0")
     completed = Project.objects.filter(status="1")
     contest_projects = Project.objects.filter(status="2")
-    return render(request,  "../templates/projects/project_list.html",
+    return render(request,  "../templates/projects/project-list.html",
                   {"in_development": in_development,
                    "completed_projects": completed,
                    "contest_projects": contest_projects,

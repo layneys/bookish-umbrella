@@ -4,12 +4,12 @@ from projects.models import Project
 
 
 def profile_page(request, username):
-    user = User.objects.get(username=username)
-    images = UserGalleryPicture.objects.filter(user__user__username=username)
-    achievements = UserAchievement.objects.filter(user__user__username=username)
-    projects = Project.objects.filter(developers__user__username=username)
-    skills = Skill.objects.filter(userprofile__user__username=username)
-    software = Software.objects.filter(userprofile__user__username=username)
+    user = UserProfile.objects.get(username=username)
+    images = UserGalleryPicture.objects.filter(user__username=username)
+    achievements = UserAchievement.objects.filter(user__username=username)
+    projects = Project.objects.filter(developers__username=username)
+    skills = Skill.objects.filter(userprofile__username=username)
+    software = Software.objects.filter(userprofile__username=username)
     return render(request,
                 "../templates/users/user_profile.html",
                   {"user": user,
@@ -26,7 +26,7 @@ def profile_page(request, username):
 def team_page(request):
     users = UserProfile.objects.all()
     return render(request,
-                  "../templates/users/about_team.html",
+                  "../templates/users/about-team.html",
                   {"users": users,
                    },
                   )

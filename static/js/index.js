@@ -1,7 +1,46 @@
 "use strict";
 
-let body = document.querySelector("body"); 
-let certificatesItem = document.querySelectorAll(".splide__slide"); 
+let body = document.querySelector("body");
+let certificatesItem = document.querySelectorAll(".splide__slide");
+let divItems = document.querySelectorAll('.div-item');
+let textItems = document.querySelectorAll('.text-item');
+let container = document.querySelector('.container');
+
+const SetAnim = (arr, clazzEl) => {
+
+    let windowTopCenter = window.pageYOffset;
+
+    arr.forEach(itemM => {
+
+        let classItem = "." + itemM.classList[0] + "";
+
+        let elH = $(classItem).offset().top - document.documentElement.clientHeight + 130;
+
+        let mainTitleEnd = itemM.getBoundingClientRect().bottom;
+
+
+        if (windowTopCenter >= elH) {
+            itemM.classList.add(clazzEl);
+        } else {
+            itemM.classList.remove(clazzEl);
+        }
+
+        if (mainTitleEnd < 0) {
+            itemM.classList.remove(clazzEl);
+        }
+    });
+
+};
+
+const AnimationScroll = () => {
+    SetAnim(divItems, "div-animation");
+    SetAnim(textItems, "text-animation");
+};
+
+AnimationScroll();
+window.addEventListener("scroll", () => {
+    AnimationScroll();
+});
 
 document.addEventListener('click', (e) => {
     let popupBg = document.querySelector('.popup__bg');
@@ -16,95 +55,149 @@ document.addEventListener('click', (e) => {
 
         body.classList.remove("hideScroll");
 
-        body.removeChild(modal);
-
     }
 });
 
-function ModalWindow () {
 
-    certificatesItem.forEach(item => {
-        item.addEventListener("click", (e) => {
-            
+let toSlide;
+function ModalWindow() {
+
+    let certificatesItemImg = document.querySelectorAll('.certificates__item-img');
+
+    for (let i = 0; i < certificatesItem.length; i++) {
+
+        certificatesItem[i].addEventListener("click", e => {
+            e.preventDefault();
+
             let slide = e.target;
             let imgSlide = slide.querySelector("img");
             let pathImg = imgSlide.src;
-    
-    
-            let modal = document.createElement("div");
-            modal.classList.add("popup__bg");
-            modal.innerHTML = `
-            <div class="popup">
+            let popupImg = document.querySelector('#popup-img');
+            popupImg.setAttribute("src", pathImg);
 
-            <div class="popup_leftImg">
-                <img src="${pathImg}" alt="картинка">
-            </div>
-
-            <div class="popup_rightDiv">
-                <div>
-                    <p>
-                        1 место за участие в хакатон 2020
-                    </p>
-                </div>
-            </div>
-            
-            </div>
-            `
 
             body.classList.add("hideScroll");
-            
-            body.appendChild(modal);
-            
-    
-            let popupBg = document.querySelector('.popup__bg'); 
-            let popup = document.querySelector('.popup'); 
 
-            popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-            popup.classList.add('active'); // И для самого окна
 
-       
+            let popupBg = document.querySelector('.popup__bg');
+            let popup = document.querySelector('.popup');
 
-            let imgClose = document.querySelector(".dm-overlay__imgClose-img");
-            
+            popupBg.classList.add('active');
+            popup.classList.add('active');
+
+
+            let imgClose = document.querySelector(".modal__imgClose-img");
+
             imgClose.addEventListener("click", () => {
 
-                let modal = document.querySelector(".dm-overlay");
+                let modal = document.querySelector(".popup__bg");
                 body.removeChild(modal);
 
             });
-    
+
+
+            if (i + 1 === certificatesItem.length) {
+                toSlide = 0;
+            } else if (i - 1 < 0) {
+                toSlide = certificatesItem.length - 1;
+            } else {
+                toSlide = i;
+            }
+
+
         });
-    });
+
+    }
+
+    PrevNextSlide(certificatesItemImg);
+
+
 }
 
+
+const PrevNextSlide = (arrWork) => {
+
+    let btnNextId = document.querySelector('#btnNext')
+        .addEventListener("click", () => {
+
+            if (toSlide >= arrWork.length) {
+                toSlide = 0;
+            }
+
+            let path;
+            if (toSlide + 1 === arrWork.length) {
+                path = arrWork[0].getAttribute("src");
+            } else {
+                path = arrWork[toSlide + 1].getAttribute("src");
+            }
+
+            let doc = document.querySelector('.popup_leftImg');
+            let imgM = doc.querySelector("img");
+
+            imgM.setAttribute("src", path);
+
+
+            toSlide++;
+
+        });
+
+
+
+    let btnPrevId = document.querySelector('#btnPrev')
+        .addEventListener("click", () => {
+
+            if (toSlide <= 0) {
+                toSlide = arrWork.length - 1;
+            }
+
+            let path;
+            if (toSlide - 1 <= 0) {
+                path = arrWork[arrWork.length - 1].getAttribute("src");
+            } else {
+                path = arrWork[toSlide - 1].getAttribute("src");
+            }
+
+            let doc = document.querySelector('.popup_leftImg');
+            let imgM = doc.querySelector("img");
+
+            imgM.setAttribute("src", path);
+
+
+            toSlide--;
+        });
+
+};
+
+
+const ImgDown = () => {
+
+    let toSecond = document.querySelector('#toSecond')
+        .addEventListener("click", () => {
+
+            document.getElementById("post-01").scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+
+        });
+
+};
 
 
 let splideArrows = document.querySelector(".splide__arrows"),
     btns = splideArrows.querySelectorAll("button"),
-    certificates = document.querySelector(".slider");
+    sliderContent = document.querySelector(".slider__content");
 
 
-btns[0].addEventListener("click", () => {
-    let img = btns[0].querySelector("img");
-    img.src = "../media/imgs/splide/prev.svg";
-});
-
-btns[1].addEventListener("click", () => {
-    let img = btns[1].querySelector("img");
-    img.src = "../media/imgs/splide/next.svg";
-});
-
-function AddBtn() {
-    let btnPrev = btns[0];
-    let btnNext = btns[1];
-
+function AddBtn(btnPrev, btnNext, block) {
     btnPrev.classList.add("btnLeft");
     btnNext.classList.add("btnRight");
 
 
-    certificates.prepend(btnPrev);
-    certificates.appendChild(btnNext);
+    block.prepend(btnPrev);
+    block.appendChild(btnNext);
 }
 
-AddBtn();
+AddBtn(btns[0], btns[1], sliderContent);
 ModalWindow();
+ImgDown();

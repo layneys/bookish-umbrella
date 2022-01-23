@@ -3,12 +3,11 @@ body {
     padding: 0;
     position: relative;
 
-    background-color:  #151515;
+    background: linear-gradient(180deg, #191E23 10%, #181D23 100%);
 
     color: #fff;
-
-    font-family: 'Inter', sans-serif;
 }
+
 
 *, *::after, *::before {
     box-sizing: border-box;
@@ -89,7 +88,6 @@ img {
 
         img {
             width: 100%;
-    
         }
     }
 
@@ -129,6 +127,16 @@ img {
     align-items: center;
     flex-wrap: wrap;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 3;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+
     height: 68px;
     letter-spacing: .1em;
 
@@ -138,12 +146,11 @@ img {
 
 
     .nav {
-
         .nav__link {
-            padding-bottom: 21px;
             margin-left: 20px;
 
-            transition: 1s ease all;
+            transition: .7s ease all;
+            padding: 23px 0;
         }
 
         .nav__link:hover {
@@ -165,6 +172,10 @@ img {
 
             padding-left: 15px;
         }
+
+        .mail-test {
+            padding: 23px 0;
+        }   
     }
 
 }
@@ -174,15 +185,13 @@ img {
 //--------------------------------
 .footer {
     background-color: #20252C;
-    padding: 50px 0;
+    padding-top: 1%;
+    padding-bottom: 4%;
 
     address {
         font-style: normal;
         line-height: 20px;
 
-        span {
-            font-weight: 700;
-        }
     }
 
     .footer__top {
@@ -195,6 +204,9 @@ img {
             text-align: center;
 
             margin-top: auto;
+
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
 
             .footer__item{
 
@@ -218,15 +230,29 @@ img {
 
             text-align: right;
 
-            width: 23%;
-
+            width: 25%;
+           
             .footer_tel {
                 font-size: 26px;
+
+                font-family: 'Roboto', sans-serif;
                 font-weight: 400;
             }
 
             .footer__text-adressDiv {
                 margin-top: 25px;
+                font-size: 18px;
+
+                font-family: 'Roboto', sans-serif;
+
+                .city {
+                    font-weight: 600;
+                }
+
+                .city__adress {
+                    
+                    font-weight: 400;
+                }
             }
         }
     }
@@ -245,6 +271,20 @@ img {
     opacity: 0; 
     pointer-events: none; 
     transition: 0.5s all;
+    z-index: 90;
+
+    .modal__imgClose-img {
+        position: absolute;
+        right: 1%;
+        top: 2%;
+
+        img {
+            width: 100%;
+            height: auto;
+
+            cursor: pointer;
+        }
+    }
 }
 
 .popup__bg.active { 
@@ -257,7 +297,9 @@ img {
     display: flex;
     justify-content: space-between;
     text-align: right;
-    
+
+    border-radius: 13px;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -265,16 +307,88 @@ img {
     background: #fff;
     max-width: 100%;
     max-height: 100vh;
-    padding: 25px;
     transition: 0.5s all;
+    background-color: #2C3136;
 
-    background-color: #485461;
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    .popup_leftImg {
+        padding: 20px;
 
-    border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #202529;
+        
+        border-radius: 13px 0 0 13px;
+    
+        width: 100%;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .popup_rightDiv {
+        width: 250px;
+
+        display: flex;
+        justify-content: left;
+        align-items: top;
+
+        padding-top: 20px;
+        padding-left: 10px;
+      
+        border-radius: 0 13px 13px 0;
+    
+        background-color: #2C3136;
+
+        text-align: left;
+
+        p {
+            font-family: 'Roboto';
+            font-weight: 300;
+        }
+
+    }
+
 }
 
 .popup.active { 
     transform: translate(-50%, -50%) scale(1); 
     transition: 0.5s all;
+}
+
+.arrow-up {
+    width: 85px;
+    height: 85px;
+    background-color: rgba(49, 49, 49, 0.32);
+    cursor: pointer;
+
+    margin-right: 5%;
+
+    border-radius: 50%;
+
+    .arrow-up-inside {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.arrow-up:hover {
+    opacity: 1;
+    transition: .9s ease-in-out;
+}
+
+.animation-hide-up {
+    transition: all  .9s;
+    opacity: 0;
+}
+
+.animation-show-up {
+    transition: all .9s;
+    opacity: .5;
 }

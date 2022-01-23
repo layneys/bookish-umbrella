@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.querySelectorAll('.person-card').forEach(el => LittleChanges(el));
             document.querySelectorAll('[data-cursor-hover]').forEach(el => LittleChanges(el));
             let splide = document.querySelector('.splide__list');
-            splide.addEventListener('mouseover', e => {
+            splide?.addEventListener('mouseover', e => {
                 self.cursorEnlarged = true;
                 self.toggleCursorSize();
                 self.$outline.style.mixBlendMode = "difference";
                 self.$outline.style.background = "#DC41D6";
             })
-            splide.addEventListener('mouseleave', e => {
+            splide?.addEventListener('mouseleave', e => {
                 self.cursorEnlarged = false;
                 self.toggleCursorSize();
                 self.$outline.style.mixBlendMode = "unset";
