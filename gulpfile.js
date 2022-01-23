@@ -6,7 +6,6 @@ const hbsRender = require('gulp-compile-handlebars')
 
 const rename = require('gulp-rename');
 
-
 const templateData = {
         project_title : '{{ project.title }}',
         project_description : '{{ project.description }}',

@@ -49,37 +49,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Команда</title>
+    <link href="../../static/css/modules/header.css" rel="stylesheet">
+    <link href="../../static/css/modules/footer_1.css" rel="stylesheet">
+
+    <link href="../../static/css/modules/custom-cursor.css" rel="stylesheet">
+    <script src="../../static/js/custom-cursor.js"></script>
 </head>
 
 <body>
 
-    <!-- main -->
-    <section id="post-01" class="main ">
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    
 
-        <header class="header">
-
-            <div class="header__item">
-                <div><img class="header__item-logo" src="../../media/icons/logoHeader.png" alt="иконка"></div>
-                <div>
-                    <p class="header-title">
-                        CITG
-                    </p>
+    <header class="header">
+        <div class="container">
+            <div class="header-data">
+                <div class="logo">
+                    <a href="http://127.0.0.1:8000/"><div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"><h3>CITG</h3></div></a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
+                        <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
+                        <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <a class="hover" href="mailto:itsomemail@mail.com"><div class="header-elements">itsomemail@mail.com</div></a>
                 </div>
             </div>
+        </div>
+    </header>
+    <script src="../../static/js/current-page.js"></script>
 
-            <div class="header__item">
-                <nav class="nav">
-                    <a class="nav__link" href="../home_page.html">Главная</a>
-                    <a class="nav__link" href="#">Проекты</a>
-                    <a class="nav__link" href="../templates/users/user_profile.html">Команда</a>
-                </nav>
-            </div>
-
-            <div class="header__item">
-                <a class="mail" href="mailto:huy@gmain.com">сontack@gmail.com</a>
-            </div>
-
-        </header>
+    <!-- main -->
+    <section id="post-01" class="main ">
 
         <div class="main__content">
 
@@ -741,87 +746,40 @@
     </section>
 
 
-    <!-- footer -->
     <footer class="footer">
-        <div class="container">
-
-            <div class="footer__top">
-
-                <div class="footer__icons">
-
-                    <div class="footer__item">
-
-                        <div>
-                            <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/imgs/footer/vk-icon.svg" alt="иконка">
-                            </a>
-                        </div>
-
-                        <div>
-                            <p>
-                                VKontakte
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="footer__item">
-
-                        <div>
-                            <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/imgs/footer/tg-icon.svg" alt="иконка">
-                            </a>
-                        </div>
-
-                        <div>
-                            <p>
-                                Telegramm
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="footer__item">
-
-                        <div>
-                            <a class="footer__link" href="https://ya.ru/" target="_blank">
-                                <img class="footer__img" src="../../media/imgs/footer/what-icon.svg" alt="иконка">
-                            </a>
-                        </div>
-
-                        <div>
-                            <p>
-                                WhatsApp
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="footer__text">
-                    <a class="footer_tel" href="tel:+12312312">
-                        +123.456.789
+        <div class="container footer-container">
+            <div class="links-to-social-networks">
+                <div class="soc-nets telegram">
+                    <a href="#">
+                       <div>
+                           <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
+                           <p>Telegram</p>
+                       </div>
                     </a>
-
-                    <div class="footer__text-adressDiv">
-                        <address>
-
-                            <span class="city">Ростов-на-Дону</span>
-                            <p class="city__adress">
-                                Пл.Ростовского Стрелкового
-                            </p>
-
-                            <p class="city__adress">
-                                Полка Народного Ополчения пл, 2,
-                            </p>
-
-                        </address>
-                    </div>
                 </div>
-
+                <div class="soc-nets VKontakte">
+                    <a href="#">
+                        <div>
+                            <img src="../../media/icons/vk-icon.svg" alt="image of social network">
+                            <p>VKontakte</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="soc-nets WhatsApp">
+                    <a href="#">
+                        <div>
+                            <img src="../../media/icons/whatsapp-icon.svg" alt="image of social network">
+                            <p>WhatsApp</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-
+            <div class="contacts">
+                <a href="tel:+123-456-789">+123.456.789</a>
+                <p>Ростов-на-Дону</p>
+                <p>пл. Ростовского Стрелкового</p>
+                <p>Полка Народного Ополочения пл, 2.</p>
+            </div>
         </div>
     </footer>
 
@@ -832,7 +790,6 @@
             </a>
         </div>
     </div>
-
 
 
     <div class="popup__bg">
