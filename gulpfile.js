@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const server = require('browser-sync');
 
 const hbs = require('gulp-handlebars');
 const hbsRender = require('gulp-compile-handlebars')
