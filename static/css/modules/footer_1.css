@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;
     height: 240px;
     background: #20252C;
@@ -20,10 +20,10 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
 }
-.soc-nets {
+.footer-container .soc-nets {
     margin-right: 50px;
 }
-.soc-nets a div {
+.footer-container .soc-nets a div {
     width: 100px;
     height: 70px;
     display: flex;
@@ -31,32 +31,32 @@
     justify-content: center;
     align-items: center;
 }
-.telegram p {
+.footer-container .telegram p {
     margin-top: 6px;
 }
-.VKontakte p {
+.footer-container .VKontakte p {
     margin-top: 8px;
 }
-.WhatsApp p {
+.footer-container .WhatsApp p {
     margin-top: 12px;
 }
-.contacts {
+.footer-container .contacts {
     text-align: right;
 }
-.contacts a {
+.footer-container .contacts a {
     font-family: 'Roboto', sans-serif;
     font-size: 26px;
     font-weight: 400;
 }
-.contacts p:first-of-type {
+.footer-container .contacts p:first-of-type {
     margin-top: 10px;
 }
-.contacts p {
+.footer-container .contacts p {
     font-size: 16px;
     font-family: 'Exo 2', sans-serif;
 }
 
-.arrow-up {
+.footer-container .arrow-up {
     width: 90px;
     height: 90px;
     transition: all .4s;
@@ -67,10 +67,10 @@
     right: 23px;
     border-radius: 50%;
 }
-.arrow-up:hover div img {
+.footer-container .arrow-up:hover div img {
     opacity: 1;
 }
-.arrow-up div {
+.footer-container .arrow-up div {
     background: rgba(49, 49, 49, 0.32);
     display: flex;
     align-items: center;
@@ -79,7 +79,7 @@
     width: 90px;
     height: 90px;
 }
-.arrow-up div img {
+.footer-container .arrow-up div img {
     opacity: .2;
     transition: all .3s;
 }

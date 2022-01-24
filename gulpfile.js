@@ -1,10 +1,10 @@
 const gulp = require('gulp');
+const server = require('browser-sync');
 
 const hbs = require('gulp-handlebars');
 const hbsRender = require('gulp-compile-handlebars')
 
 const rename = require('gulp-rename');
-
 
 const templateData = {
         project_title : '{{ project.title }}',
