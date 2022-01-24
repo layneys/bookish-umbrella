@@ -1,5 +1,5 @@
 from django.contrib import admin
-from users.models import UserProfile, UserGalleryPicture, UserAchievement, Software, Skill
+from users.models import UserProfile, UserGalleryPicture, UserAchievement, Software, Skill, Job
 
 
 class UserGalleryPictureInline(admin.TabularInline):
@@ -21,3 +21,4 @@ class UserProfileAdmin(admin.ModelAdmin):
 admin.site.register(Skill)
 # admin.site.register(Role)
 admin.site.register(Software)
+admin.site.register(Job)

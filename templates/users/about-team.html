@@ -46,35 +46,17 @@
             <p>Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных сфер, многие из них являются бывшими учениками</p>
         </div>
         <div class="team__list">
-           <!-- {% for user in users %}
-            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
+            {% for user in users %}
+            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.username }}/" data-field="all">
                 <div class="person-card__image" data-field="image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="{{ user.avatar.url }}" alt="image" ondragstart="return false" data-field="image"></a>
+                    <a href="http://127.0.0.1:8000/profile/{{ user.username }}/"><img src="{{user.avatar.url}}" alt="image" ondragstart="return false" data-field="image"></a>
                 </div>
                 <div class="person-card__info" data-field="info">
-                    <h3 data-field="info">{{ user.user.last_name }} {{ user.user.first_name}}</h3>
-                    <p data-field="info">{{ skill.name }}</p>
+                    <h3 data-field="info">{{ user.last_name }} {{ user.first_name }}</h3>
+                    <p data-field="info">{{ user.job.all|join:" " }}</p>
                 </div>
                 <div class="person-card__link" data-field="info">
-                   <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
-                        <div class='person-card__show-more'>
-                            <p>Show</p>
-                            <p>more</p>
-                        </div>
-                   </a>
-                </div>
-            </div>
-            {% endfor %}-->
-            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
-                <div class="person-card__image" data-field="image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
-                </div>
-                <div class="person-card__info" data-field="info">
-                    <h3 data-field="info">Бредихин Андрей</h3>
-                    <p data-field="info">Supa Dupa Designer and Artist</p>
-                </div>
-                <div class="person-card__link" data-field="info">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
+                    <a href="http://127.0.0.1:8000/profile/{{ user.username }}/" >
                         <div class='person-card__show-more'>
                             <p>Show</p>
                             <p>more</p>
@@ -82,56 +64,8 @@
                     </a>
                 </div>
             </div>
-            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
-                <div class="person-card__image" data-field="image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
-                </div>
-                <div class="person-card__info" data-field="info">
-                    <h3 data-field="info">Бредихин Андрей</h3>
-                    <p data-field="info">Supa Dupa Designer and Artist</p>
-                </div>
-                <div class="person-card__link" data-field="info">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
-                        <div class='person-card__show-more'>
-                            <p>Show</p>
-                            <p>more</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
-                <div class="person-card__image" data-field="image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
-                </div>
-                <div class="person-card__info" data-field="info">
-                    <h3 data-field="info">Бредихин Андрей</h3>
-                    <p data-field="info">Supa Dupa Designer and Artist</p>
-                </div>
-                <div class="person-card__link" data-field="info">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
-                        <div class='person-card__show-more'>
-                            <p>Show</p>
-                            <p>more</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="person-card animation-show-up" data-url="http://127.0.0.1:8000/profile/{{ user.user.username }}/" data-field="all">
-                <div class="person-card__image" data-field="image">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/"><img src="../../media/imgs/designer-circle.png" alt="image" ondragstart="return false" data-field="image"></a>
-                </div>
-                <div class="person-card__info" data-field="info">
-                    <h3 data-field="info">Бредихин Андрей</h3>
-                    <p data-field="info">Supa Dupa Designer and Artist</p>
-                </div>
-                <div class="person-card__link" data-field="info">
-                    <a href="http://127.0.0.1:8000/profile/{{ user.user.username }}/" >
-                        <div class='person-card__show-more'>
-                            <p>Show</p>
-                            <p>more</p>
-                        </div>
-                    </a>
-                </div>
+            {% endfor %}
+
             </div>
         </div>
     </div>

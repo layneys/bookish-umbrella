@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,29 +94,22 @@
 
             <div class="main__top">
                 <div>
-                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
+                    <img class="main__top-img" src="{{user.avatar.url}}" alt="картинка">
                 </div>
 
                 <div class="main__text">
-                    <h3 class="main__title-human">Андрей Бредихин</h3>
+                    <h3 class="main__title-human">{{user.first_name}} {{ user.last_name }}</h3>
                     <p class="main__about">
-                        illustrator, UI/UX-дизайнер
+                        {{ jobs|join:", " }}
                     </p>
                 </div>
 
                 <div class="skills__icons">
-
-                    <div class="skills__icons-item">
-                        <img src="../../media/icons/skills-human/1.png" alt="картинка">
-                    </div>
-
-                    <div class="skills__icons-item">
-                        <img src="../../media/icons/skills-human/2.png" alt="картинка">
-                    </div>
-
-                    <div class="skills__icons-item">
-                        <img src="../../media/icons/skills-human/3.png" alt="картинка">
-                    </div>
+                    {% for soft in software %}
+                        <div class="skills__icons-item">
+                            <img src="{{ soft.icon.url }}" alt="{{ soft.name }}">
+                        </div>
+                    {% endfor %}
 
                 </div>
             </div>
@@ -182,34 +175,13 @@
 
                             <div class="splide__track">
                                 <div class="splide__list">
+                                    {% for project in projects %}
 
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
-                                    </li>
+                                        <li class="splide__slide item">
+                                            <a href ="http://127.0.0.1:8000/project/{{ project.id }}"><img src="{{project.preview_pic.url}}"></a>
+                                        </li>
 
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 280.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 282.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 287.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 289.png">
-                                    </li>
+                                    {% endfor %}
 
                                 </div>
                             </div>
@@ -465,45 +437,19 @@
                         </div>
 
                         <div class="item-soft hide">
-
-                            <div class="more_det_soft-item">
-                                <div class="soft_img">
-                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                        alt="картинка">
+                            {% for s in software %}
+                                <div class="more_det_soft-item">
+                                    <div class="soft_img">
+                                        <img src="{{s.icon.url}}"
+                                            alt="картинка">
+                                    </div>
+                                    <div class="soft_text">
+                                        <p class="title_programm">
+                                            {{ s.name }}
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div class="soft_text">
-                                    <p class="title_programm">
-                                        PhotoShop
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="more_det_soft-item">
-                                <div class="soft_img">
-                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                        alt="картинка">
-                                </div>
-
-                                <div class="soft_text">
-                                    <p class="title_programm">
-                                        PhotoShop
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="more_det_soft-item">
-                                <div class="soft_img">
-                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                        alt="картинка">
-                                </div>
-
-                                <div class="soft_text">
-                                    <p class="title_programm">
-                                        PhotoShop
-                                    </p>
-                                </div>
-                            </div>
+                            {% endfor %}
 
                         </div>
 
@@ -528,133 +474,15 @@
                 </div>
 
                 <div class="resume__skills__items">
+                    {% for skill in user.skills.all %}
+                        <div class="resume__skills__item">
 
-                    <div class="resume__skills__item">
+                            <p>
+                                {{ skill.name }}
+                            </p>
 
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
-
-                    <div class="resume__skills__item">
-
-                        <p>
-                            UX/UI
-                        </p>
-
-                    </div>
+                        </div>
+                    {% endfor %}
 
                 </div>
 
@@ -677,34 +505,11 @@
 
                             <div class="splide__track">
                                 <div class="splide__list">
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 280.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 281.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 282.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 287.png">
-                                    </li>
-
-                                    <li class="splide__slide item">
-                                        <img src="../../media/imgs/team-page/works/Rectangle 289.png">
-                                    </li>
+                                    {% for ach in achievements %}
+                                        <li class="splide__slide item">
+                                            <img src="{{ach.image.url}}">
+                                        </li>
+                                    {% endfor %}
 
                                 </div>
                             </div>
@@ -854,7 +659,7 @@
 
                         <div>
                             <p class="person_name">
-                                Андрей Бредихин
+                                {{ user.first_name}} {{ user.last_name }}
                             </p>
                         </div>
 
