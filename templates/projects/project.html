@@ -99,7 +99,7 @@
                 {% endfor %}-->
 
                 {% for img in project.project_images.all%}
-                    <li class="splide__slide mouse-enter"><img src="../../media/imgs/directory.png" data-url-normal-image="pngSpaceBack.png" alt="image" data-image="true" ondragstart="return false"></li>
+                    <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" data-url-normal-image="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
                 {% endfor %}
             </ul>
         </div>
