@@ -1,9 +1,12 @@
 /* LOGIN FORM */
 
+body {
+    background: black;
+}
+
 .login {
-    /*background: var(--darkened-bg);*/
     height: auto;
-    background: #000000;
+    background: #000;
 }
 
 .login #header {
@@ -17,7 +20,7 @@
 }
 
 .login #header h1 a {
-    color: var(--header-link-color);
+    color: #000 !important;
 }
 
 .login #content {
@@ -25,8 +28,8 @@
 }
 
 .login #container {
-    background: var(--body-bg);
-    border: 1px solid var(--hairline-color);
+    background: #282828 !important;
+    border: 1px solid #000 !important;
     border-radius: 4px;
     overflow: hidden;
     width: 28em;

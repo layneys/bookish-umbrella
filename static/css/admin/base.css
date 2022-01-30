@@ -4,54 +4,43 @@
 
 @import url(fonts.css);
 
+#changelist-filter {
+    margin: 0 !important;
+}
+
 /* VARIABLE DEFINITIONS */
 :root {
-  --primary: #ff5a00;
-  --secondary:  #ff5a00;
-  --accent: #ffffff;
-  --primary-fg: #fff;
+    --primary:  #ff5a00;
+    --primary-fg: #000;
 
-  --body-bg: #707070;
-  --body-fg: #000;
-  --body-quiet-color: #ffffff;
-  --body-loud-color: #000;
+    --body-fg: #eeeeee;
+    --body-bg: #121212;
+    --body-quiet-color: #ffffff;
+    --body-loud-color: #ffffff;
 
-  --header-color: #ffffff;
-  --header-branding-color: var(--accent);
-  --header-bg: var(--secondary);
-  --header-link-color: var(--primary-fg);
+    --breadcrumbs-link-fg: #000000;
+    --breadcrumbs-bg: var(--primary);
 
-  --breadcrumbs-fg: #fc5f00;
-  --breadcrumbs-link-fg: var(--body-bg);
-  --breadcrumbs-bg: var(--primary);
+    --link-fg: #fff;
+    --link-hover-color: #fc5f00;
+    --link-selected-fg: #6f94c6;
 
-  --link-fg: #ff5a00;
-  --link-hover-color: #000;
-  --link-selected-fg: #ff5a00;
+    --hairline-color: #383838;
+    --border-color: #353535;
 
-  --hairline-color: #e8e8e8;
-  --border-color: #ccc;
+    --error-fg: #e35f5f;
+    --message-success-bg: #006b1b;
+    --message-warning-bg: #583305;
+    --message-error-bg: #570808;
 
-  --error-fg: #ba2121;
+    --darkened-bg: #212121;
+    --selected-bg: #1b1b1b;
+    --selected-row: #232323;
+
+    --close-button-bg: #333333;
+    --close-button-hover-bg: #666666;
 
 
-
-  --message-success-bg: #dfd;
-  --message-warning-bg: #ffc;
-  --message-error-bg: #ffefef;
-
-  --darkened-bg: #444444; /* A bit darker than --body-bg */
-  --selected-bg: #e4e4e4; /* E.g. selected table cells */
-  --selected-row: #000000;
-
-  --button-fg: #fff;
-  /*--button-bg: var(--primary);*/
-  --button-bg: #ff5a00;
-  --button-hover-bg: #5b5b5b;
-  --default-button-bg: var(--secondary);
-  --default-button-hover-bg: #205067;
-  --close-button-bg: #888; /* Previously #bbb, contrast 1.92 */
-  --close-button-hover-bg: #747474;
   --delete-button-bg: #ba2121;
   --delete-button-hover-bg: #a41515;
 
@@ -77,7 +66,7 @@
     --link-hover-color: #fc5f00;
     --link-selected-fg: #6f94c6;
 
-    --hairline-color: #272727;
+    --hairline-color: #383838;
     --border-color: #353535;
 
     --error-fg: #e35f5f;
@@ -87,7 +76,7 @@
 
     --darkened-bg: #212121;
     --selected-bg: #1b1b1b;
-    --selected-row: #00363a;
+    --selected-row: #232323;
 
     --close-button-bg: #333333;
     --close-button-hover-bg: #666666;
@@ -109,7 +98,7 @@ body {
     padding: 0;
     font-size: 14px;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
-    color: var(--body-fg);
+    color: #fff;
     /*background: var(--body-bg);*/
     background: #000;
 }
@@ -139,7 +128,7 @@ a img {
 
 
 a.section:link, a.section:visited {
-    color: var(--header-link-color);
+    color: #fff;
     text-decoration: none;
 }
 
@@ -184,7 +173,7 @@ h2.subhead {
 h3 {
     font-size: 14px;
     margin: .8em 0 .3em 0;
-    color: var(--body-quiet-color);
+    color: #fff;
     font-weight: bold;
 }
 
@@ -197,7 +186,7 @@ h4 {
 h5 {
     font-size: 10px;
     margin: 1.5em 0 .5em 0;
-    color: var(--body-quiet-color);
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -228,6 +217,7 @@ dd {
 form {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 fieldset {
@@ -235,7 +225,7 @@ fieldset {
     min-width: 0;
     padding: 0;
     border: none;
-    border-top: 1px solid var(--hairline-color);
+    border-top: 1px solid #000;
 }
 
 blockquote {
@@ -248,14 +238,14 @@ blockquote {
 
 code, pre {
     font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
-    color: var(--body-quiet-color);
+    color: #fff;
     font-size: 12px;
     overflow-x: auto;
 }
 
 pre.literal-block {
     margin: 10px;
-    background: var(--darkened-bg);
+    background: #000;
     padding: 6px 8px;
 }
 
@@ -265,8 +255,8 @@ code strong {
 
 hr {
     clear: both;
-    color: var(--hairline-color);
-    background-color: var(--hairline-color);
+    color: #fff;
+    background-color: #000;
     height: 1px;
     border: none;
     margin: 0;
@@ -287,7 +277,7 @@ hr {
 
 .help, p.help, form p.help, div.help, form div.help, div.help li {
     font-size: 11px;
-    color: var(--body-quiet-color);
+    color: #fff;
 }
 
 div.help ul {
@@ -303,7 +293,7 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 }
 
 .quiet, a.quiet:link, a.quiet:visited {
-    color: var(--body-quiet-color);
+    color: #fff;
     font-weight: normal;
 }
 
@@ -323,7 +313,7 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 
 table {
     border-collapse: collapse;
-    border-color: var(--border-color);
+    border-color: #fff;
 }
 
 td, th {
@@ -347,37 +337,37 @@ th {
 
 thead th,
 tfoot td {
-    color: var(--body-quiet-color);
+    color: #fff;
     padding: 5px 10px;
     font-size: 11px;
-    background: var(--body-bg);
+    background: #fff;
     border: none;
-    border-top: 1px solid var(--hairline-color);
-    border-bottom: 1px solid var(--hairline-color);
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 tfoot td {
     border-bottom: none;
-    border-top: 1px solid var(--hairline-color);
+    border-top: 1px solid #000;
 }
 
 thead th.required {
-    color: var(--body-loud-color);
+    color: #000;
 }
 
 tr.alt {
-    background: var(--darkened-bg);
+    background: #fff;
 }
 
 tr:nth-child(odd), .row-form-errors {
-    background: var(--body-bg);
+    background: #000;
 }
 
 tr:nth-child(even),
 tr:nth-child(even) .errorlist,
 tr:nth-child(odd) + .row-form-errors,
 tr:nth-child(odd) + .row-form-errors .errorlist {
-    background: var(--darkened-bg);
+    background: #000;
 }
 
 /* SORTABLE TABLES */
@@ -386,7 +376,7 @@ thead th {
     padding: 5px 10px;
     line-height: normal;
     text-transform: uppercase;
-    background: var(--darkened-bg);
+    background: #000;
 }
 
 thead th a:link, thead th a:visited {
@@ -415,7 +405,7 @@ table thead th .text a {
 }
 
 table thead th .text a:focus, table thead th .text a:hover {
-    background: var(--selected-bg);
+    background: #000;
 }
 
 thead th.sorted a.sortremove {
@@ -462,12 +452,12 @@ table thead th.sorted .sortoptions a.sortremove:after {
     left: 3px;
     font-weight: 200;
     font-size: 18px;
-    color: var(--body-quiet-color);
+    color: #fff;
 }
 
 table thead th.sorted .sortoptions a.sortremove:focus:after,
 table thead th.sorted .sortoptions a.sortremove:hover:after {
-    color: var(--link-fg);
+    color: cornflowerblue;
 }
 
 table thead th.sorted .sortoptions a.sortremove:focus,
@@ -519,14 +509,14 @@ input[type=number], input[type=tel], textarea, select, .vTextField {
     padding: 5px 6px;
     margin-top: 0;
     /*color: var(--body-fg);*/
-    color: #000;
-    background-color: var(--body-bg);
+    color: #fff;
+    background-color: #000;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus,
 input[type=url]:focus, input[type=number]:focus, input[type=tel]:focus,
 textarea:focus, select:focus, .vTextField:focus {
-    border-color: var(--body-quiet-color);
+    border-color: #fff;
 }
 
 select {
@@ -542,11 +532,11 @@ select[multiple] {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: var(--button-bg);
+    background: #343131;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    color: var(--button-fg);
+    color: #fff;
     cursor: pointer;
     transition: background 0.15s;
 }
@@ -558,7 +548,7 @@ a.button {
 .button:active, input[type=submit]:active, input[type=button]:active,
 .button:focus, input[type=submit]:focus, input[type=button]:focus,
 .button:hover, input[type=submit]:hover, input[type=button]:hover {
-    background: var(--button-hover-bg);
+    background: #ff5a00;
 }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
@@ -569,7 +559,7 @@ a.button {
     float: right;
     border: none;
     font-weight: 400;
-    background: var(--default-button-bg);
+    background: #000;
 }
 
 .button.default:active, input[type=submit].default:active,
@@ -591,6 +581,7 @@ input[type=button][disabled].default {
 .module {
     border: none;
     margin-bottom: 30px;
+    min-height: auto !important;
     background: var(--body-bg);
 }
 
@@ -619,7 +610,7 @@ input[type=button][disabled].default {
     text-align: left;
     /*background: var(--primary);*/
     background: #ff5a00;
-    color: var(--header-link-color);
+    color: #000;
 }
 
 .module caption,
@@ -646,18 +637,18 @@ ul.messagelist li {
     font-size: 13px;
     padding: 10px 10px 10px 65px;
     margin: 0 0 10px 0;
-    background: var(--message-success-bg) url(../img/icon-yes.svg) 40px 12px no-repeat;
+    background: green url(../img/icon-yes.svg) 40px 12px no-repeat;
     background-size: 16px auto;
-    color: var(--body-fg);
+    color: #fff;
 }
 
 ul.messagelist li.warning {
-    background: var(--message-warning-bg) url(../img/icon-alert.svg) 40px 14px no-repeat;
+    background: brown url(../img/icon-alert.svg) 40px 14px no-repeat;
     background-size: 14px auto;
 }
 
 ul.messagelist li.error {
-    background: var(--message-error-bg) url(../img/icon-no.svg) 40px 12px no-repeat;
+    background: brown url(../img/icon-no.svg) 40px 12px no-repeat;
     background-size: 16px auto;
 }
 
@@ -667,10 +658,10 @@ ul.messagelist li.error {
     display: block;
     padding: 10px 12px;
     margin: 0 0 10px 0;
-    color: var(--error-fg);
-    border: 1px solid var(--error-fg);
+    color: red;
+    border: 1px solid red;
     border-radius: 4px;
-    background-color: var(--body-bg);
+    background-color: #000;
     background-position: 5px 12px;
     overflow-wrap: break-word;
 }
@@ -678,8 +669,8 @@ ul.messagelist li.error {
 ul.errorlist {
     margin: 0 0 4px;
     padding: 0;
-    color: var(--error-fg);
-    background: var(--body-bg);
+    color: red;
+    background: #000;
 }
 
 ul.errorlist li {
@@ -710,7 +701,7 @@ td ul.errorlist li {
 .form-row.errors {
     margin: 0;
     border: none;
-    border-bottom: 1px solid var(--hairline-color);
+    border-bottom: 1px solid #000;
     background: none;
 }
 
@@ -720,7 +711,7 @@ td ul.errorlist li {
 
 .errors input, .errors select, .errors textarea,
 td ul.errorlist + input, td ul.errorlist + select, td ul.errorlist + textarea {
-    border: 1px solid var(--error-fg);
+    border: 1px solid red;
 }
 
 .description {
@@ -807,8 +798,8 @@ a.deletelink:focus, a.deletelink:hover {
     display: block;
     float: left;
     padding: 3px 12px;
-    background: var(--object-tools-bg);
-    color: var(--object-tools-fg);
+    background: #000;
+    color: #fff;
     font-weight: 400;
     font-size: 11px;
     text-transform: uppercase;
@@ -816,7 +807,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 .object-tools a:focus, .object-tools a:hover {
-    background-color: var(--object-tools-hover-bg);
+    background-color: #000;
 }
 
 .object-tools a:focus{
@@ -871,11 +862,10 @@ table#change-history tbody th {
 .main > .content {
     flex:  1 0;
     max-width: 100%;
-
 }
 
 #content {
-    margin: 0 auto;
+    margin: 10px auto 0;
     padding: 20px 40px;
 }
 
@@ -905,6 +895,7 @@ table#change-history tbody th {
 .colMS {
     /*margin-right: 300px;*/
     width: 100%;
+    background: #040404;
     text-align: center;
 }
 
@@ -935,13 +926,13 @@ table#change-history tbody th {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background: var(--header-bg);
-    color: var(--header-color);
+    background: #ff5a00;
+    color: #000;
     overflow: hidden;
 }
 
 #header a:link, #header a:visited {
-    color: var(--header-link-color);
+    color: #fff;
 }
 
 #header a:focus , #header a:hover {
@@ -957,19 +948,19 @@ table#change-history tbody th {
     margin: 0 20px 0 0;
     font-weight: 300;
     font-size: 24px;
-    color: var(--accent);
+    color: #000;
 }
 
-#branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: var(--accent);
-}
+/*#branding h1, #branding h1 a:link, #branding h1 a:visited {*/
+/*    color: #ff0000;*/
+/*}*/
 
 #branding h2 {
     padding: 0 10px;
     font-size: 14px;
     margin: -8px 0 8px 0;
     font-weight: normal;
-    color: var(--header-color);
+    color: #fff;
 }
 
 #branding a:hover {
@@ -1002,7 +993,7 @@ table#change-history tbody th {
 /* SIDEBAR */
 
 #content-related {
-    background: var(--darkened-bg);
+    background: #fff;
 }
 
 #content-related .module {
@@ -1010,7 +1001,7 @@ table#change-history tbody th {
 }
 
 #content-related h3 {
-    color: var(--body-quiet-color);
+    color: #fff;
     padding: 0 16px;
     margin: 0 0 16px;
 }
@@ -1039,22 +1030,22 @@ table#change-history tbody th {
     background: none;
     padding: 16px;
     margin-bottom: 16px;
-    border-bottom: 1px solid var(--hairline-color);
+    border-bottom: 1px solid #fff;
     font-size: 18px;
     color: var(--body-fg);
 }
 
 .delete-confirmation form input[type="submit"] {
-    background: var(--delete-button-bg);
+    background: red;
     border-radius: 4px;
     padding: 10px 15px;
-    color: var(--button-fg);
+    color: #fff;
 }
 
 .delete-confirmation form input[type="submit"]:active,
 .delete-confirmation form input[type="submit"]:focus,
 .delete-confirmation form input[type="submit"]:hover {
-    background: var(--delete-button-hover-bg);
+    background: red;
 }
 
 .delete-confirmation form .cancel-link {
@@ -1064,15 +1055,15 @@ table#change-history tbody th {
     line-height: 15px;
     border-radius: 4px;
     padding: 10px 15px;
-    color: var(--button-fg);
-    background: var(--close-button-bg);
+    color: #fff;
+    background: gray;
     margin: 0 0 0 10px;
 }
 
 .delete-confirmation form .cancel-link:active,
 .delete-confirmation form .cancel-link:focus,
 .delete-confirmation form .cancel-link:hover {
-    background: var(--close-button-hover-bg);
+    background: gray;
 }
 
 /* POPUP */
