@@ -10,7 +10,10 @@ ul {
 }
 
 .container {
-    width: 1700px;
+    width: 1645px !important;
+}
+.header-container {
+    max-width: 1645px !important;
 }
 
 
