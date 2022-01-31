@@ -6,12 +6,6 @@ body {
   background: linear-gradient(180deg, #191e23 10%, #181d23 100%);
   color: #fff;
 }
-*,
-*::after,
-*::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
 h1,
 h2,
 h3,
