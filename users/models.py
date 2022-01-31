@@ -68,6 +68,7 @@ class UserProfile(models.Model):
 
 class UserAchievement(models.Model):
     image = models.ImageField(upload_to="achievements_images", verbose_name="Картинка")
+    about = models.TextField(blank=True, max_length=255)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name="user_achievements")
 
 
@@ -75,3 +76,23 @@ class UserGalleryPicture(models.Model):
     image = models.ImageField(upload_to="gallery_images", verbose_name="Картинка")
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name="user_images")
 
+
+class ArtWork(models.Model):
+    preview_pic = models.ImageField(upload_to="artwork_gallery_images", default='')
+    about = models.CharField(max_length=255, blank=True)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    software = models.ManyToManyField(Software, verbose_name="Используемые программы",)
+
+
+    class Meta:
+        verbose_name = 'Художественная работа'
+        verbose_name_plural = 'Художественные работы'
+
+
+class ArtWorkGalleryPicture(models.Model):
+    image = models.ImageField(upload_to="artwork_gallery_images")
+    art_work = models.ForeignKey(ArtWork, on_delete=models.CASCADE,related_name="artwork_images")
+
+    class Meta:
+        verbose_name = 'Картинка художественной работы'
+        verbose_name_plural = 'Картинки художественной работы'

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from users.models import User, UserGalleryPicture, UserAchievement, Software, Skill, UserProfile, Job
+from users.models import User, UserGalleryPicture, UserAchievement, Software, Skill, UserProfile, Job, ArtWork
 from projects.models import Project
 
 
@@ -11,6 +11,7 @@ def profile_page(request, username):
     skills = Skill.objects.filter(userprofile__username=username)
     software = Software.objects.filter(userprofile__username=username)
     jobs = Job.objects.filter(userprofile__username=username)
+    art_works = ArtWork.objects.filter(user__username=username)
     return render(request,
                 "../templates/users/user_profile.html",
                   {"user": user,
@@ -21,6 +22,7 @@ def profile_page(request, username):
                    "achievements": achievements,
                    "software": software,
                    "jobs": jobs,
+                   "artworks":art_works,
                    },
     )
 

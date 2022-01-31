@@ -215,189 +215,41 @@
 
                             <div class="section-gal">
                                 <div class="grid">
+                                    {% for art in artworks %}
+                                        <div class="item"
+                                            data-text="{{art.about}}"
+                                            style="background-image: url('{{ art.preview_pic.url }}');">
 
-                                    <div class="item"
-                                        data-text="Никитос пидарас Никитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарас"
-                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+                                            <div class="more__det_botImgs hide">
+                                                {% for pic in art.artwork_images.all %}
+                                                    <div class="more__det_item">
+                                                        <img src="{{ pic.image.url }}">
+                                                    </div>
+                                                {% endfor %}
 
-                                        <div class="more__det_botImgs hide">
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
                                             </div>
 
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
+                                            <div class="item-soft hide">
+                                                {% for soft in art.software.all %}
 
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
+                                                    <div class="more_det_soft-item">
+                                                        <div class="soft_img">
+                                                            <img src="{{soft.icon.url}}"
+                                                                alt="картинка">
+                                                        </div>
 
-                                        </div>
-
-                                        <div class="item-soft hide">
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
+                                                        <div class="soft_text">
+                                                            <p class="title_programm">
+                                                                {{ soft.name }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
                                             </div>
 
                                         </div>
+                                    {% endfor %}
 
-                                    </div>
-
-                                    <div class="item"
-                                        data-text="SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION SUCTION "
-                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
-
-                                        <div class="more__det_botImgs hide">
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="item-soft hide">
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="item"
-                                        data-text="fISTING fISTING fISTING fISTING fISTING fISTING fISTING fISTING fISTING "
-                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
-
-                                        <div class="more__det_botImgs hide">
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                        </div>
-
-                                        <div class="item-soft hide">
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="more_det_soft-item">
-                                                <div class="soft_img">
-                                                    <img src="../../media/imgs/team-page/about-person/skills/Group 113.svg"
-                                                        alt="картинка">
-                                                </div>
-
-                                                <div class="soft_text">
-                                                    <p class="title_programm">
-                                                        PhotoShop
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="item" data-text="ass ass ass ass ass ass ass ass ass ass ass ass "
-                                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
-
-                                        <div class="more__det_botImgs hide">
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                            <div class="more__det_item">
-                                                <img src="../../media/imgs/team-page/works/124.png">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
 
                                 </div>
                             </div>
@@ -416,42 +268,40 @@
             <div class="section-gal">
                 <div class="grid">
 
-                    <div class="item"
-                        data-text="Никитос пидарас Никитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарасНикитос пидарас"
-                        style="background-image: url('../../media/imgs/team-page/works/124.png');">
+                    {% for art in artworks %}
+                                        <div class="item"
+                                            data-text="{{art.about}}"
+                                            style="background-image: url('{{ art.preview_pic.url }}');">
 
-                        <div class="more__det_botImgs hide">
+                                            <div class="more__det_botImgs hide">
+                                                {% for pic in art.artwork_images.all %}
+                                                    <div class="more__det_item">
+                                                        <img src="{{ pic.image.url }}">
+                                                    </div>
+                                                {% endfor %}
 
-                            <div class="more__det_item">
-                                <img src="../../media/imgs/team-page/works/124.png">
-                            </div>
+                                            </div>
 
-                            <div class="more__det_item">
-                                <img src="../../media/imgs/team-page/works/124.png">
-                            </div>
+                                            <div class="item-soft hide">
+                                                {% for soft in art.software.all %}
 
-                            <div class="more__det_item">
-                                <img src="../../media/imgs/team-page/works/124.png">
-                            </div>
+                                                    <div class="more_det_soft-item">
+                                                        <div class="soft_img">
+                                                            <img src="{{soft.icon.url}}"
+                                                                alt="картинка">
+                                                        </div>
 
-                        </div>
+                                                        <div class="soft_text">
+                                                            <p class="title_programm">
+                                                                {{ soft.name }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
 
-                        <div class="item-soft hide">
-                            {% for s in software %}
-                                <div class="more_det_soft-item">
-                                    <div class="soft_img">
-                                        <img src="{{s.icon.url}}"
-                                            alt="картинка">
-                                    </div>
-                                    <div class="soft_text">
-                                        <p class="title_programm">
-                                            {{ s.name }}
-                                        </p>
-                                    </div>
-                                </div>
-                            {% endfor %}
-
-                        </div>
+                                        </div>
+                                    {% endfor %}
 
                     </div>
 

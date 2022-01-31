@@ -1,20 +1,33 @@
 from django.contrib import admin
-from users.models import UserProfile, UserGalleryPicture, UserAchievement, Software, Skill, Job
+from users.models import UserProfile, UserGalleryPicture, UserAchievement, Software, Skill, Job, ArtWork, ArtWorkGalleryPicture
+from nested_inline.admin import NestedTabularInline, NestedModelAdmin
 
-
-class UserGalleryPictureInline(admin.TabularInline):
+class UserGalleryPictureInline(NestedTabularInline):
     model = UserGalleryPicture
 
 
-class UserAchievementInline(admin.TabularInline):
+class UserAchievementInline(NestedTabularInline):
     model = UserAchievement
 
 
+class ArtWorkPictureInline(NestedTabularInline):
+    model = ArtWorkGalleryPicture
+    extra = 1
+
+
+class ArtWorkInline(NestedTabularInline):
+    model = ArtWork
+    inlines = [ArtWorkPictureInline,
+               ]
+    extra = 1
+
+
 @admin.register(UserProfile)
-class UserProfileAdmin(admin.ModelAdmin):
+class UserProfileAdmin(NestedModelAdmin):
     inlines = [
         UserGalleryPictureInline,
         UserAchievementInline,
+        ArtWorkInline,
     ]
 
 
