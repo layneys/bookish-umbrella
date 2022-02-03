@@ -692,7 +692,7 @@ const Anchor = () => {
     window.addEventListener('scroll', function arrowPosition() {
 
         arrowUp.style.position = 'fixed';
-        arrowUp.style.left = container.offsetLeft + container.clientWidth + 150 + 'px';
+        arrowUp.style.left = container.offsetLeft + container.clientWidth + 'px';
 
         let top = window.pageYOffset + Math.floor(window.innerHeight / footer.clientHeight) * footer.clientHeight;
 
