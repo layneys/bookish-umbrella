@@ -6,6 +6,21 @@ let divItems = document.querySelectorAll('.div-item');
 let textItems = document.querySelectorAll('.text-item');
 let container = document.querySelector('.container');
 
+document.addEventListener('click', (e) => {
+    let popupBg = document.querySelector('.popup__bg');
+    let popup = document.querySelector('.popup');
+
+    if (e.target === popupBg) {
+        popupBg.classList.remove('active');
+        popup.classList.remove('active');
+
+        let body = document.querySelector("body");
+
+        body.classList.remove("hideScroll");
+
+    }
+});
+
 const SetAnim = (arr, clazzEl) => {
 
     let windowTopCenter = window.pageYOffset;
@@ -32,6 +47,20 @@ const SetAnim = (arr, clazzEl) => {
 
 };
 
+const SetAboutWork = (el) => {
+
+    let textPopup = document.querySelector('.popup__text');
+    
+    textPopup.innerHTML = "";
+
+    if (el.dataset.text == undefined) {
+        textPopup.innerHTML = "";
+    } else {
+        textPopup.innerHTML = el.dataset.text;
+    }
+
+};
+
 const AnimationScroll = () => {
     SetAnim(divItems, "div-animation");
     SetAnim(textItems, "text-animation");
@@ -42,21 +71,7 @@ window.addEventListener("scroll", () => {
     AnimationScroll();
 });
 
-document.addEventListener('click', (e) => {
-    let popupBg = document.querySelector('.popup__bg');
-    let popup = document.querySelector('.popup');
 
-    if (e.target === popupBg) {
-        popupBg.classList.remove('active');
-        popup.classList.remove('active');
-
-        let body = document.querySelector("body");
-        let modal = body.querySelector(".popup__bg");
-
-        body.classList.remove("hideScroll");
-
-    }
-});
 
 
 let toSlide;
@@ -74,6 +89,8 @@ function ModalWindow() {
             let pathImg = imgSlide.src;
             let popupImg = document.querySelector('#popup-img');
             popupImg.setAttribute("src", pathImg);
+
+            SetAboutWork(slide);
 
 
             body.classList.add("hideScroll");
@@ -197,6 +214,7 @@ function AddBtn(btnPrev, btnNext, block) {
     block.prepend(btnPrev);
     block.appendChild(btnNext);
 }
+
 
 AddBtn(btns[0], btns[1], sliderContent);
 ModalWindow();

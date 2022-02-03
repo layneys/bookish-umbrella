@@ -72,9 +72,11 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
+                        <!-- <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li> -->
+                        <li><a href="/templates/home_page.html"><div class="header-elements" data-hover>Домой</div></a></li>
                         <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
-                        <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                        <!-- <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li> -->
+                        <li><a href="users/user_profile.html"><div class="header-elements" data-hover>Команда</div></a></li>
                     </ul>
                 </div>
                 <div class="mail">
@@ -170,7 +172,7 @@
 
                 <div class="">
                     <p class="advanteges__subTitle">
-                        Здесь действия так же выжны, как и эмоции
+                        Здесь действия так же важны, как и эмоции
                     </p>
                 </div>
 
@@ -418,11 +420,12 @@
 
                 </div>
 
-                <div class="developers__btn ">
-                    <button class="btn">
-                        Contact us
-                    </button>
-                </div>
+            </div>
+
+            <div class="developers__btn ">
+                <button class="btn">
+                    Contact us
+                </button>
             </div>
 
         </div>
@@ -513,7 +516,7 @@
             </div>
 
             <div class="projects__showAll ">
-                <a class="projects-showAll btn" href="#">LOAD MORE</a>
+                <a class="projects-showAll btn" href="#">Показать всё</a>
             </div>
         </div>
 
@@ -532,34 +535,34 @@
 
                         <div class="splide__track">
                             <div class="splide__list">
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="asdadasd">
                                     <img class="certificates__item-img" src="../media/imgs/slider/certificat.png"
                                         alt="сертификат">
                                 </li>
 
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="asdadasd">
                                     <img class="certificates__item-img"
                                         src="../media/imgs/e213bac0439465f65ec4412560dea1fc.png" alt="сертификат">
                                 </li>
 
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="22222">
                                     <img class="certificates__item-img"
                                         src="https://10wallpaper.com/wallpaper/1680x1050/1603/2016_Windows_10_scenery_theme_desktop_wallpaper_04_1680x1050.jpg"
                                         alt="сертификат">
                                 </li>
 
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="44444">
                                     <img class="certificates__item-img"
                                         src="https://i10.fotocdn.net/s113/68b08dbc59f3ce29/public_pin_l/2552876898.jpg"
                                         alt="сертификат">
                                 </li>
 
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="11111">
                                     <img class="certificates__item-img"
                                         src="https://images5.alphacoders.com/688/688755.jpg" alt="сертификат">
                                 </li>
 
-                                <li class="splide__slide item">
+                                <li class="splide__slide item" data-text="66666">
                                     <img class="certificates__item-img"
                                         src="https://i.artfile.ru/4900x3270_660669_[www.ArtFile.ru].jpg"
                                         alt="сертификат">
@@ -600,7 +603,7 @@
 
             </div>
 
-            <div class="container">
+            <div class="container--width">
 
                 <div class="team__content">
 
@@ -645,10 +648,12 @@
                         <div class="team__img ">
 
                             <img class="team__bottom-img" src="../media/imgs/GITG/team.png" alt="картинка">
-
+    
                         </div>
 
                     </div>
+
+                   
 
                 </div>
 
@@ -707,7 +712,6 @@
 
         <div class="popup">
 
-
             <button id="btnPrev" class="btnLeft">
                 <img src="../media/imgs/splide/prev1.svg" alt="кнопка вперёд">
             </button>
@@ -717,7 +721,7 @@
             </div>
 
             <div class="popup_rightDiv">
-                <p>
+                <p class="popup__text">
                     1 место за участие в хакатон 2020
                 </p>
             </div>

@@ -175,7 +175,7 @@
   height: 100%;
   width: 100%;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .slider .splide .splide__slide .splide_slide-img img {
   height: auto;
@@ -195,10 +195,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .work .portfolio .portfolio__top__top .portfolio__top {
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 2% 2% 0 2%;
   background: rgba(32, 31, 31, 0.35);
 }
@@ -214,13 +214,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .work .portfolio .work__bottom__bottom .work__bottom {
   background: rgba(32, 31, 31, 0.35);
   margin-top: 3%;
   padding: 2%;
-  border-radius: 10px;
+  padding-bottom: 0;
+  border-radius: 7px;
 }
 .work .portfolio .work__bottom__bottom .work__bottom .work__bottom-text {
   display: -webkit-box;
@@ -241,11 +242,23 @@
 .work .portfolio .work__bottom__bottom .work__bottom .work__bottom__items .work__bottom__top {
   padding: 3% 0;
 }
+.work .portfolio .work__bottom__bottom .work__bottom .work__bottom__items .work__bottom__top .item {
+  border-radius: 7px;
+}
+.work .portfolio .work__bottom__bottom .work__bottom .work__bottom__items .work__bottom__top .item img {
+  border-radius: 7px;
+}
 .work .gallery {
   text-align: center;
 }
 .work .gallery #gallery-btn {
   margin-top: 5%;
+}
+.work .gallery .item {
+  border-radius: 7px;
+}
+.work .gallery .item img {
+  border-radius: 7px;
 }
 .work .resume {
   font-family: 'Inter', sans-serif;
@@ -326,6 +339,10 @@
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+.popup {
+  height: auto;
+  max-height: 900px;
+}
 .Mpopup__bg {
   position: fixed;
   top: 0;
@@ -360,7 +377,7 @@
   padding: 25px;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .Mpopup body {
   overflow: hidden;
@@ -376,12 +393,12 @@
 }
 .Mpopup .more__det .more__det__imgs {
   width: 70%;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .Mpopup .more__det .more__det__imgs img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .Mpopup .more__det .more__det__imgs .more__det_botImgs {
   margin-top: 5%;
@@ -393,10 +410,9 @@
   cursor: pointer;
 }
 .Mpopup .more__det .more__det__info {
-  background-color: #121518;
   width: 35%;
   padding: 2%;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .Mpopup .more__det .more__det__info .more_det_top {
   display: -webkit-box;
@@ -445,22 +461,46 @@
   font-weight: 300;
   font-size: 18px;
 }
-.Mpopup .more__det .more__det__info .more_det_item .more_det_work {
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
   height: 200px;
+  width: 100%;
   border-radius: 7px;
   background-size: cover;
   background-position: top;
-  position: relative;
 }
-.Mpopup .more__det .more__det__info .more_det_item .more_det_work #next_img,
-.Mpopup .more__det .more__det__info .more_det_item .more_det_work #next_img2 {
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work img {
   position: absolute;
   height: auto;
   margin: auto;
   top: 0;
   bottom: 0;
-  left: 7%;
   cursor: pointer;
+}
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work:first-child {
+  left: 7%;
+}
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work:first-child img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: 7%;
+}
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work:last-child {
+  right: 7%;
+}
+.Mpopup .more__det .more__det__info .more_det_item .more_det__work .more_det_work:last-child img {
+  right: 7%;
 }
 .Mpopup .more__det .more__det__info .more_det_item #more_det_soft {
   display: -webkit-box;
@@ -476,7 +516,7 @@
 }
 .Mpopup .more__det .more__det__info .more_det_item #more_det_soft .more_det_soft-item {
   background-color: #0C0824;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 35px;
   margin-top: 20px;
   display: -webkit-box;

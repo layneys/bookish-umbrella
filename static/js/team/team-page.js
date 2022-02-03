@@ -62,24 +62,24 @@ const itemClassesGall = {
 const SetItemClassMyWorks = () => {
 
     //four elements of myWorks
-    let myWorks = document.querySelector('.work__bottom__top');    
-    let arrMyWorks = myWorks.querySelectorAll('.item');    
+    let myWorks = document.querySelector('.work__bottom__top');
+    let arrMyWorks = myWorks.querySelectorAll('.item');
 
     for (let i = 0; i < arrMyWorks.length; i++) {
-                            
-        arrMyWorks[i].classList.add(itemClassesMyWorks[i+1]);                 
-                            
+
+        arrMyWorks[i].classList.add(itemClassesMyWorks[i + 1]);
+
     }
 
     //gallery's elements
-    let gallery = document.querySelector('.gallery');    
-    let arrGall = gallery.querySelectorAll('.item');    
+    let gallery = document.querySelector('.gallery');
+    let arrGall = gallery.querySelectorAll('.item');
 
     let temp = 1;
     for (let i = 0; i < arrGall.length; i++) {
-                            
-        arrGall[i].classList.add(itemClassesGall[temp]);                 
-                            
+
+        arrGall[i].classList.add(itemClassesGall[temp]);
+
         temp++;
 
         if (temp === 10)
@@ -198,7 +198,7 @@ const SetSfteareUsed = (el) => {
     while (moreDetSoft.firstChild) {
         moreDetSoft.removeChild(moreDetSoft.lastChild);
     }
-    
+
     arrSoftImg.forEach(item => {
 
         let img = item.querySelector("img");
@@ -219,16 +219,21 @@ const SetSfteareUsed = (el) => {
             </div>
             `;
 
-            moreDetSoft.appendChild(div);
+        moreDetSoft.appendChild(div);
 
     });
 
 };
 
-const SetAboutWork = (el) => {
+const SetAboutWork = (el, mBool = true) => {
 
-    let moreDetText = document.querySelector('.more_det-text');
-    
+    let moreDetText;
+    if (mBool) {
+        moreDetText = document.querySelector('.more_det-text');
+    } else {
+        moreDetText = document.querySelector('.popup__text');
+    }
+
     moreDetText.innerHTML = "";
 
     if (el.dataset.text == undefined) {
@@ -239,71 +244,111 @@ const SetAboutWork = (el) => {
 
 };
 
-let iNextWork;
-const NextWork = (arrWork, boolCh) => {
-
-    if (iNextWork >= arrWork.length) {
-        iNextWork = 0;
-    }
-
-    let moreDetImgs = document.querySelector(".more__det__imgs");
-    let img = moreDetImgs.querySelector("img");
-
-    let style = arrWork[iNextWork].currentStyle || window.getComputedStyle(arrWork[iNextWork], false),
-        path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-
-    img.setAttribute("src", path);
 
 
-    // for img right
-    let styleM;
-    if (iNextWork + 1 === arrWork.length) {
-        styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
-
-        SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
-        SetSfteareUsed(arrWork[arrWork.length - 1]);
-        SetAboutWork(arrWork[arrWork.length - 1]);
-        
-    } else {
-        styleM = arrWork[iNextWork + 1].currentStyle || window.getComputedStyle(arrWork[iNextWork + 1], false);
-
-        SetMoreDetBbotImgs(arrWork[iNextWork]);
-        SetSfteareUsed(arrWork[iNextWork]);
-        SetAboutWork(arrWork[iNextWork]);
-
-    }
-
-    let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
-
-    let moreDetItem = document.querySelectorAll(".more_det_work");
-
-    if (boolCh) {
-        moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
-        moreDetItem[0].style.display = "none";
-
-        moreDetItem[1].style.display = "block";
-    } else {
-        moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
-        moreDetItem[1].style.display = "none";
-
-        moreDetItem[0].style.display = "block";
-    }
 
 
-    iNextWork++;
-
-};
 
 
-const ShowDelWork = (section, boolCh) => {
+
+
+
+
+
+
+
+
+let numSlide;
+// const NextWork = (arrWork) => {
+
+//     if (numSlide >= arrWork.length) {
+//         numSlide = 0;
+//     }
+
+//     let moreDetImgs = document.querySelector(".more__det__imgs");
+//     let img = moreDetImgs.querySelector("img");
+
+//     let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
+//         path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+//     img.setAttribute("src", path);
+
+
+//     // for img right
+//     let styleM;
+//     if (numSlide + 1 === arrWork.length) {
+//         styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+//         SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+//         SetSfteareUsed(arrWork[arrWork.length - 1]);
+//         SetAboutWork(arrWork[arrWork.length - 1]);
+
+//     } else {
+//         styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
+
+//         SetMoreDetBbotImgs(arrWork[numSlide]);
+//         SetSfteareUsed(arrWork[numSlide]);
+//         SetAboutWork(arrWork[numSlide]);
+
+//     }
+
+//     let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+//     let moreDetItem = document.querySelector(".more_det__work");
+
+//     moreDetItem.style.backgroundImage = `url("${pathM}")`;
+
+//     // if (boolCh) {
+//     //     moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
+//     //     moreDetItem[0].style.display = "none";
+
+//     //     moreDetItem[1].style.display = "block";
+//     // } else {
+//     //     moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
+//     //     moreDetItem[1].style.display = "none";
+
+//     //     moreDetItem[0].style.display = "block";
+//     // }
+
+
+//     numSlide++;
+
+// };
+
+
+const ShowDelWork = (section, mBool) => {
 
     let sec = document.querySelector(section);
     let arrWork = sec.querySelectorAll(".item");
+
 
     for (let i = 0; i < arrWork.length; i++) {
 
         arrWork[i].addEventListener("click", (e) => {
             e.preventDefault();
+
+            if (mBool) {
+                let btnPrev = document.querySelector('#prev_img1')
+                .classList.add("hide");
+                let btnNext = document.querySelector('#next_img1')
+                .classList.add("hide");
+        
+                let btnPrev1 = document.querySelector('#prev_img')
+                .classList.remove("hide");
+                let btnNext1 = document.querySelector('#next_img')
+                .classList.remove("hide");
+        
+            } else {
+                let btnPrev1 = document.querySelector('#prev_img')
+                .classList.add("hide");
+                let btnNext1 = document.querySelector('#next_img')
+                .classList.add("hide");
+        
+                let btnPrev = document.querySelector('#prev_img1')
+                .classList.remove("hide");
+                let btnNext = document.querySelector('#next_img1')
+                .classList.remove("hide");
+            }
 
             let divT = e.target;
 
@@ -317,8 +362,8 @@ const ShowDelWork = (section, boolCh) => {
 
             //soft
             SetSfteareUsed(divT);
-           
-            
+
+
             //img right
             let mainPopupImg = document.querySelector('#main__popup_img');
             mainPopupImg.setAttribute("src", path);
@@ -332,19 +377,9 @@ const ShowDelWork = (section, boolCh) => {
 
             let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
 
-            let moreDetItem = document.querySelectorAll(".more_det_work");
+            let moreDetItem = document.querySelector(".more_det__work");
 
-            if (boolCh) {
-                moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
-                moreDetItem[0].style.display = "none";
-
-                moreDetItem[1].style.display = "block";
-            } else {
-                moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
-                moreDetItem[1].style.display = "none";
-
-                moreDetItem[0].style.display = "block";
-            }
+            moreDetItem.style.backgroundImage = `url("${pathM}")`;
 
 
             let popupBg = document.querySelector('.Mpopup__bg');
@@ -353,11 +388,7 @@ const ShowDelWork = (section, boolCh) => {
             popupBg.classList.add('Mactive');
             popup.classList.add('Mactive');
 
-            if (i + 1 === arrWork.length) {
-                iNextWork = 0;
-            } else {
-                iNextWork = i + 1;
-            }
+            numSlide = i;
 
             SetMoreDetBbotImgs(divT);
 
@@ -365,17 +396,229 @@ const ShowDelWork = (section, boolCh) => {
 
     }
 
-    if (boolCh) {
-        let nextImg = document.querySelector("#next_img2")
-            .addEventListener("click", function () { NextWork(arrWork, boolCh) });
-    } else {
-        let nextImg = document.querySelector("#next_img")
-            .addEventListener("click", function () { NextWork(arrWork, boolCh) });
-    }
 
+
+    PrevNextSlide(arrWork, mBool);
     let imgClose = document.querySelector("#more_det-close")
         .addEventListener("click", CloseModalWork);
+
 };
+
+
+
+const PrevNextSlide = (arrWork, mBool) => {
+
+    if (mBool) {
+
+        let btnNextId = document.querySelector('#next_img')
+            .addEventListener("click", () => {
+                numSlide++;
+
+
+                if (numSlide >= arrWork.length) {
+                    numSlide = 0;
+                }
+
+                let moreDetImgs = document.querySelector(".more__det__imgs");
+                let img = moreDetImgs.querySelector("img");
+
+                let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
+                    path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                img.setAttribute("src", path);
+
+
+                // for img right
+                let styleM;
+                if (numSlide + 1 === arrWork.length) {
+                    styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+                    SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+                    SetSfteareUsed(arrWork[arrWork.length - 1]);
+                    SetAboutWork(arrWork[arrWork.length - 1]);
+
+                } else {
+                    styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
+
+                    SetMoreDetBbotImgs(arrWork[numSlide]);
+                    SetSfteareUsed(arrWork[numSlide]);
+                    SetAboutWork(arrWork[numSlide]);
+
+                }
+
+                let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                let moreDetItem = document.querySelector(".more_det__work");
+
+                moreDetItem.style.backgroundImage = `url("${pathM}")`;
+            });
+
+
+
+        let btnPrevId = document.querySelector('#prev_img')
+            .addEventListener("click", () => {
+
+                numSlide--;
+                console.log(numSlide)
+
+                if (numSlide < 0) {
+                    numSlide = arrWork.length - 1;
+                }
+
+                let moreDetImgs = document.querySelector(".more__det__imgs");
+                let img = moreDetImgs.querySelector("img");
+
+                let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
+                    path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                img.setAttribute("src", path);
+
+
+                // for img right
+                let styleM;
+                if (numSlide + 1 === arrWork.length) {
+                    styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+                    SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+                    SetSfteareUsed(arrWork[arrWork.length - 1]);
+                    SetAboutWork(arrWork[arrWork.length - 1]);
+
+                } else {
+                    styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
+
+                    SetMoreDetBbotImgs(arrWork[numSlide]);
+                    SetSfteareUsed(arrWork[numSlide]);
+                    SetAboutWork(arrWork[numSlide]);
+
+                }
+
+                let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                let moreDetItem = document.querySelector(".more_det__work");
+
+                moreDetItem.style.backgroundImage = `url("${pathM}")`;
+
+            });
+
+    } else {
+
+        let btnNextId = document.querySelector('#next_img1')
+            .addEventListener("click", () => {
+                numSlide++;
+
+
+                if (numSlide >= arrWork.length) {
+                    numSlide = 0;
+                }
+
+                let moreDetImgs = document.querySelector(".more__det__imgs");
+                let img = moreDetImgs.querySelector("img");
+
+                let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
+                    path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                img.setAttribute("src", path);
+
+
+                // for img right
+                let styleM;
+                if (numSlide + 1 === arrWork.length) {
+                    styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+                    SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+                    SetSfteareUsed(arrWork[arrWork.length - 1]);
+                    SetAboutWork(arrWork[arrWork.length - 1]);
+
+                } else {
+                    styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
+
+                    SetMoreDetBbotImgs(arrWork[numSlide]);
+                    SetSfteareUsed(arrWork[numSlide]);
+                    SetAboutWork(arrWork[numSlide]);
+
+                }
+
+                let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                let moreDetItem = document.querySelector(".more_det__work");
+
+                moreDetItem.style.backgroundImage = `url("${pathM}")`;
+            });
+
+
+
+        let btnPrevId = document.querySelector('#prev_img1')
+            .addEventListener("click", () => {
+
+                numSlide--;
+                console.log(numSlide)
+
+                if (numSlide < 0) {
+                    numSlide = arrWork.length - 1;
+                }
+
+                let moreDetImgs = document.querySelector(".more__det__imgs");
+                let img = moreDetImgs.querySelector("img");
+
+                let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
+                    path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                img.setAttribute("src", path);
+
+
+                // for img right
+                let styleM;
+                if (numSlide + 1 === arrWork.length) {
+                    styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
+
+                    SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
+                    SetSfteareUsed(arrWork[arrWork.length - 1]);
+                    SetAboutWork(arrWork[arrWork.length - 1]);
+
+                } else {
+                    styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
+
+                    SetMoreDetBbotImgs(arrWork[numSlide]);
+                    SetSfteareUsed(arrWork[numSlide]);
+                    SetAboutWork(arrWork[numSlide]);
+
+                }
+
+                let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+                let moreDetItem = document.querySelector(".more_det__work");
+
+                moreDetItem.style.backgroundImage = `url("${pathM}")`;
+
+            });
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function ModalSWindow() {
@@ -390,6 +633,8 @@ function ModalSWindow() {
             let slide = e.target;
             let imgSlide = slide.querySelector("img");
             let pathImg = imgSlide.src;
+
+            SetAboutWork(slide, false);
 
             let popupLeftImg = document.querySelector('.popup_leftImg');
             let img = popupLeftImg.querySelector('img');
@@ -425,6 +670,7 @@ const Anchor = () => {
     let post_01 = document.querySelector('#post-01');
     let arrowUp = document.querySelector('.arrow-up');
 
+
     window.addEventListener('scroll', function scrollArrow() {
 
         if (document.documentElement.scrollTop > post_01.offsetTop + post_01.clientHeight - 300) {
@@ -446,7 +692,7 @@ const Anchor = () => {
     window.addEventListener('scroll', function arrowPosition() {
 
         arrowUp.style.position = 'fixed';
-        arrowUp.style.left = container.offsetLeft + container.clientWidth + 'px';
+        arrowUp.style.left = container.offsetLeft + container.clientWidth + 150 + 'px';
 
         let top = window.pageYOffset + Math.floor(window.innerHeight / footer.clientHeight) * footer.clientHeight;
 
@@ -467,13 +713,14 @@ const Anchor = () => {
             behavior: 'smooth',
             block: 'start'
         })
-    })
+    });
+
 
 };
 
 
 let hideItems = 9;
-const ShowHideItem = () => {
+function ShowHideItem() {
 
     let gallery = document.querySelector('.gallery');
     let itemGal = gallery.querySelectorAll('.item');
@@ -484,6 +731,9 @@ const ShowHideItem = () => {
         itemGal[hideItems].classList.remove("hide");
 
     }
+
+    this.classList.add("btnDisabled");
+    this.disabled = false;
 
 };
 
@@ -500,8 +750,8 @@ const LoadMomeGallery = () => {
 BtnShowS();
 AddBtnSlider(".portfolio");
 AddBtnSlider(".resume");
-ShowDelWork(".gallery", true);
-ShowDelWork(".work__bottom__top", false);
+ShowDelWork(".work__bottom__top", true);
+ShowDelWork(".gallery", false);
 ModalSWindow();
 Anchor();
 LoadMomeGallery();

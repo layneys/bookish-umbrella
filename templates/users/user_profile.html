@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="ru">
-<!--{% load static %}-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- fonsts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
@@ -85,7 +85,7 @@
     </header>
     <script src="../../static/js/current-page.js"></script>
 
-    <!-- main -->
+  
     <section id="post-01" class="main ">
 
         <div class="main__content">
@@ -112,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="main__bottom">
+            <div class="main__bottom" id="post-gallery">
                 <div class="container">
 
                     <div class="main__bottom__items">
@@ -202,7 +202,7 @@
                         </p>
 
                         <div class="show__gallery">
-                            <button id="btn_showGall">Посмотреть ещё</button>
+                            <button id="btn_showGall" href="#post-gallery">Посмотреть ещё</button>
                         </div>
 
                     </div>
@@ -337,7 +337,7 @@
 
             </div>
 
-            <!-- slider -->
+           
             <div class="achi">
 
                 <div class="achi__title">
@@ -475,7 +475,7 @@
     </div>
 
 
-    <div class="Mpopup__bg">
+     <div class="Mpopup__bg">
 
         <div class="Mpopup">
 
@@ -508,7 +508,7 @@
 
                         <div>
                             <p class="person_name">
-                                {{ user.first_name}} {{ user.last_name }}
+                                Андрей Бредихин
                             </p>
                         </div>
 
@@ -538,12 +538,20 @@
                             </p>
                         </div>
 
-                        <div class="more_det_work">
-                            <img id="next_img" src="../../media/icons/next-icon.svg" alt="картинка">
-                        </div>
+                        <div class="more_det__work">
 
-                        <div class="more_det_work">
-                            <img id="next_img2" src="../../media/icons/next-icon.svg" alt="картинка">
+                            <div class="more_det_work">
+                                <img id="prev_img" src="../../media/icons/modal-work/next-icon.svg" alt="картинка">
+
+                                <img id="prev_img1" src="../../media/icons/modal-work/next-icon.svg" alt="картинка">
+                            </div>
+
+                            <div class="more_det_work">
+                                <img id="next_img" src="../../media/icons/modal-work/next-icon.svg" alt="картинка">
+
+                                <img id="next_img1" src="../../media/icons/modal-work/next-icon.svg" alt="картинка">
+                            </div>
+
                         </div>
 
                     </div>

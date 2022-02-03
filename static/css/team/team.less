@@ -2,17 +2,6 @@
     color: #E1793E;
 }
 
-
- // font-family: 'Inter', sans-serif;
-    // font-family: 'Open Sans', sans-serif;
-    //font-family: 'Cabin', sans-serif;
-    //font-family: 'Montserrat', sans-serif;
-    //font-family: 'Roboto', sans-serif;
-    //font-family: 'Asap', sans-serif;
-    //font-family: 'Exo 2', sans-serif;
-    //font-family: 'Karla', sans-serif;
-
-
 .container {
     width: 100%;
     max-width: 1300px;
@@ -223,7 +212,7 @@
 
                 cursor: pointer;
 
-                border-radius: 10px;
+                border-radius: 7px;
                 
                 img {
                     height: auto;
@@ -260,10 +249,10 @@
             background-size: cover;
             background-position: center;
 
-            border-radius: 10px;
+            border-radius: 7px;
 
             .portfolio__top {
-                border-radius: 10px;
+                border-radius: 7px;
                 padding: 2% 2% 0 2%;
 
                 background: rgba(32, 31, 31, 0.35);
@@ -292,7 +281,7 @@
             background-size: cover;
             background-position: center;
 
-            border-radius: 10px;
+            border-radius: 7px;
 
             .work__bottom {
 
@@ -300,7 +289,8 @@
     
                 margin-top: 3%;
                 padding: 2%;
-                border-radius: 10px;
+                padding-bottom: 0;
+                border-radius: 7px;
     
                 .work__bottom-text {
                     display: flex;
@@ -320,6 +310,13 @@
     
                     .work__bottom__top {
                         padding: 3% 0;
+
+                        .item {
+                            border-radius: 7px;
+                            img {
+                                border-radius: 7px;
+                            }
+                        }
                     }
     
                 }
@@ -334,6 +331,13 @@
 
        #gallery-btn {
            margin-top: 5%;
+       }
+
+       .item {
+        border-radius: 7px;
+           img {
+               border-radius: 7px;
+           }
        }
    }
 
@@ -429,7 +433,11 @@
     
 }
 
+.popup {
 
+    height: auto;
+    max-height: 900px;
+}
 
 .Mpopup__bg {
     position: fixed;
@@ -471,7 +479,7 @@
     padding: 25px;
     transition: 0.5s all;
 
-    border-radius: 10px;
+    border-radius: 7px;
 
     .more__det {
         display: flex;
@@ -482,13 +490,13 @@
         .more__det__imgs {
             width: 70%;
     
-            border-radius: 10px;
+            border-radius: 7px;
 
             img {
                 width: 100%;
                 height: auto;
 
-                border-radius: 10px;
+                border-radius: 7px;
             }
             
             .more__det_botImgs {
@@ -506,12 +514,11 @@
         }
     
         .more__det__info {
-            background-color: #121518;;
             width: 35%;
     
             padding: 2%;
     
-            border-radius: 10px;
+            border-radius: 7px;
     
             .more_det_top {
                 display: flex;
@@ -570,33 +577,61 @@
                         font-size: 18px;
                     }
                 }
-    
-                .more_det_work {
-                    height: 200px;
 
+                .more_det__work {
+
+                    display: flex;
+                    justify-content: space-between;
+
+                    position: relative;
+
+                    height: 200px;
+                    width: 100%;
+    
                     border-radius: 7px;
     
                     background-size: cover;
                     background-position: top;
-    
-                    // display: flex;
-                    // justify-content: left;
-                    // align-items: center;
-    
-                    position: relative;
 
-                    #next_img, #next_img2 {
+                    .more_det_work {
                         position: absolute;
-                        height: auto;
-                        margin: auto;
                         top: 0;
                         bottom: 0;
+
+                        img {
+                            position: absolute;
+                            height: auto;
+                            margin: auto;
+                            top: 0;
+                            bottom: 0;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .more_det_work:first-child {
+
                         left: 7%;
 
-                        cursor: pointer;
+                        img {
+                            transform: rotate(180deg);
+
+                            left: 7%;
+                        }
+    
                     }
-                    
+
+                    .more_det_work:last-child {
+
+                        right: 7%;
+
+                        img {
+                            right: 7%;
+                        }
+
+                    }
                 }
+    
+                
     
                 #more_det_soft {
                     display: flex;
@@ -606,7 +641,7 @@
                     .more_det_soft-item {
 
                         background-color: #0C0824;
-                        border-radius: 10px;
+                        border-radius: 7px;
 
                         padding: 35px;
 

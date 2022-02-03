@@ -14,9 +14,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
   color: #DC6041;
 }
 .num__page .num__page__left {
@@ -87,11 +87,12 @@ body {
   transition: opacity 1s ease-in-out, transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 .main {
-  padding-bottom: 9%;
   background-image: url("../../media/imgs/main/bg-main.png");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
   background-position: right;
+  background-position-y: bottom;
+  padding-bottom: 9%;
 }
 .main .main__content {
   height: 100vh;
@@ -194,18 +195,18 @@ body {
           justify-content: space-between;
 }
 .advanteges .advanteges__content .advanteges__left {
-  width: 30%;
+  width: 500px;
   margin-left: 10%;
 }
 .advanteges .advanteges__content .advanteges__left .advanteges__title {
   font-size: 48px;
   color: #F4672B;
+  margin-bottom: 20px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 .advanteges .advanteges__content .advanteges__left .advanteges__subTitle {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-size: 24px;
   font-family: 'Cabin', sans-serif;
   font-weight: 500;
@@ -213,6 +214,7 @@ body {
 .advanteges .advanteges__content .advanteges__left .advanteges__text {
   margin-top: 25px;
   font-size: 20px;
+  line-height: 140%;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
@@ -226,7 +228,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-left: 17%;
+  position: absolute;
+  right: -30px;
 }
 .advanteges .advanteges__content .advanteges__right .advanteges__item {
   font-size: 22px;
@@ -243,6 +246,7 @@ body {
 }
 .devepolers .developers__content {
   padding: 5% 0;
+  position: relative;
   background-image: url("../../media/imgs/developers/bg-devepolers.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -256,12 +260,12 @@ body {
   margin-left: 7%;
 }
 .devepolers .developers__content .developers__items {
-  padding-left: 7%;
-  padding-top: 5%;
+  margin-left: 7%;
+  margin-bottom: 4%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 33.3333%);
+  grid-template-columns: repeat(3, 320px);
   grid-row-gap: 50px;
-  grid-column-gap: 10px;
+  grid-column-gap: 100px;
   text-align: right;
 }
 .devepolers .developers__content .developers__items .developer__item {
@@ -283,12 +287,14 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
-.devepolers .developers__content .developers__items .developers__btn {
-  grid-column-start: 3;
-  grid-column-end: 3;
+.devepolers .developers__content .developers__btn {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
 }
-.devepolers .developers__content .developers__items .developers__btn button {
+.devepolers .developers__content .developers__btn button {
   text-transform: uppercase;
+  font-size: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
@@ -340,6 +346,7 @@ body {
 .projects .projects__top .projects__top__text .projects-title {
   font-size: 36px;
   color: #F8682A;
+  margin-bottom: 15px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
@@ -362,9 +369,13 @@ body {
           justify-content: center;
   display: grid;
   grid-template-columns: repeat(5, 252px);
-  row-gap: 20px;
+  row-gap: 10px;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+}
+.projects .container .projects__items .projects__item {
+  width: 252px;
+  height: 320px;
 }
 .projects .container .projects__items .projects__item .projects__item-img {
   width: 100%;
@@ -425,6 +436,9 @@ body {
 .slider .slider__content .splide {
   width: 92%;
 }
+.slider .slider__content .splide .splide__pagination {
+  display: none;
+}
 .slider .slider__content .splide .splide__track {
   padding: 10px;
 }
@@ -437,7 +451,7 @@ body {
 }
 .team {
   padding-top: 10%;
-  padding-bottom: 10%;
+  padding-bottom: 15%;
   background-image: url("../../media/imgs/GITG/bg-team.png");
   background-repeat: no-repeat;
   background-size: 58%;
@@ -457,6 +471,11 @@ body {
 .team .team__test {
   position: relative;
 }
+.team .team__test .container--width {
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
 .team .team__test .team__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,6 +493,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 .team .team__test .team__content .team__bottom .team__img {
   display: -webkit-box;
@@ -482,34 +502,31 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: absolute;
+  right: -100px;
+  width: 795px;
+  height: 698px;
 }
 .team .team__test .team__content .team__bottom .team__img .team__bottom-img {
-  margin-left: auto;
-  width: 80%;
   height: auto;
+  width: 100%;
   border-radius: 7px;
 }
 .team .team__test .team__content .team__bottom .team__bottom-text {
   width: 700px;
-  position: relative;
 }
 .team .team__test .team__content .team__bottom .team__bottom-text .team__btn {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin-top: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 .team .team__test .team__content .team__bottom .team__bottom-text .team__btn .team-btn {
   background-color: transparent;
@@ -564,9 +581,10 @@ body {
           align-items: center;
 }
 .popup {
-  height: 500px;
+  height: auto;
+  max-height: 700px;
   width: 100%;
-  max-width: 850px;
+  max-width: 1000px;
   position: relative;
 }
 .popup img {
@@ -592,7 +610,3 @@ body {
 .popup .btnLeft {
   left: -65px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 63961b0e21d2f398b812975d39f6aca294aefcf7

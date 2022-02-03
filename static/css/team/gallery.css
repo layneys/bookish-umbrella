@@ -1,13 +1,7 @@
 .test {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 100%; }
@@ -19,8 +13,7 @@
   border: 1px solid #d2d0d0;
   padding: 2em;
   font-size: 1.7vw;
-  -webkit-box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
-          box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4); }
+  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4); }
   @supports (display: grid) {
     .message {
       display: none; } }
@@ -48,19 +41,14 @@ h1 {
 
 .item {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #0c0703;
   grid-column-start: auto;
   grid-row-start: auto;
   background-size: cover;
   background-position: center;
-  -webkit-box-shadow: -2px 2px 10px 0px rgba(26, 8, 8, 0.4);
-          box-shadow: -2px 2px 10px 0px rgba(26, 8, 8, 0.4);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
+  box-shadow: -2px 2px 10px 0px rgba(26, 8, 8, 0.4);
   transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   cursor: pointer;
   counter-increment: item-counter; }
   .item:after {
@@ -68,11 +56,9 @@ h1 {
     position: absolute;
     width: 0%;
     height: 0%;
-    -webkit-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out; }
   .item:hover {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05); }
+    transform: scale(1.05); }
   .item--min {
     grid-row-end: span 2; }
   .item--medium {
@@ -99,3 +85,5 @@ h1 {
     .item__details:before {
       content: counter(item-counter);
       padding-right: 0.5em; }
+
+/*# sourceMappingURL=gallery.css.map */

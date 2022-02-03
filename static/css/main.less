@@ -27,7 +27,7 @@ body {
     width: 200px;
 
     display: flex;
-    align-items: center;
+    align-items: top;
 
     color: #DC6041;
     
@@ -96,12 +96,13 @@ body {
 //main
 //--------------------------------------
 .main {
-    padding-bottom: 9%;
-    
     background-image: url("../../media/imgs/main/bg-main.png");
     background-repeat:no-repeat;
-    background-size:auto;
+    background-size:contain;
     background-position: right;
+    background-position-y: bottom;
+
+    padding-bottom: 9%;
 
     .main__content {
         height: 100vh;
@@ -232,21 +233,22 @@ body {
         justify-content: space-between;
 
         .advanteges__left {
-            width: 30%;
+
+            width: 500px;
 
             margin-left: 10%;
 
             .advanteges__title {
                 font-size: 48px;
                 color: #F4672B;
+                margin-bottom: 20px;
 
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 400;
             }
 
             .advanteges__subTitle {
-                margin-top: 20px;
-                margin-bottom: 30px;
+                margin-bottom: 40px;
 
                 font-size: 24px;
 
@@ -257,6 +259,8 @@ body {
             .advanteges__text {
                 margin-top: 25px;
                 font-size: 20px;
+
+                line-height: 140%;
 
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 400;
@@ -270,9 +274,10 @@ body {
         .advanteges__right {
             display: flex;
             justify-content: space-between;
-            
-            margin-left: 17%;
 
+            position: absolute;
+            right: -30px;
+            
             .advanteges__item{
                 font-size: 22px;
 
@@ -304,8 +309,8 @@ body {
 
     .developers__content {
         padding: 5% 0;
-        
-        // margin-right: 10%;
+
+        position: relative;
         
         background-image: url("../../media/imgs/developers/bg-devepolers.png");
         background-repeat: no-repeat;
@@ -324,15 +329,15 @@ body {
         }
         
         .developers__items {
-            padding-left: 7%;
-            padding-top: 5%;
-    
+            margin-left: 7%;
+            margin-bottom: 4%;
+
+
             display: grid;
     
-            grid-template-columns: repeat(auto-fill, 33.3333%);
+            grid-template-columns: repeat(3, 320px);
             grid-row-gap: 50px; //Oy
-            grid-column-gap: 10px; //Ox
-
+            grid-column-gap: 100px; //Ox
 
             text-align: right;
     
@@ -362,21 +367,22 @@ body {
                     font-weight: 600;
                 }
             }
-    
-    
-            .developers__btn {
+        }
 
-               button {
-                text-transform: uppercase;
+        .developers__btn {
+            position: absolute;
+            bottom: 25px;
+            right: 0;
 
-                font-family: 'Inter', sans-serif;
-                font-weight: 500;
-               }
+            button {
+             text-transform: uppercase;
+             font-size: 16px;
 
-                grid-column-start: 3;
-                grid-column-end: 3;
 
+             font-family: 'Inter', sans-serif;
+             font-weight: 500;
             }
+
         }
 
     }
@@ -424,7 +430,7 @@ body {
     .projects__top {
         display: flex;
         justify-content: space-between;
-
+        
         .projects__top__text {
             text-align: right;
             margin-right: 5%;
@@ -432,6 +438,8 @@ body {
             .projects-title {
                 font-size: 36px;
                 color:#F8682A;
+
+                margin-bottom: 15px;
 
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 400;
@@ -458,10 +466,12 @@ body {
     
             display: grid;
             grid-template-columns: repeat(5, 252px);
-            row-gap: 20px;
+            row-gap: 10px;
             column-gap: 20px;
     
             .projects__item {
+                width: 252px;
+                height: 320px;
                 .projects__item-img {
                     width: 100%;
                     height: auto;
@@ -534,6 +544,10 @@ body {
         .splide {
             width: 92%;
 
+            .splide__pagination {
+                display: none;
+            }
+
             .splide__track {
                 padding: 10px;
 
@@ -556,7 +570,7 @@ body {
 
 .team {
     padding-top: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 15%;
 
     background-image: url("../../media/imgs/GITG/bg-team.png");
     background-repeat: no-repeat;
@@ -583,6 +597,12 @@ body {
 
         position: relative;
 
+        .container--width {
+            width: 100%;
+            max-width: 1550px;
+            margin: 0 auto;
+        }
+
         
         .team__content {
             display: flex;
@@ -593,37 +613,41 @@ body {
     
                 display: flex;
                 justify-content: space-between;
+
+                position: relative;
     
                 .team__img {
                     display: flex;
                     justify-content: center;
-                    align-items: center;
-    
+
+                    position: absolute;
+                    right: -100px;
+
+                    width: 795px;
+
+                    height: 698px;
+
                     .team__bottom-img {
     
-                        margin-left: auto;
-                    
-                        width: 80%;
                         height: auto;
+                        width: 100%;
         
                         border-radius: 7px;
                     }
                 }
     
-    
                 .team__bottom-text {
                     width: 700px;
     
-                    position: relative;
+                    
                     .team__btn {
                         width: 100%;
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
+                        
+                        margin-top: 130px;
     
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: left;
     
                         .team-btn {
                             background-color: transparent;
@@ -660,8 +684,6 @@ body {
 
     }
 
-    
-
     .num__page {
         position: absolute;
         left: 0;
@@ -693,9 +715,10 @@ body {
 
 .popup {
 
-    height: 500px;
+    height: auto;
+    max-height: 700px;
     width: 100%;
-    max-width: 850px;
+    max-width: 1000px;
 
     position: relative;
 
