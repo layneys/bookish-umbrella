@@ -16,6 +16,9 @@ ul {
     max-width: 1645px !important;
 }
 
+*, :after, :before {
+    box-sizing: content-box; !important;
+}
 
 .header {
     position: fixed;
