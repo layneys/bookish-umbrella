@@ -72,8 +72,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-
-
 let toSlide;
 function ModalWindow() {
 
@@ -134,6 +132,8 @@ function ModalWindow() {
 
 const PrevNextSlide = (arrWork) => {
 
+    let splideSlide = document.querySelectorAll('.splide__slide');
+
     let btnNextId = document.querySelector('#btnNext')
         .addEventListener("click", () => {
 
@@ -144,8 +144,10 @@ const PrevNextSlide = (arrWork) => {
             let path;
             if (toSlide + 1 === arrWork.length) {
                 path = arrWork[0].getAttribute("src");
+                SetAboutWork(splideSlide[0]);
             } else {
                 path = arrWork[toSlide + 1].getAttribute("src");
+                SetAboutWork(splideSlide[toSlide + 1]);
             }
 
             let doc = document.querySelector('.popup_leftImg');
@@ -170,8 +172,10 @@ const PrevNextSlide = (arrWork) => {
             let path;
             if (toSlide - 1 <= 0) {
                 path = arrWork[arrWork.length - 1].getAttribute("src");
+                SetAboutWork(splideSlide[arrWork.length - 1]);
             } else {
                 path = arrWork[toSlide - 1].getAttribute("src");
+                SetAboutWork(splideSlide[toSlide - 1]);
             }
 
             let doc = document.querySelector('.popup_leftImg');

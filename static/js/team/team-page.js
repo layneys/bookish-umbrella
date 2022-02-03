@@ -246,74 +246,8 @@ const SetAboutWork = (el, mBool = true) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 let numSlide;
-// const NextWork = (arrWork) => {
 
-//     if (numSlide >= arrWork.length) {
-//         numSlide = 0;
-//     }
-
-//     let moreDetImgs = document.querySelector(".more__det__imgs");
-//     let img = moreDetImgs.querySelector("img");
-
-//     let style = arrWork[numSlide].currentStyle || window.getComputedStyle(arrWork[numSlide], false),
-//         path = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-
-//     img.setAttribute("src", path);
-
-
-//     // for img right
-//     let styleM;
-//     if (numSlide + 1 === arrWork.length) {
-//         styleM = arrWork[0].currentStyle || window.getComputedStyle(arrWork[0], false);
-
-//         SetMoreDetBbotImgs(arrWork[arrWork.length - 1]);
-//         SetSfteareUsed(arrWork[arrWork.length - 1]);
-//         SetAboutWork(arrWork[arrWork.length - 1]);
-
-//     } else {
-//         styleM = arrWork[numSlide + 1].currentStyle || window.getComputedStyle(arrWork[numSlide + 1], false);
-
-//         SetMoreDetBbotImgs(arrWork[numSlide]);
-//         SetSfteareUsed(arrWork[numSlide]);
-//         SetAboutWork(arrWork[numSlide]);
-
-//     }
-
-//     let pathM = styleM.backgroundImage.slice(4, -1).replace(/"/g, "");
-
-//     let moreDetItem = document.querySelector(".more_det__work");
-
-//     moreDetItem.style.backgroundImage = `url("${pathM}")`;
-
-//     // if (boolCh) {
-//     //     moreDetItem[1].style.backgroundImage = `url("${pathM}")`;
-//     //     moreDetItem[0].style.display = "none";
-
-//     //     moreDetItem[1].style.display = "block";
-//     // } else {
-//     //     moreDetItem[0].style.backgroundImage = `url("${pathM}")`;
-//     //     moreDetItem[1].style.display = "none";
-
-//     //     moreDetItem[0].style.display = "block";
-//     // }
-
-
-//     numSlide++;
-
-// };
 
 
 const ShowDelWork = (section, mBool) => {
@@ -597,27 +531,6 @@ const PrevNextSlide = (arrWork, mBool) => {
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
