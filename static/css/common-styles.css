@@ -163,7 +163,10 @@ img {
 }
 .popup .popup_leftImg img {
   border-radius: 7px;
+  width: 100%;
 }
+
+
 .popup .popup_rightDiv {
   width: 250px;
   display: -webkit-box;
