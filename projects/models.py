@@ -1,5 +1,8 @@
 from django.db import models
 from users.models import UserProfile
+from PIL import Image
+from io import BytesIO
+from django.core.files import File
 # Create your models here.
 
 
@@ -28,6 +31,22 @@ class Project(models.Model):
 class ProjectGalleryPicture(models.Model):
     image = models.ImageField(upload_to="gallery_images", verbose_name="Картинка")
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="project_images", verbose_name="Проект")
+    compressed_image = models.ImageField(upload_to="compressed_images", verbose_name = "Облегчённая картинка", default="default.jpg")
+
+    def save(self, *args, **kwargs):
+        new_image = self.reduce_image_size(self.image)
+        self.compressed_image = new_image
+        super().save(*args, **kwargs)
+
+
+    def reduce_image_size(self, image_to_resize):
+        img = Image.open(image_to_resize)
+        if img.mode in ("RGBA", "P"): img = img.convert("RGB")
+        thumb_io = BytesIO()
+        img.resize((500, 500))
+        img.save(thumb_io, "jpeg", quality=50)
+        new_image = File(thumb_io, name=image_to_resize.name)
+        return new_image
 
 
     class Meta:

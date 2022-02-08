@@ -5,6 +5,7 @@ from .models import Project, ProjectGalleryPicture
 
 class ProjectGalleryPictureInline(admin.TabularInline):
     model = ProjectGalleryPicture
+    exclude = ("compressed_image", )
 
 @admin.register(Project)
 class UserProfileAdmin(admin.ModelAdmin):
