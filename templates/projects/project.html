@@ -91,15 +91,11 @@
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide mouse-enter">
-                    <img src="../../media/imgs/spaceHalloween-background.png" data-cursor-hover="1" alt="image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
+                    <img src="{{ project.preview_pic.url }}" data-cursor-hover="1" alt="image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                     <img class="video-image" src="../../media/icons/start-video-icon.svg" data-cursor-hover="1"  alt="play/pause image" data-video="true" data-src="https://www.youtube.com/embed/{{ project.video_id }}" ondragstart="return false">
                 </li>
-                <!--{% for img in project.project_images.all%}
-                <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
-                {% endfor %}-->
-
                 {% for img in project.project_images.all%}
-                    <li class="splide__slide mouse-enter"><img src="{{ img.image.url }}" data-url-normal-image="{{ img.image.url }}" alt="image" data-image="true" ondragstart="return false"></li>
+                    <li class="splide__slide mouse-enter"><img src="{{ img.compressed_image.url }}" data-url-normal-image="{{ img.image.url}}" alt="image" data-image="true" ondragstart="return false"></li>
                 {% endfor %}
             </ul>
         </div>

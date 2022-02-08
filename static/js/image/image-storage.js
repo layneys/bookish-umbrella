@@ -47,7 +47,7 @@ export class ImageStorage {
         Image.prototype.completedPercentage = 0;
 
         this._image = new Image();
-        this._url = `../../media/imgs/${url}`;
+        this._url = `${url}`;
         this._id = id;
 
         //this._circle = document.querySelector('.progress-ring__circle');
