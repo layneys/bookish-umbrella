@@ -379,7 +379,7 @@ body {
 }
 .projects .container .projects__items .projects__item .projects__item-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   cursor: pointer;
 }
 .projects .container .projects__showAll {

@@ -1,3 +1,6 @@
+var less = require('gulp-less');
+var path = require('path');
+
 const gulp = require('gulp');
 const server = require('browser-sync');
 

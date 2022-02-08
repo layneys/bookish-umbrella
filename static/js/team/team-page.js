@@ -246,17 +246,17 @@ const SetAboutWork = (el, mBool = true) => {
     } else {
         moreDetText.innerHTML = el.dataset.text;
 
-        aboutWork.classList.remove("hide");
+        aboutWork?.classList.remove("hide");
     }
 
     let softwareUsed = document.querySelector("#software__used");
     let moreDetSoftItem = el.querySelectorAll(".more_det_soft-item");
  
     if (moreDetSoftItem.length === 0) {
-        softwareUsed.classList.add("hide");
+        softwareUsed?.classList.add("hide");
 
     } else {
-        softwareUsed.classList.remove("hide");
+        softwareUsed?.classList.remove("hide");
     }
 
 };
