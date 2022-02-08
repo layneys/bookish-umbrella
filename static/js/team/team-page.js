@@ -236,18 +236,33 @@ const SetAboutWork = (el, mBool = true) => {
 
     moreDetText.innerHTML = "";
 
+    let aboutWork = document.querySelector("#about__work");
+
     if (el.dataset.text == undefined) {
         moreDetText.innerHTML = "";
+
+        aboutWork.classList.add("hide");
+
     } else {
         moreDetText.innerHTML = el.dataset.text;
+
+        aboutWork.classList.remove("hide");
+    }
+
+    let softwareUsed = document.querySelector("#software__used");
+    let moreDetSoftItem = el.querySelectorAll(".more_det_soft-item");
+ 
+    if (moreDetSoftItem.length === 0) {
+        softwareUsed.classList.add("hide");
+
+    } else {
+        softwareUsed.classList.remove("hide");
     }
 
 };
 
 
-
 let numSlide;
-
 
 
 const ShowDelWork = (section, mBool) => {
@@ -393,7 +408,6 @@ const PrevNextSlide = (arrWork, mBool) => {
             .addEventListener("click", () => {
 
                 numSlide--;
-                console.log(numSlide)
 
                 if (numSlide < 0) {
                     numSlide = arrWork.length - 1;
@@ -485,7 +499,6 @@ const PrevNextSlide = (arrWork, mBool) => {
             .addEventListener("click", () => {
 
                 numSlide--;
-                console.log(numSlide)
 
                 if (numSlide < 0) {
                     numSlide = arrWork.length - 1;
@@ -534,49 +547,6 @@ const PrevNextSlide = (arrWork, mBool) => {
 
 
 
-function ModalSWindow() {
-
-    let arrSplideIt = document.querySelectorAll(".splide__slide");
-    let body = document.querySelector("body");
-
-    arrSplideIt.forEach(item => {
-
-        item.addEventListener("click", (e) => {
-
-            let slide = e.target;
-            let imgSlide = slide.querySelector("img");
-            let pathImg = imgSlide.src;
-
-            SetAboutWork(slide, false);
-
-            let popupLeftImg = document.querySelector('.popup_leftImg');
-            let img = popupLeftImg.querySelector('img');
-            img.setAttribute("src", pathImg);
-
-            body.classList.add("hideScroll");
-
-            let popupBg = document.querySelector('.popup__bg');
-            let popup = document.querySelector('.popup');
-
-            let imgClose = document.querySelector(".modal__imgClose-img");
-
-            imgClose.addEventListener("click", () => {
-                let modal = document.querySelector(".popup__bg");
-                popupBg.classList.remove('active'); // Добавляем класс 'active' для фона
-                popup.classList.remove('active'); // И для самого окна
-                body.classList.remove("hideScroll");
-            });
-
-            popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-            popup.classList.add('active'); // И для самого окна
-
-        });
-
-    });
-
-}
-
-
 const Anchor = () => {
 
     let container = document.querySelector('.container');
@@ -605,7 +575,7 @@ const Anchor = () => {
     window.addEventListener('scroll', function arrowPosition() {
 
         arrowUp.style.position = 'fixed';
-        arrowUp.style.left = container.offsetLeft + container.clientWidth + 'px';
+        arrowUp.style.left = container.offsetLeft + container.clientWidth + 150 + 'px';
 
         let top = window.pageYOffset + Math.floor(window.innerHeight / footer.clientHeight) * footer.clientHeight;
 
@@ -657,6 +627,64 @@ const LoadMomeGallery = () => {
 
 };
 
+const DisabledSplideSlide = () => {
+
+    let portfolioTop = document.querySelector(".portfolio__top");
+    let arrSlide = portfolioTop.querySelectorAll(".splide__slide");
+
+    arrSlide.forEach(it => {
+
+        it.disabled = false;
+
+    });
+
+};
+
+function ModalWindow() {
+
+    let parent = document.querySelector('.achi__content');
+    let arrSlide = parent.querySelectorAll('.splide__slide');
+    let body = document.querySelector('body');
+
+    for (let i = 0; i < arrSlide.length; i++) {
+
+        arrSlide[i].addEventListener("click", e => {
+            e.preventDefault();
+
+            let slide = e.target;
+            let imgSlide = slide.querySelector("img");
+            let pathImg = imgSlide.src;
+            let popupImg = document.querySelector('#popup-img');
+            popupImg.setAttribute("src", pathImg);
+
+
+            body.classList.add("hideScroll");
+
+
+            let popupBg = document.querySelector('.popup__bg');
+            let popup = document.querySelector('.popup');
+
+            popupBg.classList.add('active');
+            popup.classList.add('active');
+
+
+            let imgClose = document.querySelector(".modal__imgClose-img");
+
+            imgClose.addEventListener("click", () => {
+
+                popupBg.classList.remove('active');
+                popup.classList.remove('active');
+
+                body.classList.remove("hideScroll");
+
+            });
+
+        });
+
+    }
+
+}
+
 
 
 
@@ -665,7 +693,8 @@ AddBtnSlider(".portfolio");
 AddBtnSlider(".resume");
 ShowDelWork(".work__bottom__top", true);
 ShowDelWork(".gallery", false);
-ModalSWindow();
 Anchor();
 LoadMomeGallery();
 SetItemClassMyWorks();
+DisabledSplideSlide();
+ModalWindow();

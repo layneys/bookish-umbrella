@@ -62,53 +62,63 @@
 
     <div class="cursor-dot-outline"></div>
     <div class="cursor-dot"></div>
-    
+
 
     <header class="header">
         <div class="container header-container">
             <div class="header-data">
                 <div class="logo">
-                    <a href="http://127.0.0.1:8000/"><div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png" alt="logo"><h3>CITG</h3></div></a>
+                    <a href="http://127.0.0.1:8000/">
+                        <div class="header-elements"><img class="hover" src="../../media/icons/logoHeader.png"
+                                alt="logo">
+                            <h3>CITG</h3>
+                        </div>
+                    </a>
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="http://127.0.0.1:8000/"><div class="header-elements" data-hover>Домой</div></a></li>
-                        <li><a href="http://127.0.0.1:8000/projects/"><div class="header-elements" data-hover>Проекты</div></a></li>
-                        <li><a href="http://127.0.0.1:8000/team/"><div class="header-elements" data-hover>Команда</div></a></li>
+                        <li><a href="http://127.0.0.1:8000/">
+                                <div class="header-elements" data-hover>Домой</div>
+                            </a></li>
+                        <li><a href="http://127.0.0.1:8000/projects/">
+                                <div class="header-elements" data-hover>Проекты</div>
+                            </a></li>
+                        <li><a href="http://127.0.0.1:8000/team/">
+                                <div class="header-elements" data-hover>Команда</div>
+                            </a></li>
                     </ul>
                 </div>
                 <div class="mail">
-                    <a class="hover" href="mailto:itsomemail@mail.com"><div class="header-elements">itsomemail@mail.com</div></a>
+                    <a class="hover" href="mailto:itsomemail@mail.com">
+                        <div class="header-elements">itsomemail@mail.com</div>
+                    </a>
                 </div>
             </div>
         </div>
     </header>
     <script src="../../static/js/current-page.js"></script>
 
-  
+
     <section id="post-01" class="main ">
 
         <div class="main__content">
 
             <div class="main__top">
                 <div>
-                    <img class="main__top-img" src="{{user.avatar.url}}" alt="картинка">
+                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
                 </div>
 
                 <div class="main__text">
-                    <h3 class="main__title-human">{{user.first_name}} {{ user.last_name }}</h3>
+                    <h3 class="main__title-human">Андрей Бредихин</h3>
                     <p class="main__about">
-                        {{ jobs|join:", " }}
+                        Юморист
                     </p>
                 </div>
 
                 <div class="skills__icons">
-                    {% for soft in software %}
-                        <div class="skills__icons-item">
-                            <img src="{{ soft.icon.url }}" alt="{{ soft.name }}">
-                        </div>
-                    {% endfor %}
-
+                    <div class="skills__icons-item">
+                        <img src="../../media/imgs/team-page/main/human.png" alt="{{ soft.name }}">
+                    </div>
                 </div>
             </div>
 
@@ -173,13 +183,13 @@
 
                             <div class="splide__track">
                                 <div class="splide__list">
-                                    {% for project in projects %}
 
-                                        <li class="splide__slide item">
-                                            <a href ="http://127.0.0.1:8000/project/{{ project.id }}"><img src="{{project.preview_pic.url}}"></a>
-                                        </li>
+                                    <li class="splide__slide item" data-text="12333">
+                                        <img src="../../media/imgs/team-page/works/Rectangle 279.png">
 
-                                    {% endfor %}
+                                        <a href="https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA+%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C+%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83+%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%BE%D0%B9&lr=39"
+                                        target="_blank"></a>
+                                    </li>
 
                                 </div>
                             </div>
@@ -214,38 +224,36 @@
                             <div class="section-gal">
                                 <div class="grid">
                                     {% for art in artworks %}
-                                        <div class="item"
-                                            data-text="{{art.about}}"
-                                            style="background-image: url('{{ art.preview_pic.url }}');">
+                                    <div class="item" data-text="{{art.about}}"
+                                        style="background-image: url('{{ art.preview_pic.url }}');">
 
-                                            <div class="more__det_botImgs hide">
-                                                {% for pic in art.artwork_images.all %}
-                                                    <div class="more__det_item">
-                                                        <img src="{{ pic.image.url }}">
-                                                    </div>
-                                                {% endfor %}
-
+                                        <div class="more__det_botImgs hide">
+                                            {% for pic in art.artwork_images.all %}
+                                            <div class="more__det_item">
+                                                <img src="{{ pic.image.url }}">
                                             </div>
-
-                                            <div class="item-soft hide">
-                                                {% for soft in art.software.all %}
-
-                                                    <div class="more_det_soft-item">
-                                                        <div class="soft_img">
-                                                            <img src="{{soft.icon.url}}"
-                                                                alt="картинка">
-                                                        </div>
-
-                                                        <div class="soft_text">
-                                                            <p class="title_programm">
-                                                                {{ soft.name }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                {% endfor %}
-                                            </div>
+                                            {% endfor %}
 
                                         </div>
+
+                                        <div class="item-soft hide">
+                                            {% for soft in art.software.all %}
+
+                                            <div class="more_det_soft-item">
+                                                <div class="soft_img">
+                                                    <img src="{{soft.icon.url}}" alt="картинка">
+                                                </div>
+
+                                                <div class="soft_text">
+                                                    <p class="title_programm">
+                                                        {{ soft.name }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
                                     {% endfor %}
 
 
@@ -267,48 +275,46 @@
                 <div class="grid">
 
                     {% for art in artworks %}
-                                        <div class="item"
-                                            data-text="{{art.about}}"
-                                            style="background-image: url('{{ art.preview_pic.url }}');">
+                    <div class="item" data-text="{{art.about}}"
+                        style="background-image: url('{{ art.preview_pic.url }}');">
 
-                                            <div class="more__det_botImgs hide">
-                                                {% for pic in art.artwork_images.all %}
-                                                    <div class="more__det_item">
-                                                        <img src="{{ pic.image.url }}">
-                                                    </div>
-                                                {% endfor %}
+                        <div class="more__det_botImgs hide">
+                            {% for pic in art.artwork_images.all %}
+                            <div class="more__det_item">
+                                <img src="{{ pic.image.url }}">
+                            </div>
+                            {% endfor %}
 
-                                            </div>
+                        </div>
 
-                                            <div class="item-soft hide">
-                                                {% for soft in art.software.all %}
+                        <div class="item-soft hide">
+                            {% for soft in art.software.all %}
 
-                                                    <div class="more_det_soft-item">
-                                                        <div class="soft_img">
-                                                            <img src="{{soft.icon.url}}"
-                                                                alt="картинка">
-                                                        </div>
+                            <div class="more_det_soft-item">
+                                <div class="soft_img">
+                                    <img src="{{soft.icon.url}}" alt="картинка">
+                                </div>
 
-                                                        <div class="soft_text">
-                                                            <p class="title_programm">
-                                                                {{ soft.name }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                {% endfor %}
-                                            </div>
-
-                                        </div>
-                                    {% endfor %}
+                                <div class="soft_text">
+                                    <p class="title_programm">
+                                        {{ soft.name }}
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
 
                     </div>
-
+                    {% endfor %}
 
                 </div>
+
+
+            </div>
             <div class="gallery__btn">
                 <button id="gallery-btn" class="btn">LOAD MORE</button>
             </div>
-            </div>
+        </div>
 
 
 
@@ -324,20 +330,20 @@
 
                 <div class="resume__skills__items">
                     {% for skill in user.skills.all %}
-                        <div class="resume__skills__item">
+                    <div class="resume__skills__item">
 
-                            <p>
-                                {{ skill.name }}
-                            </p>
+                        <p>
+                            {{ skill.name }}
+                        </p>
 
-                        </div>
+                    </div>
                     {% endfor %}
 
                 </div>
 
             </div>
 
-           
+
             <div class="achi">
 
                 <div class="achi__title">
@@ -355,9 +361,9 @@
                             <div class="splide__track">
                                 <div class="splide__list">
                                     {% for ach in achievements %}
-                                        <li class="splide__slide item">
-                                            <img src="{{ach.image.url}}">
-                                        </li>
+                                    <li class="splide__slide item">
+                                        <img src="{{ach.image.url}}">
+                                    </li>
                                     {% endfor %}
 
                                 </div>
@@ -409,10 +415,10 @@
             <div class="links-to-social-networks">
                 <div class="soc-nets telegram">
                     <a href="#">
-                       <div>
-                           <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
-                           <p>Telegram</p>
-                       </div>
+                        <div>
+                            <img src="../../media/icons/telegramm-icon.svg" alt="image of social network">
+                            <p>Telegram</p>
+                        </div>
                     </a>
                 </div>
                 <div class="soc-nets VKontakte">
@@ -455,15 +461,7 @@
         <div class="popup">
 
             <div class="popup_leftImg">
-                <img src="${pathImg}" alt="картинка">
-            </div>
-
-            <div class="popup_rightDiv">
-                <div>
-                    <p>
-                        1 место за участие в хакатон 2020
-                    </p>
-                </div>
+                <img id="popup-img" src="" alt="картинка">
             </div>
 
         </div>
@@ -475,7 +473,7 @@
     </div>
 
 
-     <div class="Mpopup__bg">
+    <div class="Mpopup__bg">
 
         <div class="Mpopup">
 
