@@ -536,7 +536,7 @@
 }
 .Mpopup .more__det .more__det__info .more_det_item #more_det_soft .more_det_soft-item .soft_img img {
   width: 100%;
-  height: auto;
+  height: 45px;
 }
 .Mpopup .more__det .more__det__info .more_det_item #more_det_soft .more_det_soft-item .title_programm {
   font-family: 'Exo 2', sans-serif;

@@ -105,7 +105,7 @@
 
             <div class="main__top">
                 <div>
-                    <img class="main__top-img" src="../../media/imgs/team-page/main/human.png" alt="картинка">
+                    <img class="main__top-img" src="{{user.avatar.url}}" alt="картинка">
                 </div>
 
                 <div class="main__text">
@@ -305,9 +305,12 @@
 
                     </div>
                     {% endfor %}
-
+                    {% for pic in pictures %}
+                    <div class="item" data-text="Picture"
+                        style="background-image: url('{{ pic.image.url }}');">
+                    </div>
+                    {% endfor %}
                 </div>
-
 
             </div>
             <div class="gallery__btn">
@@ -573,7 +576,7 @@
 
                         <div>
                             <p class="more_det_title">
-                                Contack
+                                Contact
                             </p>
                         </div>
 
