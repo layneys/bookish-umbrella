@@ -67,6 +67,7 @@ main {
 .person-card__image img {
     height: 192px;
     width: 192px;
+    border-radius: 50%;
 }
 
 .person-card__info {
